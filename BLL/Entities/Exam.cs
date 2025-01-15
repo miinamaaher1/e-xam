@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BLL.Entities
+{
+    public class Exam : Entity
+    {
+        public int id { get; set; }
+        public string? title { get; set; }
+        public int duration { get; set; }
+        public DateTime startDate { get; set; }
+        public DateTime endDate { get; set; }
+        public int totalDegree { get; set; }
+        public Course course { get; set; }
+        public List<Question> questions { get; set; }
+    }
+}

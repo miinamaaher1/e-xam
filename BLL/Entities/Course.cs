@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace BLL.Entities
 {
-    public class Track : Entity
+    public class Course : Entity
     {
         public int id { get; set; }
         public string name { get; set; }
-        public Department dept { get; set; }
+        public List<string> topics { get; set; }
+        public List<Question> questions { get; set; }
+        public List<Student> students { get; set; }
     }
 }

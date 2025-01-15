@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Entities
 {
-    public class Track : Entity
+    public abstract class Entity
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public Department dept { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace BLL.Entities
     {
         public decimal? gpa { get; set; }
         public Track track { get; set; }
+        public List<Course> courses { get; set; }
     }
 }

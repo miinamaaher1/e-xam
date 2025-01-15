@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Entities
 {
-    public class User : EntityBase
+    public class User : Entity
     {
         public int id { get; set; }
         public string firstName { get; set; }

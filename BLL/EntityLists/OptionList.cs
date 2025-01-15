@@ -1,12 +1,13 @@
-﻿using System;
+﻿using BLL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Entities
+namespace BLL.EntityLists
 {
-    public abstract class EntityBase
+    public class OptionList : List<Option>
     {
     }
 }
