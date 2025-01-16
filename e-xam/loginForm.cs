@@ -5,9 +5,9 @@ using System.Data;
 
 namespace e_xam
 {
-    public partial class loginForm : Form
+    public partial class LoginForm : Form
     {
-        public loginForm()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -23,16 +23,32 @@ namespace e_xam
             } else if (user.type == 's')
             {
                 Student student = StudentManager.getStudent(user.id);
-                MessageBox.Show("Welcome " + student.firstName + " " + student.lastName);
-                // this.Hide();
-                // new StudentForm(conn, student).Show();
+                
+                StudentHome studentHome = new StudentHome(student);
+
+                // Subscribe to the FormClosed event
+                studentHome.FormClosed += (s, args) =>
+                {
+                    // Show the current form again
+                    this.Close();
+                };
+                this.Hide();
+                studentHome.Show();
             }
             else
             {
                 Instructor instructor = InstructorManager.getInstructor(user.id);
-                MessageBox.Show("Welcome " + instructor.firstName + " " + instructor.lastName);
-                // this.Hide();
-                // new InstructorForm(conn, instructor).Show();
+
+                InstructorHome instructorHome = new InstructorHome(instructor);
+
+                // Subscribe to the FormClosed event
+                instructorHome.FormClosed += (s, args) =>
+                {
+                    // Show the current form again
+                    this.Close();
+                };
+                this.Hide();
+                instructorHome.Show();
             }
         }
     }

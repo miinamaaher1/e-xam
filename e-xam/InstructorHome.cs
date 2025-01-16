@@ -1,0 +1,84 @@
+﻿using BLL.Entities;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace e_xam
+{
+    public partial class InstructorHome : Form
+    {
+        Instructor user;
+        public InstructorHome(Instructor _user)
+        {
+            InitializeComponent();
+            user = _user;
+            nameLbl.Text = user.firstName + " " + user.lastName;
+            trackLbl.Text = user.dept.name;
+        }
+
+        private void addQuestionItm_Click(object sender, EventArgs e)
+        {
+            // insert the add question form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void generateExamItm_Click(object sender, EventArgs e)
+        {
+            // insert the generate exam form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void exitItm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void editProfileItm_Click(object sender, EventArgs e)
+        {
+            // insert the edit profile form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void answerSheetItm_Click(object sender, EventArgs e)
+        {
+            // insert the answer sheet (review student answers) form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void courseDetailsItm_Click(object sender, EventArgs e)
+        {
+            // insert the course details (topics) form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void instructorClassesItm_Click(object sender, EventArgs e)
+        {
+            // insert the instructor classes (class and student count) form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void trackStatsItm_Click(object sender, EventArgs e)
+        {
+            // insert the track stats (student name and gpa) form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void studentStatsItm_Click(object sender, EventArgs e)
+        {
+            // insert the student stats (course name and total grade) form here
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void aboutItm_Click(object sender, EventArgs e)
+        {
+            // insert the about form here
+            MessageBox.Show("Coming Soon");
+        }
+    }
+}

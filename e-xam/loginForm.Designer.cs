@@ -1,6 +1,6 @@
 ﻿namespace e_xam
 {
-    partial class loginForm
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             userNameLbl = new Label();
             passwordLbl = new Label();
             userNameBx = new TextBox();
@@ -65,6 +65,7 @@
             // 
             passwordBx.Location = new Point(336, 204);
             passwordBx.Name = "passwordBx";
+            passwordBx.PasswordChar = '*';
             passwordBx.Size = new Size(295, 38);
             passwordBx.TabIndex = 3;
             // 
@@ -72,26 +73,28 @@
             // 
             loginBtn.Location = new Point(347, 340);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(116, 44);
+            loginBtn.Size = new Size(115, 45);
             loginBtn.TabIndex = 4;
             loginBtn.Text = "Login";
             loginBtn.UseVisualStyleBackColor = true;
             loginBtn.Click += loginBtn_Click;
             // 
-            // loginForm
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(823, 497);
+            ClientSize = new Size(822, 498);
             Controls.Add(loginBtn);
             Controls.Add(passwordBx);
             Controls.Add(userNameBx);
             Controls.Add(passwordLbl);
             Controls.Add(userNameLbl);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(5, 5, 5, 5);
-            Name = "loginForm";
+            Margin = new Padding(5);
+            MaximizeBox = false;
+            Name = "LoginForm";
             Text = "e-xam login";
             ResumeLayout(false);
             PerformLayout();
