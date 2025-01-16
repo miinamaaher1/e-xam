@@ -141,35 +141,35 @@
             // answerSheetItm
             // 
             answerSheetItm.Name = "answerSheetItm";
-            answerSheetItm.Size = new Size(224, 26);
+            answerSheetItm.Size = new Size(205, 26);
             answerSheetItm.Text = "&Answer Sheet";
             answerSheetItm.Click += answerSheetItm_Click;
             // 
             // courseDetailsItm
             // 
             courseDetailsItm.Name = "courseDetailsItm";
-            courseDetailsItm.Size = new Size(224, 26);
+            courseDetailsItm.Size = new Size(205, 26);
             courseDetailsItm.Text = "&Course Details";
             courseDetailsItm.Click += courseDetailsItm_Click;
             // 
             // instructorClassesItm
             // 
             instructorClassesItm.Name = "instructorClassesItm";
-            instructorClassesItm.Size = new Size(224, 26);
+            instructorClassesItm.Size = new Size(205, 26);
             instructorClassesItm.Text = "&Instructor Classes";
             instructorClassesItm.Click += instructorClassesItm_Click;
             // 
             // trackStatsItm
             // 
             trackStatsItm.Name = "trackStatsItm";
-            trackStatsItm.Size = new Size(224, 26);
+            trackStatsItm.Size = new Size(205, 26);
             trackStatsItm.Text = "&Track Stats";
             trackStatsItm.Click += trackStatsItm_Click;
             // 
             // studentStatsItm
             // 
             studentStatsItm.Name = "studentStatsItm";
-            studentStatsItm.Size = new Size(224, 26);
+            studentStatsItm.Size = new Size(205, 26);
             studentStatsItm.Text = "&Student Stats";
             studentStatsItm.Click += studentStatsItm_Click;
             // 
@@ -183,7 +183,7 @@
             // aboutItm
             // 
             aboutItm.Name = "aboutItm";
-            aboutItm.Size = new Size(224, 26);
+            aboutItm.Size = new Size(133, 26);
             aboutItm.Text = "A&bout";
             aboutItm.Click += aboutItm_Click;
             // 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-xam UI", "e-xam\e-xam UI.csproj", "{0CDAA1E1-20CA-416A-9C22-E0D9DAE4CD7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "e-xam", "e-xam\e-xam.csproj", "{0CDAA1E1-20CA-416A-9C22-E0D9DAE4CD7A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FB0AC38E-7297-46BD-BA60-EA0D775B152C} = {FB0AC38E-7297-46BD-BA60-EA0D775B152C}
 	EndProjectSection
