@@ -1,3 +1,5 @@
+using e_xam.InstructorForms;
+
 namespace e_xam
 {
     internal static class Program
@@ -12,7 +14,9 @@ namespace e_xam
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
+           // Application.Run(new LoginForm());
+                   Application.Run(new GenerateExam(10004));
+
         }
     }
 }
