@@ -64,7 +64,6 @@ namespace BLL.EntityManagers
 
             return students;
         }
-    }
         
         public static Student getStudentStats(int _id)
         {

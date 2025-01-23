@@ -1,6 +1,6 @@
 ﻿namespace e_xam
 {
-    partial class trackSelectionReport
+    partial class TrackStatsForm
     {
         /// <summary>
         /// Required designer variable.

@@ -15,8 +15,6 @@ namespace e_xam
 
             ApplicationConfiguration.Initialize();
 
-            // Application.Run(new trackSelectionReport());
-
             Application.Run(new LoginForm());
 
         }

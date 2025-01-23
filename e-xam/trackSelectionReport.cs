@@ -13,11 +13,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace e_xam
 {
-    public partial class trackSelectionReport : Form
+    public partial class TrackStatsForm : Form
     {
         private Dictionary<string, int> trackDictionary;
 
-        public trackSelectionReport()
+        public TrackStatsForm()
         {
             InitializeComponent();
             trackDictionary = TrackManager.getTrackNamesAndIds();  // I returned the Ids too, since they are our primary keys

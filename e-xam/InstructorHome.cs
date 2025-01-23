@@ -80,7 +80,16 @@ namespace e_xam
         private void trackStatsItm_Click(object sender, EventArgs e)
         {
             //// insert the track stats (student name and gpa) form here
-            MessageBox.Show("Coming Soon");
+            TrackStatsForm trackStatsForm = new TrackStatsForm();
+
+            // Subscribe to the FormClosed event
+            trackStatsForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            trackStatsForm.Show();
         }
 
         private void studentStatsItm_Click(object sender, EventArgs e)

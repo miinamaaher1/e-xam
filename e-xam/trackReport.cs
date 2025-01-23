@@ -42,7 +42,7 @@ namespace e_xam
 
         private void okBtn_Click(object sender, EventArgs e)
         {
-            trackSelectionReport newTrack = new trackSelectionReport();
+            TrackStatsForm newTrack = new TrackStatsForm();
             // Subscribe to the FormClosed event
             newTrack.FormClosed += (s, args) =>
             {

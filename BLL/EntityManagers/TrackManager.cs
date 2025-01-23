@@ -21,11 +21,12 @@ namespace BLL.EntityManagers
         {
             DataTable dt = dBManager.executeDataTable("getTrackNamesAndIds");
             Dictionary<string, int> trackDictionary = new Dictionary<string, int>();
-            foreach(DataRow row in dt.Rows)
+            foreach (DataRow row in dt.Rows)
             {
-                trackDictionary.Add(Convert.ToString(row["name"]) ,Convert.ToInt32(row["id"]));
+                trackDictionary.Add(Convert.ToString(row["name"]), Convert.ToInt32(row["id"]));
             }
             return trackDictionary;
+        }
 
         public static TrackList getInstructorTracksInCrs(int _instId , int _crsId)
         {
