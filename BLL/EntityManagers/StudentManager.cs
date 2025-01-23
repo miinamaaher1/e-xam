@@ -1,4 +1,5 @@
 using BLL.Entities;
+using BLL.EntityList;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -104,6 +105,5 @@ namespace BLL.EntityManagers
                 return student;
             }
         }
-
     }  
 }
