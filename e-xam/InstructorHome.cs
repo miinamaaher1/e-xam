@@ -1,4 +1,5 @@
 ﻿using BLL.Entities;
+using e_xam.InstructorForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +32,17 @@ namespace e_xam
         private void generateExamItm_Click(object sender, EventArgs e)
         {
             // insert the generate exam form here
-            MessageBox.Show("Coming Soon");
+
+            GenerateExamForm genExamForm = new GenerateExamForm(user.id);
+
+            // Subscribe to the FormClosed event
+            genExamForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            genExamForm.Show();
         }
 
         private void exitItm_Click(object sender, EventArgs e)

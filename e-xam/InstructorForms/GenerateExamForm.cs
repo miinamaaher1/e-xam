@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace e_xam.InstructorForms
 {
-    public partial class GenerateExam : Form
+    public partial class GenerateExamForm : Form
     {
         int instId;
         CourseList courses = null;
@@ -22,16 +22,13 @@ namespace e_xam.InstructorForms
         DateTime oldDate = new DateTime(1999, 1, 1);
         int currentExamId;
         bool isLoaded;
-        public GenerateExam(int _instId)
+        public GenerateExamForm(int _instId)
         {
             InitializeComponent();
             MsgLbl.Visible=false;
             instId = _instId;
 
         }
-
-
-
 
         private void GenerateExam_Load(object sender, EventArgs e)
         {

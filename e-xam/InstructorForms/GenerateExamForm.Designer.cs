@@ -1,6 +1,6 @@
 ﻿namespace e_xam.InstructorForms
 {
-    partial class GenerateExam
+    partial class GenerateExamForm
     {
         /// <summary>
         /// Required designer variable.
