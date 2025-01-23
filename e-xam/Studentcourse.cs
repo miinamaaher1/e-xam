@@ -17,40 +17,28 @@ namespace e_xam
     public partial class Studentcourse : Form
     {
         CourseList courselist;
-        int x = 0;
-        int y = 0;
-        int z = 0;
-        int v = 0;
-        public Studentcourse(CourseList c)
+        int x, y, z, v;
+        public Studentcourse(int _id)
         {
-            courselist = c;
-            
+            x = y = z = v = 0;
+            courselist = CourseManger.getStudentcourse(_id);
             InitializeComponent();
             loadcourses();
-           
         }
         
         private void loadcourses()
         {
-          
-          
-           
             courses.Controls.Clear();
-
-
             courses.Size = new Size(1000, 5000);
 
-
-                foreach (Course course in courselist)
+            foreach (Course course in courselist)
+            {
+   
+                Panel coursePanel = new Panel
                 {
-
-                    
-                    
-                        Panel coursePanel = new Panel
-                        {
-                            Size = new Size(1000, 50), 
-                            BorderStyle = BorderStyle.None 
-                        };
+                    Size = new Size(1000, 50), 
+                    BorderStyle = BorderStyle.None 
+                };
 
                 Label courseName = new Label
                 {
@@ -60,33 +48,28 @@ namespace e_xam
                     Location = new Point(10 + x, 10 + y)
                 };
 
+                Button btnCourse = new Button
+                {
+                    Text = "view",
+                    Size = new Size(80, 30),
+                    Location = new Point(500+z, 5+v),
+                    Tag = course.id
+                };
 
-                        Button btnCourse = new Button
-                        {
-                            Text = "view",
-                            Size = new Size(80, 30),
-                            Location = new Point(500+z, 5+v),
-                            Tag = course.id
-                        };
-                        coursePanel.Controls.Add(courseName);
-                        coursePanel.Controls.Add(btnCourse);
+                coursePanel.Controls.Add(courseName);
+                coursePanel.Controls.Add(btnCourse);
 
-                        courses.Controls.Add(coursePanel);
+                courses.Controls.Add(coursePanel);
 
-                    }
+            }
             x += 10;
             y += 10;
             z += 500;
             v += 5;
-
-
-                }
-            }
-           
-            
-
-         
         }
+    }
+     
+}
 
        
     

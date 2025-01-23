@@ -40,40 +40,25 @@ namespace e_xam
         {
             // insert the show courses (course name and view button) form here
 
-            CourseList c = CourseManger.getStudentcourse(user.id);
-
-            if (c == null || c.Count == 0) 
+            Studentcourse studentcourse = new Studentcourse(user.id);
+            studentcourse.FormClosed += (s, args) =>
             {
-                MessageBox.Show("There are no courses for this student.", "No Courses");
+                this.Show();
+            };
+            this.Hide();
+            studentcourse.Show();
 
-                return;
-            }
-
-
-
-            else 
-            {
-                Studentcourse studentcourse = new Studentcourse(c);
-                studentcourse.FormClosed += (s, args) =>
-                {
-                    // Show the current form again
-                    this.Close();
-
-                };
-                this.Hide();
-                studentcourse.Show();
-
-            }
-            
-
-            // Subscribe to the FormClosed event
-            
         }
 
         private void aboutItm_Click(object sender, EventArgs e)
         {
             // insert the about form here
             MessageBox.Show("Coming Soon");
+        }
+
+        private void showCourseItm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
