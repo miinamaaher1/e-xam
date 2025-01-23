@@ -53,30 +53,32 @@
             // welcomeLbl
             // 
             welcomeLbl.AutoSize = true;
-            welcomeLbl.Font = new Font("Raleway Black", 42F, FontStyle.Bold);
+            
+            welcomeLbl.Font = new Font("Raleway ExtraBold", 41.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welcomeLbl.Location = new Point(12, 43);
             welcomeLbl.Name = "welcomeLbl";
-            welcomeLbl.Size = new Size(496, 97);
+          
+            welcomeLbl.Size = new Size(489, 97);
             welcomeLbl.TabIndex = 0;
             welcomeLbl.Text = "Welcome, Dr.";
             // 
             // nameLbl
             // 
             nameLbl.AutoSize = true;
-            nameLbl.Font = new Font("Raleway Black", 42F, FontStyle.Bold);
+            nameLbl.Font = new Font("Raleway ExtraBold", 41.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameLbl.Location = new Point(12, 140);
             nameLbl.Name = "nameLbl";
-            nameLbl.Size = new Size(467, 97);
+            nameLbl.Size = new Size(458, 97);
             nameLbl.TabIndex = 0;
             nameLbl.Text = "placeholder";
             // 
             // trackLbl
             // 
             trackLbl.AutoSize = true;
-            trackLbl.Font = new Font("Raleway Black", 28F, FontStyle.Bold);
+            trackLbl.Font = new Font("Raleway ExtraBold", 28.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
             trackLbl.Location = new Point(19, 258);
             trackLbl.Name = "trackLbl";
-            trackLbl.Size = new Size(141, 65);
+            trackLbl.Size = new Size(139, 65);
             trackLbl.TabIndex = 0;
             trackLbl.Text = "Dept";
             // 
@@ -99,21 +101,21 @@
             // addQuestionItm
             // 
             addQuestionItm.Name = "addQuestionItm";
-            addQuestionItm.Size = new Size(192, 26);
+            addQuestionItm.Size = new Size(224, 26);
             addQuestionItm.Text = "Add &Question";
             addQuestionItm.Click += addQuestionItm_Click;
             // 
             // generateExamItm
             // 
             generateExamItm.Name = "generateExamItm";
-            generateExamItm.Size = new Size(192, 26);
+            generateExamItm.Size = new Size(224, 26);
             generateExamItm.Text = "&Generate Exam";
             generateExamItm.Click += generateExamItm_Click;
             // 
             // exitItm
             // 
             exitItm.Name = "exitItm";
-            exitItm.Size = new Size(192, 26);
+            exitItm.Size = new Size(224, 26);
             exitItm.Text = "E&xit";
             exitItm.Click += exitItm_Click;
             // 
@@ -127,7 +129,7 @@
             // editProfileItm
             // 
             editProfileItm.Name = "editProfileItm";
-            editProfileItm.Size = new Size(165, 26);
+            editProfileItm.Size = new Size(224, 26);
             editProfileItm.Text = "Edit &Profile";
             editProfileItm.Click += editProfileItm_Click;
             // 
@@ -141,35 +143,35 @@
             // answerSheetItm
             // 
             answerSheetItm.Name = "answerSheetItm";
-            answerSheetItm.Size = new Size(205, 26);
+            answerSheetItm.Size = new Size(224, 26);
             answerSheetItm.Text = "&Answer Sheet";
             answerSheetItm.Click += answerSheetItm_Click;
             // 
             // courseDetailsItm
             // 
             courseDetailsItm.Name = "courseDetailsItm";
-            courseDetailsItm.Size = new Size(205, 26);
+            courseDetailsItm.Size = new Size(224, 26);
             courseDetailsItm.Text = "&Course Details";
             courseDetailsItm.Click += courseDetailsItm_Click;
             // 
             // instructorClassesItm
             // 
             instructorClassesItm.Name = "instructorClassesItm";
-            instructorClassesItm.Size = new Size(205, 26);
+            instructorClassesItm.Size = new Size(224, 26);
             instructorClassesItm.Text = "&Instructor Classes";
             instructorClassesItm.Click += instructorClassesItm_Click;
             // 
             // trackStatsItm
             // 
             trackStatsItm.Name = "trackStatsItm";
-            trackStatsItm.Size = new Size(205, 26);
+            trackStatsItm.Size = new Size(224, 26);
             trackStatsItm.Text = "&Track Stats";
             trackStatsItm.Click += trackStatsItm_Click;
             // 
             // studentStatsItm
             // 
             studentStatsItm.Name = "studentStatsItm";
-            studentStatsItm.Size = new Size(205, 26);
+            studentStatsItm.Size = new Size(224, 26);
             studentStatsItm.Text = "&Student Stats";
             studentStatsItm.Click += studentStatsItm_Click;
             // 
@@ -203,6 +205,7 @@
             MaximizeBox = false;
             Name = "InstructorHome";
             Text = "e-xam home";
+            Load += InstructorHome_Load;
             menuBar.ResumeLayout(false);
             menuBar.PerformLayout();
             ResumeLayout(false);

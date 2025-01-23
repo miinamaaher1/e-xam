@@ -10,6 +10,7 @@ namespace e_xam
         public LoginForm()
         {
             InitializeComponent();
+            this.AcceptButton = loginBtn;
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
