@@ -1,4 +1,5 @@
 ﻿using BLL.Entities;
+using BLL.EntityList;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,10 @@ namespace BLL.EntityManagers
                 gpa = Convert.ToDecimal(dt.Rows[0]["gpa"])
             };
         }
+
+
+
+
 
     }  
 }
