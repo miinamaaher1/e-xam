@@ -27,30 +27,11 @@ namespace e_xam.InstructorForms
             InitializeComponent();
             MsgLbl.Visible=false;
             instId = _instId;
-            startDateDtPicker.Value = oldDate;
-            endDateDtPicker.Value = oldDate;
-        }
-
-
-
-        private void courseCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!isLoaded)
-                return;
-
-            else if (courseCombo.SelectedIndex != -1)
-            {
-                int crsId = (int)courseCombo.SelectedValue;
-                trackList = TrackManager.getInstructorTracksInCrs(instId, crsId);
-                //trackList.Add(new Track { name = "All", id = -5 });
-                trackscheckedList.DataSource = trackList;
-                trackscheckedList.DisplayMember = "name";
-                trackscheckedList.ValueMember = "id";
-
-
-            }
 
         }
+
+
+
 
         private void GenerateExam_Load(object sender, EventArgs e)
         {
@@ -72,20 +53,14 @@ namespace e_xam.InstructorForms
 
                 exam.course = new Course() { id = (int)courseCombo.SelectedValue };
 
-                exam.tracksId = "";
-                foreach (var item in trackscheckedList.CheckedItems)
-                    exam.tracksId += ((Track)item).id.ToString()+",";
-
                 exam.mcqCount = (int)mcqNumUpDown.Value;
                 exam.tfCount = (int)tfNumUpDown.Value;
                 exam.duration=(int)durationNumUpDown.Value;
                 exam.title = tilteTxtBox.Text == "" ? "exam" : tilteTxtBox.Text;
-                exam.startDate = startDateDtPicker.Value;
-                exam.endDate = endDateDtPicker.Value;
+
                 currentExamId = ExamManager.generateExam(exam);
                 MsgLbl.Text = $"exam id:{currentExamId}";
                 MsgLbl.Visible = true;
-
 
             }
             else
@@ -99,18 +74,14 @@ namespace e_xam.InstructorForms
         {
             if (courseCombo.SelectedIndex == -1)
                 return "must select course";
-            else if (trackscheckedList.CheckedItems.Count == 0)
-                return "must select track";
+
             else if (mcqNumUpDown.Value == 0)
                 return "must determine count of mcq questions";
             else if (tfNumUpDown.Value == 0)
                 return "must determine count of true/false questions";
             else if (durationNumUpDown.Value == 0)
                 return "must determine count of mcq questions";
-            else if (startDateDtPicker.Value == oldDate)
-                return "must determine start date";
-            else if (endDateDtPicker.Value == oldDate)
-                return "must determine end date";
+
             else
                 return null;
         }
