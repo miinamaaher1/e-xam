@@ -39,5 +39,45 @@ namespace BLL.EntityManagers
             };
         }
 
+        public static Student getStudentStats(int _id)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@id", _id);
+
+            DataTable dt = dBManager.executeDataTable("getStudentStats", parameters);
+
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                Student student = new Student();
+
+                student.firstName = Convert.ToString(dt.Rows[0]["first_name"]);
+                student.lastName = Convert.ToString(dt.Rows[0]["last_name"]);
+                student.gpa = Convert.ToDecimal(dt.Rows[0]["gpa"]);
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (student.courseGrades == null)
+                    {
+                        student.courseGrades = new();
+                    }
+
+                    student.courseGrades.Add
+                    (
+                        new Course 
+                        {
+                            name = Convert.ToString(dr["course_name"]) 
+                        }
+                        , Convert.ToDecimal(dr["total_grade"])
+                    );
+                }
+
+                return student;
+            }
+        }
+
     }  
 }

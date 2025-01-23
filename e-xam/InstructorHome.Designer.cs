@@ -53,30 +53,30 @@
             // welcomeLbl
             // 
             welcomeLbl.AutoSize = true;
-            welcomeLbl.Font = new Font("Raleway Black", 42F, FontStyle.Bold);
+            welcomeLbl.Font = new Font("Microsoft Sans Serif", 42F, FontStyle.Bold);
             welcomeLbl.Location = new Point(12, 43);
             welcomeLbl.Name = "welcomeLbl";
-            welcomeLbl.Size = new Size(496, 97);
+            welcomeLbl.Size = new Size(469, 79);
             welcomeLbl.TabIndex = 0;
             welcomeLbl.Text = "Welcome, Dr.";
             // 
             // nameLbl
             // 
             nameLbl.AutoSize = true;
-            nameLbl.Font = new Font("Raleway Black", 42F, FontStyle.Bold);
+            nameLbl.Font = new Font("Microsoft Sans Serif", 42F, FontStyle.Bold);
             nameLbl.Location = new Point(12, 140);
             nameLbl.Name = "nameLbl";
-            nameLbl.Size = new Size(467, 97);
+            nameLbl.Size = new Size(408, 79);
             nameLbl.TabIndex = 0;
             nameLbl.Text = "placeholder";
             // 
             // trackLbl
             // 
             trackLbl.AutoSize = true;
-            trackLbl.Font = new Font("Raleway Black", 28F, FontStyle.Bold);
+            trackLbl.Font = new Font("Microsoft Sans Serif", 28F, FontStyle.Bold);
             trackLbl.Location = new Point(19, 258);
             trackLbl.Name = "trackLbl";
-            trackLbl.Size = new Size(141, 65);
+            trackLbl.Size = new Size(126, 54);
             trackLbl.TabIndex = 0;
             trackLbl.Text = "Dept";
             // 
@@ -203,6 +203,7 @@
             MaximizeBox = false;
             Name = "InstructorHome";
             Text = "e-xam home";
+            Load += InstructorHome_Load;
             menuBar.ResumeLayout(false);
             menuBar.PerformLayout();
             ResumeLayout(false);
