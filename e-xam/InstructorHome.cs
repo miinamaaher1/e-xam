@@ -1,4 +1,5 @@
 ﻿using BLL.Entities;
+using BLL.EntityManagers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,7 +66,7 @@ namespace e_xam
 
         private void trackStatsItm_Click(object sender, EventArgs e)
         {
-            // insert the track stats (student name and gpa) form here
+            //// insert the track stats (student name and gpa) form here
             MessageBox.Show("Coming Soon");
         }
 
