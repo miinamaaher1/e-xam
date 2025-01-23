@@ -17,4 +17,5 @@ namespace BLL.Entities
         public char gender { get; set; }
         public string ssn { get; set; }
     }
+
 }

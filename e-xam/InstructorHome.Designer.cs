@@ -53,9 +53,11 @@
             // welcomeLbl
             // 
             welcomeLbl.AutoSize = true;
+            
             welcomeLbl.Font = new Font("Raleway ExtraBold", 41.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welcomeLbl.Location = new Point(12, 43);
             welcomeLbl.Name = "welcomeLbl";
+          
             welcomeLbl.Size = new Size(489, 97);
             welcomeLbl.TabIndex = 0;
             welcomeLbl.Text = "Welcome, Dr.";

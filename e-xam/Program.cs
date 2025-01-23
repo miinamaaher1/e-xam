@@ -14,6 +14,9 @@ namespace e_xam
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
+
+            // Application.Run(new trackSelectionReport());
+
             Application.Run(new LoginForm());
 
         }
