@@ -17,13 +17,10 @@ namespace BLL.EntityManagers
         {
             Dictionary<string,object> dict = new Dictionary<string,object>();
             dict.Add("@courseId", _exam.course.id);
-            dict.Add("@startDate", _exam.startDate);
-            dict.Add("@endDate", _exam.endDate);
             dict.Add("@tfCount", _exam.tfCount);
             dict.Add("@mcqCount", _exam.mcqCount);
             dict.Add("@duration",_exam.duration);
             dict.Add("@title", _exam.title);
-            dict.Add("@tracks", _exam.tracksId);
 
             DataTable dt = dBManager.executeDataTable("generateExam", dict);
 
