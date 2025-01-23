@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="e_xam_db">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=sql.bsite.net\MSSQL2016;Initial Catalog=miinamaaher_SampleDB</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>d402651b-5ded-48b7-94bd-40748f02d3a9</DataSourceID>
+</RptDataSource>

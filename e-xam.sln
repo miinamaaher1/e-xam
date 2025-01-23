@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{F
 		{A10316B3-72B9-4BCB-A107-2AC3BD34022E} = {A10316B3-72B9-4BCB-A107-2AC3BD34022E}
 	EndProjectSection
 EndProject
-Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Reports", "Student_Stats_Report\Reports.rptproj", "{A5AA1497-C394-4103-B1F8-7FF6D8356198}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,14 +40,6 @@ Global
 		{FB0AC38E-7297-46BD-BA60-EA0D775B152C}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
 		{FB0AC38E-7297-46BD-BA60-EA0D775B152C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB0AC38E-7297-46BD-BA60-EA0D775B152C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.Debug|Any CPU.ActiveCfg = Debug
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.Debug|Any CPU.Build.0 = Debug
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.Debug|Any CPU.Deploy.0 = Debug
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.DebugLocal|Any CPU.Build.0 = DebugLocal
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.Release|Any CPU.ActiveCfg = Release
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.Release|Any CPU.Build.0 = Release
-		{A5AA1497-C394-4103-B1F8-7FF6D8356198}.Release|Any CPU.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

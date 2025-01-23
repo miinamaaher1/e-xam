@@ -31,13 +31,13 @@ namespace e_xam
             })
             .ToList();
 
-            studentStatsRV.LocalReport.ReportPath = @"C:\Users\TE\source\repos\e-xam\Student_Stats_Report\StudentReport.rdl";
+            studentStatsRV.LocalReport.ReportPath = @"Reports\StudentReport.rdlc";
 
             ReportParameter studentIdParam = new ReportParameter("id", student.id.ToString());
 
             studentStatsRV.LocalReport.SetParameters(studentIdParam);
 
-            ReportDataSource studentReportDataSource = new ReportDataSource("DataSet1", courseReportList);
+            ReportDataSource studentReportDataSource = new ReportDataSource("StudentStatsDS", courseReportList);
 
             studentStatsRV.LocalReport.DataSources.Add(studentReportDataSource);
 
