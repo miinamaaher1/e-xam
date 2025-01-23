@@ -1,5 +1,8 @@
-﻿using BLL.Entities;
+using BLL.Entities;
+
 using BLL.EntityManagers;
+
+using e_xam.InstructorForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +35,17 @@ namespace e_xam
         private void generateExamItm_Click(object sender, EventArgs e)
         {
             // insert the generate exam form here
-            MessageBox.Show("Coming Soon");
+
+            GenerateExamForm genExamForm = new GenerateExamForm(user.id);
+
+            // Subscribe to the FormClosed event
+            genExamForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            genExamForm.Show();
         }
 
         private void exitItm_Click(object sender, EventArgs e)
@@ -73,13 +86,28 @@ namespace e_xam
         private void studentStatsItm_Click(object sender, EventArgs e)
         {
             // insert the student stats (course name and total grade) form here
-            MessageBox.Show("Coming Soon");
+
+            StudentStatsForm studentStats = new StudentStatsForm();
+
+            // Subscribe to the FormClosed event
+            studentStats.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            studentStats.Show();
         }
 
         private void aboutItm_Click(object sender, EventArgs e)
         {
             // insert the about form here
             MessageBox.Show("Coming Soon");
+        }
+
+        private void InstructorHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
