@@ -1,6 +1,6 @@
 ﻿namespace e_xam
 {
-    partial class trackReport
+    partial class TrackStatsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrackStatsForm));
             trackNameLbl = new Label();
             StudFLayPanel = new FlowLayoutPanel();
             okBtn = new Button();
@@ -73,7 +74,7 @@
             printBtn.Text = "Print";
             printBtn.UseVisualStyleBackColor = true;
             // 
-            // trackReport
+            // TrackStatsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -82,7 +83,8 @@
             Controls.Add(okBtn);
             Controls.Add(StudFLayPanel);
             Controls.Add(trackNameLbl);
-            Name = "trackReport";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "TrackStatsForm";
             Text = "Track Report";
             ResumeLayout(false);
             PerformLayout();

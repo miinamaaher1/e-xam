@@ -17,9 +17,11 @@ namespace BLL.EntityManagers
         static DBManager dBManager = new DBManager();
 
 
-        public static Dictionary<string, int> getTrackNamesAndIds()
+        public static Dictionary<string, int> getTrackNamesAndIds(int _instId)
         {
-            DataTable dt = dBManager.executeDataTable("getTrackNamesAndIds");
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@instId", _instId);
+            DataTable dt = dBManager.executeDataTable("getTrackNamesAndIds", parameters);
             Dictionary<string, int> trackDictionary = new Dictionary<string, int>();
             foreach (DataRow row in dt.Rows)
             {
@@ -27,6 +29,7 @@ namespace BLL.EntityManagers
             }
             return trackDictionary;
         }
+
 
         public static TrackList getInstructorTracksInCrs(int _instId , int _crsId)
         {

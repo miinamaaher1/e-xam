@@ -12,13 +12,15 @@ using System.Windows.Forms;
 
 namespace e_xam
 {
-    public partial class trackReport : Form
+    public partial class TrackStatsForm : Form
     {
+        private int instId;
 
-        public trackReport(int trackId)
+        public TrackStatsForm(int trackId, int _instId)
         {
             InitializeComponent();
             List<Student> students = StudentManager.getStudentsByTrack(trackId);
+            instId = _instId;
 
             trackNameLbl.Text = students[0].track.name + " Track";
             trackReportStudItem[] studItems = new trackReportStudItem[students.Count];
@@ -42,7 +44,7 @@ namespace e_xam
 
         private void okBtn_Click(object sender, EventArgs e)
         {
-            TrackStatsForm newTrack = new TrackStatsForm();
+            TrackSelectionStatsForm newTrack = new TrackSelectionStatsForm(instId);
             // Subscribe to the FormClosed event
             newTrack.FormClosed += (s, args) =>
             {
