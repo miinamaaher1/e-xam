@@ -32,5 +32,39 @@ namespace BLL.EntityManagers
                 }
             };
         }
+
+        public static List<CourseInstructorTrack> getInstructorClasses(int _id)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@id", _id);
+
+            DataTable dt = dBManager.executeDataTable("getInstructorClasses", parameters);
+
+            List<CourseInstructorTrack> crsInsTrk = new List<CourseInstructorTrack>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                crsInsTrk.Add
+                (
+                    new CourseInstructorTrack
+                    {
+                        course = new Course
+                        {
+                            name = Convert.ToString(dr["course_name"])
+                        },
+
+                        track = new Track
+                        {
+                            name = Convert.ToString(dr["track_name"])
+                        },
+
+                        studentCount = Convert.ToInt32(dr["student_numbers"])
+                    }
+                );
+            }
+
+            return crsInsTrk;
+
+        }
     }
 }

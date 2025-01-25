@@ -24,6 +24,9 @@
     <EmbeddedResource Include="Raleway-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InstructorClassReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\StudentReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -39,6 +42,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="InstructorClassesDSC.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InstructorClassesDSC.xsd</DependentUpon>
+    </Compile>
     <Compile Update="InstructorHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -46,6 +54,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>miinamaaher_SampleDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="miinamaaher_SampleDBDataSet2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>miinamaaher_SampleDBDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -62,9 +75,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="InstructorClassesDSC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InstructorClassesDSC.Designer.cs</LastGenOutput>
+    </None>
     <None Update="miinamaaher_SampleDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>miinamaaher_SampleDBDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="miinamaaher_SampleDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>miinamaaher_SampleDBDataSet2.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
