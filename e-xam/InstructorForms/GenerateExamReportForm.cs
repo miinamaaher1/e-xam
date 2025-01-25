@@ -34,7 +34,7 @@ namespace e_xam.InstructorForms
 
             DataTable TfQuestions = QuestionsManager.getExamTfQuestions(examId);
 
-            generateExamRV.LocalReport.ReportPath = @"D:\repo\e-xam\e-xam\Reports\GenerateExamReport.rdlc";
+            generateExamRV.LocalReport.ReportPath = @"Reports\GenerateExamReport.rdlc";
 
             ReportParameter reportParameter = new ReportParameter("examId", examId.ToString());
             generateExamRV.LocalReport.SetParameters(reportParameter);

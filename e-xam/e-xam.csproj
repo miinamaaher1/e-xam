@@ -13,6 +13,7 @@
     <None Remove="e-xam icon.ico" />
     <None Remove="Raleway-VariableFont_wght.ttf" />
     <None Remove="Reports\CourseTopicsReport.rdlc" />
+    <None Remove="Reports\GenerateExamReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +26,12 @@
     <EmbeddedResource Include="Raleway-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CourseTopicsReport.rdlc" />
+    <EmbeddedResource Include="Reports\CourseTopicsReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GenerateExamReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\StudentReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
