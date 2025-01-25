@@ -56,7 +56,15 @@ namespace e_xam
         private void editProfileItm_Click(object sender, EventArgs e)
         {
             // insert the edit profile form here
-            MessageBox.Show("Coming Soon");
+            EditProfileForm editProfileForm = new EditProfileForm(user.id);
+            editProfileForm.FormClosed += (s, args) =>
+            {
+                user = InstructorManager.getInstructor(user.id);
+                nameLbl.Text = user.firstName + " " + user.lastName;
+                this.Show();
+            };
+            this.Hide();
+            editProfileForm.Show();
         }
 
         private void answerSheetItm_Click(object sender, EventArgs e)

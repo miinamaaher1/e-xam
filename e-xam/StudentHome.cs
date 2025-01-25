@@ -33,7 +33,15 @@ namespace e_xam
         private void editProfileItm_Click(object sender, EventArgs e)
         {
             // insert the edit profile form here
-            MessageBox.Show("Coming Soon");
+            EditProfileForm editProfileForm = new EditProfileForm(user.id);
+            editProfileForm.FormClosed += (s, args) =>
+            {
+                user = StudentManager.getStudent(user.id);
+                nameLbl.Text = user.firstName + " " + user.lastName;
+                this.Show();
+            };
+            this.Hide();
+            editProfileForm.Show();
         }
 
         private void showCoursesItm_Click(object sender, EventArgs e)
@@ -54,11 +62,6 @@ namespace e_xam
         {
             // insert the about form here
             MessageBox.Show("Coming Soon");
-        }
-
-        private void showCourseItm_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
