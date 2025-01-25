@@ -16,6 +16,9 @@ namespace e_xam
             ApplicationConfiguration.Initialize();
 
             Application.Run(new LoginForm());
+            //Application.Run(new GenerateExamForm(10004));
+           // Application.Run(new generateExamReportForm(16,1000,10004));
+            //Application.Run(new CourseTopicsReportForm(1000));
 
         }
     }

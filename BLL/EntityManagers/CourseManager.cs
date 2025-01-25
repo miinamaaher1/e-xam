@@ -37,5 +37,22 @@ namespace BLL.EntityManagers
                 name = Convert.ToString(_dr["name"])
             };
         }
+
+        static public DataTable getCourseTopics(int _courseId)
+        {
+            List<string>topics=new List<string>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@crsId", _courseId);
+
+            DataTable dt = dBManager.executeDataTable("getCourseTopics", parameters);
+            /*
+                        foreach (DataRow dr in dt.Rows)
+                            topics.Add(Convert.ToString(
+            ));
+
+                        return topics;
+            */
+            return dt;
+        }
     }
 }

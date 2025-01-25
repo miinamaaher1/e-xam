@@ -68,12 +68,23 @@ namespace e_xam
         private void courseDetailsItm_Click(object sender, EventArgs e)
         {
             // insert the course details (topics) form here
-            MessageBox.Show("Coming Soon");
+
+            ViewCourseTopicsForm courseTopicsForm = new ViewCourseTopicsForm(user.id);
+
+            // Subscribe to the FormClosed event
+            courseTopicsForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            courseTopicsForm.Show();
         }
 
         private void instructorClassesItm_Click(object sender, EventArgs e)
         {
             // insert the instructor classes (class and student count) form here
+
             InstructorClassesReport instClasses = new InstructorClassesReport(user);
 
             instClasses.FormClosed += (s, args) =>
