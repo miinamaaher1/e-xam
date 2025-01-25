@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace e_xam
 {
-    public partial class StudentReportForm : Form
+    public partial class StudentStatsReport : Form
     {
         public Student student;
-        public StudentReportForm(Student _student)
+        public StudentStatsReport(Student _student)
         {
             InitializeComponent();
             student = _student;

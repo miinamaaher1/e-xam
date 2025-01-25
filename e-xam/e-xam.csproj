@@ -26,6 +26,8 @@
     <EmbeddedResource Include="Raleway-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InstructorClassReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     <EmbeddedResource Include="Reports\CourseTopicsReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -47,6 +49,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="InstructorClassesDSC.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InstructorClassesDSC.xsd</DependentUpon>
     <Compile Update="CourseTopicsDS.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -70,6 +76,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>miinamaaher_SampleDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Update="miinamaaher_SampleDBDataSet2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>miinamaaher_SampleDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -85,6 +96,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="InstructorClassesDSC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InstructorClassesDSC.Designer.cs</LastGenOutput>
     <None Update="CourseTopicsDS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CourseTopicsDS.Designer.cs</LastGenOutput>
@@ -100,6 +114,10 @@
     <None Update="miinamaaher_SampleDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>miinamaaher_SampleDBDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="miinamaaher_SampleDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>miinamaaher_SampleDBDataSet2.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

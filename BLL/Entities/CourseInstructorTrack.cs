@@ -13,5 +13,7 @@ namespace BLL.Entities
         public Track track { get; set; }
         public DateOnly? startDate { get; set; }
         public DateOnly? endDate { get; set; }
+
+        public int studentCount {  get; set; } 
     }
 }
