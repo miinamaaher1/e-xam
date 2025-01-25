@@ -41,6 +41,9 @@
             minutesLbl = new Label();
             generateExBtn = new Button();
             MsgLbl = new Label();
+            label1 = new Label();
+            mcqLblMsg = new Label();
+            tfLblMsg = new Label();
             ((System.ComponentModel.ISupportInitialize)mcqNumUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tfNumUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)durationNumUpDown).BeginInit();
@@ -54,6 +57,7 @@
             courseCombo.Name = "courseCombo";
             courseCombo.Size = new Size(151, 28);
             courseCombo.TabIndex = 0;
+            courseCombo.SelectedIndexChanged += courseCombo_SelectedIndexChanged;
             // 
             // mcqNumUpDown
             // 
@@ -157,12 +161,42 @@
             MsgLbl.Text = "label1";
             MsgLbl.Visible = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 25;
+            label1.Text = "label1";
+            // 
+            // mcqLblMsg
+            // 
+            mcqLblMsg.AutoSize = true;
+            mcqLblMsg.Location = new Point(549, 133);
+            mcqLblMsg.Name = "mcqLblMsg";
+            mcqLblMsg.Size = new Size(198, 20);
+            mcqLblMsg.TabIndex = 26;
+            mcqLblMsg.Text = "There are no MCQ Questions";
+            // 
+            // tfLblMsg
+            // 
+            tfLblMsg.AutoSize = true;
+            tfLblMsg.Location = new Point(549, 194);
+            tfLblMsg.Name = "tfLblMsg";
+            tfLblMsg.Size = new Size(231, 20);
+            tfLblMsg.TabIndex = 27;
+            tfLblMsg.Text = "There are no True/False Questions";
+            // 
             // GenerateExamForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(800, 450);
+            Controls.Add(tfLblMsg);
+            Controls.Add(mcqLblMsg);
+            Controls.Add(label1);
             Controls.Add(MsgLbl);
             Controls.Add(generateExBtn);
             Controls.Add(minutesLbl);
@@ -201,5 +235,8 @@
         private Label minutesLbl;
         private Button generateExBtn;
         private Label MsgLbl;
+        private Label label1;
+        private Label mcqLblMsg;
+        private Label tfLblMsg;
     }
 }
