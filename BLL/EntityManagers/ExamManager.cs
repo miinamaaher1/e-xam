@@ -26,5 +26,59 @@ namespace BLL.EntityManagers
 
             return Convert.ToInt32( dt.Rows[0]["id"]);
         }
+
+        public static Exam getExam(int _id)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@examId", _id);
+            DataTable dt = dBManager.executeDataTable("getExam", parameters);
+            Exam exam = new Exam
+            {
+                id = _id,
+                duration = Convert.ToInt32(dt.Rows[0]["duration"]),
+                title = Convert.ToString(dt.Rows[0]["title"]),
+                questions = new List<Question>()
+            };
+            // add questions
+            HashSet<int> q_ids = new HashSet<int>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (q_ids.Contains(Convert.ToInt32(dr["id"])))
+                {
+                    foreach(Question q in exam.questions)
+                    {
+                        if (q.id == Convert.ToInt32(dr["id"]))
+                        {
+                            q.options.Add(new Option
+                            {
+                                num = Convert.ToChar(dr["num"]),
+                                body = Convert.ToString(dr["o_body"])
+                            });
+                            break;
+                        }
+                    }
+                } else
+                {
+                    q_ids.Add(Convert.ToInt32(dr["id"]));
+                    Question q = new Question()
+                    {
+                        id = Convert.ToInt32(dr["id"]),
+                        body = Convert.ToString(dr["q_body"]),
+                        type = Convert.ToChar(dr["type"]),
+                    };
+                    if (Convert.ToChar(dr["type"]) == 'm')
+                    {
+                        q.options = new List<Option>();
+                        q.options.Add(new Option
+                        {
+                            num = Convert.ToChar(dr["num"]),
+                            body = Convert.ToString(dr["o_body"])
+                        });
+                    };
+                    exam.questions.Add(q);
+                }
+            }
+            return exam;
+        }
     }
 }

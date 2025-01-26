@@ -28,6 +28,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\InstructorClassReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
     <EmbeddedResource Include="Reports\CourseTopicsReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -53,6 +54,7 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>InstructorClassesDSC.xsd</DependentUpon>
+	</Compile>
     <Compile Update="CourseTopicsDS.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -99,6 +101,7 @@
     <None Update="InstructorClassesDSC.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>InstructorClassesDSC.Designer.cs</LastGenOutput>
+	</None>
     <None Update="CourseTopicsDS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CourseTopicsDS.Designer.cs</LastGenOutput>
