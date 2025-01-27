@@ -20,7 +20,7 @@ namespace e_xam
             //Application.Run(new GenerateExamForm(10004));
             //Application.Run(new generateExamReportForm(16,1000,10004));
             //Application.Run(new CourseTopicsReportForm(1000));
-            Application.Run(new TakeExamForm(3));
+            Application.Run(new TakeExamForm(3, 10003));
         }
     }
 }

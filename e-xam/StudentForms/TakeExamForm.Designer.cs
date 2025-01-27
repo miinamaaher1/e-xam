@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             examTitleLbl = new Label();
             examQuestionsPanel = new FlowLayoutPanel();
+            durationTimer = new System.Windows.Forms.Timer(components);
+            timerLbl = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // examTitleLbl
@@ -47,14 +51,41 @@
             examQuestionsPanel.AutoScroll = true;
             examQuestionsPanel.Location = new Point(30, 105);
             examQuestionsPanel.Name = "examQuestionsPanel";
-            examQuestionsPanel.Size = new Size(760, 381);
+            examQuestionsPanel.Size = new Size(760, 302);
             examQuestionsPanel.TabIndex = 1;
+            // 
+            // durationTimer
+            // 
+            durationTimer.Enabled = true;
+            durationTimer.Interval = 1000;
+            durationTimer.Tick += durationTimer_Tick;
+            // 
+            // timerLbl
+            // 
+            timerLbl.AutoSize = true;
+            timerLbl.Location = new Point(723, 41);
+            timerLbl.Name = "timerLbl";
+            timerLbl.Size = new Size(67, 31);
+            timerLbl.TabIndex = 3;
+            timerLbl.Text = "00:00";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(353, 440);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 37);
+            button1.TabIndex = 2;
+            button1.Text = "Submit";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += submitBtn_Click;
             // 
             // TakeExamForm
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(822, 498);
+            Controls.Add(timerLbl);
+            Controls.Add(button1);
             Controls.Add(examQuestionsPanel);
             Controls.Add(examTitleLbl);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -71,5 +102,8 @@
 
         private Label examTitleLbl;
         private FlowLayoutPanel examQuestionsPanel;
+        private System.Windows.Forms.Timer durationTimer;
+        private Label timerLbl;
+        private Button button1;
     }
 }
