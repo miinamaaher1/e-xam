@@ -29,72 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrackStatsForm));
-            trackNameLbl = new Label();
-            StudFLayPanel = new FlowLayoutPanel();
-            okBtn = new Button();
-            printBtn = new Button();
+            TrackStatsReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             SuspendLayout();
             // 
-            // trackNameLbl
+            // TrackStatsReportViewer
             // 
-            trackNameLbl.AutoSize = true;
-            trackNameLbl.Font = new Font("Segoe UI", 20F);
-            trackNameLbl.Location = new Point(41, 32);
-            trackNameLbl.Name = "trackNameLbl";
-            trackNameLbl.Size = new Size(233, 46);
-            trackNameLbl.TabIndex = 0;
-            trackNameLbl.Text = "[ Track Name ]";
-            // 
-            // StudFLayPanel
-            // 
-            StudFLayPanel.AutoScroll = true;
-            StudFLayPanel.Location = new Point(83, 119);
-            StudFLayPanel.Name = "StudFLayPanel";
-            StudFLayPanel.Size = new Size(654, 227);
-            StudFLayPanel.TabIndex = 1;
-            // 
-            // okBtn
-            // 
-            okBtn.Font = new Font("Segoe UI", 12F);
-            okBtn.Location = new Point(196, 387);
-            okBtn.Name = "okBtn";
-            okBtn.Size = new Size(131, 42);
-            okBtn.TabIndex = 2;
-            okBtn.Text = "Ok";
-            okBtn.UseVisualStyleBackColor = true;
-            okBtn.Click += okBtn_Click;
-            // 
-            // printBtn
-            // 
-            printBtn.Font = new Font("Segoe UI", 12F);
-            printBtn.Location = new Point(496, 387);
-            printBtn.Name = "printBtn";
-            printBtn.Size = new Size(131, 42);
-            printBtn.TabIndex = 3;
-            printBtn.Text = "Print";
-            printBtn.UseVisualStyleBackColor = true;
+            TrackStatsReportViewer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TrackStatsReportViewer.Location = new Point(0, 0);
+            TrackStatsReportViewer.Name = "ReportViewer";
+            TrackStatsReportViewer.ServerReport.BearerToken = null;
+            TrackStatsReportViewer.Size = new Size(800, 440);
+            TrackStatsReportViewer.TabIndex = 0;
             // 
             // TrackStatsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(printBtn);
-            Controls.Add(okBtn);
-            Controls.Add(StudFLayPanel);
-            Controls.Add(trackNameLbl);
+            ClientSize = new Size(800, 440);
+            Controls.Add(TrackStatsReportViewer);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TrackStatsForm";
             Text = "Track Report";
+            Load += TrackStatsForm_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label trackNameLbl;
-        private FlowLayoutPanel StudFLayPanel;
-        private Button okBtn;
-        private Button printBtn;
+        private Microsoft.Reporting.WinForms.ReportViewer TrackStatsReportViewer;
     }
 }
