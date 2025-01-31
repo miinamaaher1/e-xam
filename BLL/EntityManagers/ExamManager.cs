@@ -66,7 +66,7 @@ namespace BLL.EntityManagers
                         body = Convert.ToString(dr["q_body"]),
                         type = Convert.ToChar(dr["type"]),
                     };
-                    if (Convert.ToChar(dr["type"]) == 'm')
+                    if (Convert.ToChar(dr["type"]) == 'm') // maybe
                     {
                         q.options = new List<Option>();
                         q.options.Add(new Option

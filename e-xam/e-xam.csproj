@@ -14,6 +14,7 @@
     <None Remove="Raleway-VariableFont_wght.ttf" />
     <None Remove="Reports\CourseTopicsReport.rdlc" />
     <None Remove="Reports\GenerateExamReport.rdlc" />
+    <None Remove="Reports\ReviewAnswersReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\GenerateExamReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReviewAnswersReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\StudentReport.rdlc">
@@ -88,6 +92,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="ReviewAnswersDSC.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReviewAnswersDSC.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -121,6 +130,10 @@
     <None Update="miinamaaher_SampleDBDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>miinamaaher_SampleDBDataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ReviewAnswersDSC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReviewAnswersDSC.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
