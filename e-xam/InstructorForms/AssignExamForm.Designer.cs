@@ -28,27 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            AssignExamGV = new DataGridView();
             saveExamTracksBtn = new Button();
-            ((System.ComponentModel.ISupportInitialize)AssignExamGV).BeginInit();
+            tracksCheckedListB = new CheckedListBox();
+            startDatetimeP = new DateTimePicker();
+            enddateTimeP = new DateTimePicker();
+            startDateLbl = new Label();
+            endDateLbl = new Label();
+            tracksLbl = new Label();
+            doneButton = new Button();
             SuspendLayout();
-            // 
-            // AssignExamGV
-            // 
-            AssignExamGV.AllowUserToAddRows = false;
-            AssignExamGV.AllowUserToDeleteRows = false;
-            AssignExamGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AssignExamGV.Dock = DockStyle.Top;
-            AssignExamGV.Location = new Point(0, 0);
-            AssignExamGV.Name = "AssignExamGV";
-            AssignExamGV.RowHeadersWidth = 51;
-            AssignExamGV.Size = new Size(800, 233);
-            AssignExamGV.TabIndex = 0;
-
             // 
             // saveExamTracksBtn
             // 
-            saveExamTracksBtn.Location = new Point(340, 359);
+            saveExamTracksBtn.Location = new Point(259, 336);
             saveExamTracksBtn.Name = "saveExamTracksBtn";
             saveExamTracksBtn.Size = new Size(94, 29);
             saveExamTracksBtn.TabIndex = 1;
@@ -56,23 +48,94 @@
             saveExamTracksBtn.UseVisualStyleBackColor = true;
             saveExamTracksBtn.Click += saveExamTracksBtn_Click;
             // 
+            // tracksCheckedListB
+            // 
+            tracksCheckedListB.AllowDrop = true;
+            tracksCheckedListB.FormattingEnabled = true;
+            tracksCheckedListB.Location = new Point(315, 139);
+            tracksCheckedListB.Name = "tracksCheckedListB";
+            tracksCheckedListB.Size = new Size(145, 136);
+            tracksCheckedListB.TabIndex = 2;
+            // 
+            // startDatetimeP
+            // 
+            startDatetimeP.Location = new Point(315, 44);
+            startDatetimeP.Name = "startDatetimeP";
+            startDatetimeP.Size = new Size(250, 27);
+            startDatetimeP.TabIndex = 3;
+            // 
+            // enddateTimeP
+            // 
+            enddateTimeP.Location = new Point(315, 92);
+            enddateTimeP.Name = "enddateTimeP";
+            enddateTimeP.Size = new Size(250, 27);
+            enddateTimeP.TabIndex = 4;
+            // 
+            // startDateLbl
+            // 
+            startDateLbl.AutoSize = true;
+            startDateLbl.Location = new Point(194, 44);
+            startDateLbl.Name = "startDateLbl";
+            startDateLbl.Size = new Size(72, 20);
+            startDateLbl.TabIndex = 5;
+            startDateLbl.Text = "start date";
+            // 
+            // endDateLbl
+            // 
+            endDateLbl.AutoSize = true;
+            endDateLbl.Location = new Point(194, 92);
+            endDateLbl.Name = "endDateLbl";
+            endDateLbl.Size = new Size(68, 20);
+            endDateLbl.TabIndex = 6;
+            endDateLbl.Text = "end date";
+            // 
+            // tracksLbl
+            // 
+            tracksLbl.AutoSize = true;
+            tracksLbl.Location = new Point(194, 139);
+            tracksLbl.Name = "tracksLbl";
+            tracksLbl.Size = new Size(85, 20);
+            tracksLbl.TabIndex = 7;
+            tracksLbl.Text = "select Track";
+            // 
+            // doneButton
+            // 
+            doneButton.Location = new Point(403, 336);
+            doneButton.Name = "doneButton";
+            doneButton.Size = new Size(94, 29);
+            doneButton.TabIndex = 8;
+            doneButton.Text = "Done";
+            doneButton.UseVisualStyleBackColor = true;
+            doneButton.Click += doneButton_Click;
+            // 
             // AssignExamForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(doneButton);
+            Controls.Add(tracksLbl);
+            Controls.Add(endDateLbl);
+            Controls.Add(startDateLbl);
+            Controls.Add(enddateTimeP);
+            Controls.Add(startDatetimeP);
+            Controls.Add(tracksCheckedListB);
             Controls.Add(saveExamTracksBtn);
-            Controls.Add(AssignExamGV);
             Name = "AssignExamForm";
             Text = "AssignExamForm";
             Load += AssignExamForm_Load;
-            ((System.ComponentModel.ISupportInitialize)AssignExamGV).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private DataGridView AssignExamGV;
         private Button saveExamTracksBtn;
+        private CheckedListBox tracksCheckedListB;
+        private DateTimePicker startDatetimeP;
+        private DateTimePicker enddateTimeP;
+        private Label startDateLbl;
+        private Label endDateLbl;
+        private Label tracksLbl;
+        private Button doneButton;
     }
 }

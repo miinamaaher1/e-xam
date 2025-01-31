@@ -16,11 +16,16 @@ namespace e_xam.InstructorForms
     public partial class generateExamReportForm : Form
     {
         int examId;
+        int tfCount;
+        int mcqCount;
         int courseId;
         int instrcutorId;
-        public generateExamReportForm(int _examId, int _courseId , int _instrcutorId)
+
+        public generateExamReportForm(int _examId,int _tfCount, int _mcqCount, int _courseId, int _instrcutorId )
         {
             examId = _examId;
+            tfCount = _tfCount;
+            mcqCount = _mcqCount;
             courseId = _courseId;
             instrcutorId = _instrcutorId;
             InitializeComponent();
@@ -28,16 +33,22 @@ namespace e_xam.InstructorForms
 
         private void generateExamReportForm_Load(object sender, EventArgs e)
         {
-            DataTable mcqQuestions = QuestionsManager.getExamMcqQuestions(examId);
 
-
-
-            DataTable TfQuestions = QuestionsManager.getExamTfQuestions(examId);
 
             generateExamRV.LocalReport.ReportPath = @"Reports\GenerateExamReport.rdlc";
 
             ReportParameter reportParameter = new ReportParameter("examId", examId.ToString());
             generateExamRV.LocalReport.SetParameters(reportParameter);
+            RefreshReport();
+
+
+        }
+        private void RefreshReport()
+        {
+            DataTable mcqQuestions = QuestionsManager.getExamMcqQuestions(examId);
+
+            DataTable TfQuestions = QuestionsManager.getExamTfQuestions(examId);
+
             generateExamRV.LocalReport.DataSources.Clear();
 
             ReportDataSource mcqQuestionsDataSource = new ReportDataSource("getExamMcqQuestionsDS1", mcqQuestions);
@@ -48,10 +59,9 @@ namespace e_xam.InstructorForms
             generateExamRV.RefreshReport();
 
         }
-
         private void assignExamBtn_Click(object sender, EventArgs e)
         {
-            AssignExamForm assignExamForm  = new AssignExamForm(examId,courseId,instrcutorId);
+            AssignExamForm assignExamForm = new AssignExamForm(examId, courseId, instrcutorId);
 
             // Subscribe to the FormClosed event
             assignExamForm.FormClosed += (s, args) =>
@@ -61,6 +71,24 @@ namespace e_xam.InstructorForms
             };
             this.Hide();
             assignExamForm.Show();
+        }
+
+        private void generateAnotherQBtn_Click(object sender, EventArgs e)
+        {
+            Exam exam = new Exam
+            {
+                id = examId,
+                course = new Course { id = courseId },
+                mcqCount = mcqCount,
+                tfCount = tfCount
+            };
+           int exId= ExamManager.generateAnotherExamQ(exam);
+            if(exId==-1)
+            {
+                MessageBox.Show("Error in generating another Questions");
+                return;
+            }
+            RefreshReport();
         }
     }
 }

@@ -22,9 +22,9 @@ namespace BLL.EntityManagers
             dict.Add("@duration",_exam.duration);
             dict.Add("@title", _exam.title);
 
-            DataTable dt = dBManager.executeDataTable("generateExam", dict);
+            int examId = (int)(dBManager.executeScaler("generateExam", dict));
 
-            return Convert.ToInt32( dt.Rows[0]["id"]);
+            return examId;
         }
 
         public static Exam getExam(int _id)
@@ -79,6 +79,34 @@ namespace BLL.EntityManagers
                 }
             }
             return exam;
+        }
+
+        public static int assignExamToTracks(int examId,DateTime startDate , DateTime endDate, TrackList tracks )
+        {
+            DataTable tracksDt = new DataTable();
+
+            tracksDt.Columns.Add("Id", typeof(int));
+
+            foreach(var track in tracks)
+                tracksDt.Rows.Add(track.id);
+
+            Dictionary<string,object>parameters = new Dictionary<string,object>();
+            parameters.Add("@examId",examId);
+            parameters.Add("@startDate",startDate);
+            parameters.Add("@endDate",endDate);
+            parameters.Add("@tracks", tracksDt);
+
+           return (int)( dBManager.executeScaler("assignExamToTracks", parameters));
+
+        }
+        public static int generateAnotherExamQ(Exam _exam)
+        {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("@examId", _exam.id);
+            dict.Add("@courseId", _exam.course.id);
+            dict.Add("@tfCount", _exam.tfCount);
+            dict.Add("@mcqCount", _exam.mcqCount);
+            return (int)( dBManager.executeScaler("generateAnotherExamQ", dict));
         }
     }
 }
