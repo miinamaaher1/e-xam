@@ -28,8 +28,15 @@ namespace e_xam
 
         private void addQuestionItm_Click(object sender, EventArgs e)
         {
-            // insert the add question form here
-            MessageBox.Show("Coming Soon");
+            AddQCourseSelectionForm addQCourseSelectionForm = new AddQCourseSelectionForm(user.id);
+
+            addQCourseSelectionForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            addQCourseSelectionForm.Show();
         }
 
         private void generateExamItm_Click(object sender, EventArgs e)

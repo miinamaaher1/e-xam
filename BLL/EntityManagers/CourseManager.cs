@@ -1,4 +1,5 @@
 ﻿using BLL.Entities;
+using BLL.EntityList;
 using BLL.EntityLists;
 using DAL;
 using System;
@@ -36,6 +37,19 @@ namespace BLL.EntityManagers
                 id = Convert.ToInt32(_dr["id"]),
                 name = Convert.ToString(_dr["name"])
             };
+        }
+
+        public static Dictionary<string,int> getCoursesByInstId(int inst_id)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@instId", inst_id);
+            DataTable dt = dBManager.executeDataTable("getCoursesByInstId", parameters);
+            Dictionary<string, int> courseDictionary = new Dictionary<string, int>();
+            foreach (DataRow row in dt.Rows)
+            {
+                courseDictionary.Add(Convert.ToString(row["name"]), Convert.ToInt32(row["id"]));
+            }
+            return courseDictionary;
         }
     }
 }
