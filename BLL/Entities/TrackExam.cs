@@ -10,7 +10,7 @@ namespace BLL.Entities
     {
         public int trackId { get; set; }
         public int examId { get; set; }
-        public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
+        public  DateTime? startDate { get; set; }
+        public DateTime? endDate { get; set; }
     }
 }
