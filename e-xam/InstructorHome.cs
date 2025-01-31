@@ -70,7 +70,15 @@ namespace e_xam
         private void answerSheetItm_Click(object sender, EventArgs e)
         {
             // insert the answer sheet (review student answers) form here
-            
+            SelectStudentClassForm answersheet = new SelectStudentClassForm(user);
+
+            answersheet.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            answersheet.Show();
         }
 
         private void courseDetailsItm_Click(object sender, EventArgs e)

@@ -50,11 +50,13 @@ namespace BLL.EntityManagers
                     {
                         course = new Course
                         {
+                            id = Convert.ToInt32(dr["course_id"]),
                             name = Convert.ToString(dr["course_name"])
                         },
 
                         track = new Track
                         {
+                            id = Convert.ToInt32(dr["track_id"]), 
                             name = Convert.ToString(dr["track_name"])
                         },
 
@@ -65,6 +67,92 @@ namespace BLL.EntityManagers
 
             return crsInsTrk;
 
+        }
+
+        public static List<Student> getTrackStudents(int _id)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@id", _id);
+
+            DataTable dt = dBManager.executeDataTable("getTrackStudents", parameters);
+
+            List<Student> studentList = new List<Student>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                studentList.Add
+                (
+                    new Student
+                    {
+                        id = Convert.ToInt32(dr["id"]),
+
+                        firstName = Convert.ToString(dr["first_name"]),
+
+                        lastName = Convert.ToString(dr["last_name"])
+                    }
+                );
+            }
+
+            return studentList;
+        }
+
+        public static Exam reviewStudentAnswers(int _examId, int _stdId)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+
+            parameters.Add("@ex_id", _examId);
+            parameters.Add("@std_id", _stdId);
+
+            DataTable dt = dBManager.executeDataTable("reviewStudentAnswers", parameters);
+
+            Exam exam = new Exam
+            {
+                questions = new List<Question>()
+            };
+
+            // add questions
+            HashSet<int> q_ids = new HashSet<int>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (q_ids.Contains(Convert.ToInt32(dr["id"])))
+                {
+                    foreach (Question q in exam.questions)
+                    {
+                        if (q.id == Convert.ToInt32(dr["id"]))
+                        {
+                            q.options.Add(new Option
+                            {
+                                num = Convert.ToChar(dr["Option"]),
+                                body = Convert.ToString(dr["OptionBody"])
+                            });
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    q_ids.Add(Convert.ToInt32(dr["id"]));
+                    Question q = new Question()
+                    {
+                        id = Convert.ToInt32(dr["id"]),
+                        body = Convert.ToString(dr["Question"]),
+                        type = Convert.ToChar(dr["type"]),
+                        ans = Convert.ToChar(dr["RightAnswer"]),
+                        selectedAns = Convert.ToChar(dr["StudentAnswer"])
+                    };
+                    if (Convert.ToChar(dr["type"]) == 'm') // maybe
+                    {
+                        q.options = new List<Option>();
+                        q.options.Add(new Option
+                        {
+                            num = Convert.ToChar(dr["Option"]),
+                            body = Convert.ToString(dr["OptionBody"])
+                        });
+                    };
+                    exam.questions.Add(q);
+                }
+            }
+            return exam;
         }
     }
 }

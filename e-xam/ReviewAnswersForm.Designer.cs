@@ -1,6 +1,6 @@
 ﻿namespace e_xam
 {
-    partial class AnswerSheetForm
+    partial class ReviewAnswersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnswerSheetForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReviewAnswersForm));
+            reviewAnswersRV = new Microsoft.Reporting.WinForms.ReportViewer();
             SuspendLayout();
             // 
-            // AnswerSheetForm
+            // reviewAnswersRV
+            // 
+            reviewAnswersRV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            reviewAnswersRV.Location = new Point(0, 0);
+            reviewAnswersRV.Name = "ReportViewer";
+            reviewAnswersRV.ServerReport.BearerToken = null;
+            reviewAnswersRV.Size = new Size(834, 461);
+            reviewAnswersRV.TabIndex = 0;
+            // 
+            // ReviewAnswersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoScroll = true;
+            ClientSize = new Size(834, 461);
+            Controls.Add(reviewAnswersRV);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "AnswerSheetForm";
+            Name = "ReviewAnswersForm";
             Text = "Answer Sheet";
+            Load += ReviewAnswersForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reviewAnswersRV;
     }
 }
