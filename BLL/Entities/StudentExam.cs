@@ -12,5 +12,7 @@ namespace BLL.Entities
         public Exam exam { get; set; }
         public int? grade { get; set; }
         public char? status { get; set; }
+        public int courseid {  get; set; }
+        
     }
 }

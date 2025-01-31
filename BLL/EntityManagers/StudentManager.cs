@@ -105,5 +105,48 @@ namespace BLL.EntityManagers
                 return student;
             }
         }
+
+
+
+
+        public static List<StudentExam> getStudetExams(int _studentid, int _courseid,int _trakid)
+        {
+            List<StudentExam> exams = new List<StudentExam>();
+          
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+         {
+        { "@studentid", _studentid },
+        { "@courseid", _courseid },
+                {"@trakid",_trakid}
+         };
+            
+                DataTable dt = dBManager.executeDataTable("getExams", parameters);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    exams.Add(new StudentExam
+                    {
+
+                        exam = new Exam
+                        {
+                            id = Convert.ToInt32(dr["id"]),
+                            title = Convert.ToString(dr["title"]),
+                            startDate = Convert.ToDateTime(dr["startDate"]),
+                            endDate = Convert.ToDateTime(dr["endDate"])
+
+                        },
+                       courseid  = _courseid,
+                        student = new Student { id = _studentid },
+                        status = Convert.ToChar(dr["status"])
+
+
+
+                    });
+
+                }
+                return exams;
+            
+            
+
+        }
     }  
 }

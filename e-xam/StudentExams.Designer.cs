@@ -1,6 +1,6 @@
 ﻿namespace e_xam
 {
-    partial class Studentcourse
+    partial class StudentExams
     {
         /// <summary>
         /// Required designer variable.
@@ -28,47 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            courselbal = new Label();
-            courses = new FlowLayoutPanel();
+            coursename = new Label();
+            examspanel = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // courselbal
+            // coursename
             // 
-            courselbal.AutoSize = true;
-            courselbal.Font = new Font("Simplified Arabic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            courselbal.Location = new Point(98, 38);
-            courselbal.Name = "courselbal";
-            courselbal.Size = new Size(104, 41);
-            courselbal.TabIndex = 0;
-            courselbal.Text = "Courses";
+            coursename.AutoSize = true;
+            coursename.Location = new Point(66, 25);
+            coursename.Name = "coursename";
+            coursename.Size = new Size(38, 15);
+            coursename.TabIndex = 0;
+            coursename.Text = "label1";
             // 
-            // courses
+            // examspanel
             // 
-            courses.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            courses.AutoScroll = true;
-            courses.AutoSize = true;
-            courses.FlowDirection = FlowDirection.TopDown;
-            courses.Location = new Point(21, 82);
-            courses.Name = "courses";
-            courses.Size = new Size(520, 374);
-            courses.TabIndex = 1;
+            examspanel.AutoScrollMargin = new Size(2, 2);
+            examspanel.AutoSize = true;
+            examspanel.BackColor = SystemColors.Control;
+            examspanel.FlowDirection = FlowDirection.TopDown;
+            examspanel.Location = new Point(12, 71);
+            examspanel.Name = "examspanel";
+            examspanel.Size = new Size(749, 378);
+            examspanel.TabIndex = 1;
+            examspanel.WrapContents = false;
             // 
-            // Studentcourse
+            // StudentExams
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(courses);
-            Controls.Add(courselbal);
-            Name = "Studentcourse";
-            Text = "Studentcourse";
+            Controls.Add(examspanel);
+            Controls.Add(coursename);
+            Name = "StudentExams";
+            Text = "StudentExams";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label courselbal;
-        private FlowLayoutPanel courses;
+        private Label coursename;
+        private FlowLayoutPanel examspanel;
     }
 }
