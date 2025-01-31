@@ -21,9 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Assets\Asset 2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Assets\e-xam icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

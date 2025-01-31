@@ -67,7 +67,6 @@
             // 
             // trackLbl
             // 
-            trackLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             trackLbl.AutoSize = true;
             trackLbl.Font = new Font("Raleway ExtraBold", 28.1999989F, FontStyle.Bold);
             trackLbl.Location = new Point(51, 276);
