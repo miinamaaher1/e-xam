@@ -13,16 +13,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace e_xam
 {
-    public partial class TrackStatsForm : Form
+    public partial class TrackSelectionStatsForm : Form
     {
         private Dictionary<string, int> trackDictionary;
+        private int instId;
 
-        public TrackStatsForm()
+        public TrackSelectionStatsForm(int _instId)
         {
             InitializeComponent();
-            trackDictionary = TrackManager.getTrackNamesAndIds();  // I returned the Ids too, since they are our primary keys
+            trackDictionary = TrackManager.getTrackNamesAndIds(_instId);  // I returned the Ids too, since they are our primary keys
             tracksComboBox.Items.Clear();
-
+            instId = _instId;
             if (trackDictionary.Count == 0)
             {
                 tracksComboBox.Items.Add("No Tracks Available");
@@ -48,7 +49,7 @@ namespace e_xam
             }
             int selectedTrackId = trackDictionary[selectedTrackName];
 
-            trackReport trackReport = new trackReport(selectedTrackId);
+            TrackStatsForm trackReport = new TrackStatsForm(selectedTrackId, instId);
 
             // Subscribe to the FormClosed event
             trackReport.FormClosed += (s, args) =>
