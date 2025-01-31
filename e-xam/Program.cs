@@ -1,4 +1,5 @@
 using e_xam.InstructorForms;
+using e_xam.StudentForms;
 
 namespace e_xam
 {
@@ -14,9 +15,8 @@ namespace e_xam
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-
+          
             Application.Run(new LoginForm());
-
         }
     }
 }

@@ -21,7 +21,7 @@ namespace e_xam
         public Studentcourse(int _id)
         {
             x = y = z = v = 0;
-            courselist = CourseManger.getStudentcourse(_id);
+            courselist = CourseManager.getStudentCourses(_id);
             InitializeComponent();
             loadcourses();
         }

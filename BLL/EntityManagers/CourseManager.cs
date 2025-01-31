@@ -20,23 +20,59 @@ namespace BLL.EntityManagers
             Dictionary<string,object> parameters = new Dictionary<string,object>();
             parameters.Add("@instId", _instId);
             DataTable dt = dBManager.executeDataTable("getInstructorCourses", parameters);
-            return dataTabelToCourseList(dt);
+            return dataTableToCourseList(dt);
 
         }
-        public static CourseList dataTabelToCourseList(DataTable _dt)
+
+        static public DataTable getCourseTopics(int _courseId)
         {
-            CourseList courses = new CourseList();
-            foreach (DataRow dr in _dt.Rows) { 
-                courses.Add(dataRowToCourse(dr));
-            }
-            return courses;
+            List<string>topics=new List<string>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@crsId", _courseId);
+
+            DataTable dt = dBManager.executeDataTable("getCourseTopics", parameters);
+            return dt;
         }
-        public static Course dataRowToCourse(DataRow _dr) {
-            return new Course()
+
+        public static CourseList getStudentCourses(int _id)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@id", _id);
+
+
+            try
             {
-                id = Convert.ToInt32(_dr["id"]),
-                name = Convert.ToString(_dr["name"])
-            };
+                return dataTableToCourseList(dBManager.executeDataTable("getStudentCourses", parameters));
+            }
+
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"Error in getStudentcourse: {ex.Message}");
+                return new CourseList();
+            }
+        }
+
+        internal static CourseList dataTableToCourseList(DataTable dt)
+        {
+            CourseList c = new CourseList();
+
+            if (dt?.Rows?.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    c.Add(dataRowToCourse(dr));
+                }
+            }
+            return c;
+        }
+
+        internal static Course dataRowToCourse(DataRow dataRow)
+        {
+            Course course = new Course();
+            course.id = Convert.ToInt32(dataRow["id"]);
+            course.name = Convert.ToString(dataRow["name"]);
+            return course;
         }
 
         public static Dictionary<string,int> getCoursesByInstId(int inst_id)

@@ -11,5 +11,10 @@ namespace BLL.Entities
         public decimal? gpa { get; set; }
         public Track track { get; set; }
         public Dictionary<Course,decimal> courseGrades { get; set; }
+
+        public override string ToString()
+        {
+            return $"{id} {firstName} {lastName}";
+        }
     }
 }

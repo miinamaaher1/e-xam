@@ -33,7 +33,7 @@ namespace e_xam
             else
             {
                
-                StudentReportForm studentReport = new StudentReportForm(student);
+                StudentStatsReport studentReport = new StudentStatsReport(student);
 
                 // Subscribe to the FormClosed event
                 studentReport.FormClosed += (s, args) =>

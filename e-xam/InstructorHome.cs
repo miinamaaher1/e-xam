@@ -63,25 +63,61 @@ namespace e_xam
         private void editProfileItm_Click(object sender, EventArgs e)
         {
             // insert the edit profile form here
-            MessageBox.Show("Coming Soon");
+            EditProfileForm editProfileForm = new EditProfileForm(user.id);
+            editProfileForm.FormClosed += (s, args) =>
+            {
+                user = InstructorManager.getInstructor(user.id);
+                nameLbl.Text = user.firstName + " " + user.lastName;
+                this.Show();
+            };
+            this.Hide();
+            editProfileForm.Show();
         }
 
         private void answerSheetItm_Click(object sender, EventArgs e)
         {
             // insert the answer sheet (review student answers) form here
-            MessageBox.Show("Coming Soon");
+            SelectStudentClassForm answersheet = new SelectStudentClassForm(user);
+
+            answersheet.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            answersheet.Show();
         }
 
         private void courseDetailsItm_Click(object sender, EventArgs e)
         {
             // insert the course details (topics) form here
-            MessageBox.Show("Coming Soon");
+
+            ViewCourseTopicsForm courseTopicsForm = new ViewCourseTopicsForm(user.id);
+
+            // Subscribe to the FormClosed event
+            courseTopicsForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            courseTopicsForm.Show();
         }
 
         private void instructorClassesItm_Click(object sender, EventArgs e)
         {
             // insert the instructor classes (class and student count) form here
-            MessageBox.Show("Coming Soon");
+
+            InstructorClassesReport instClasses = new InstructorClassesReport(user);
+
+            instClasses.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+
+            this.Hide();
+            instClasses.Show();
         }
 
         private void trackStatsItm_Click(object sender, EventArgs e)

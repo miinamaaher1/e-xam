@@ -26,6 +26,11 @@ namespace BLL.Entities
         public int mcqCount { get; set; }
         public int tfCount { get; set; }
 
+        public override string ToString()
+        {
+            return $"{id} {title}";
+        }
+
 
     }
 }

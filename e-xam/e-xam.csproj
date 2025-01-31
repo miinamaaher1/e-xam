@@ -12,6 +12,9 @@
   <ItemGroup>
     <None Remove="e-xam icon.ico" />
     <None Remove="Raleway-VariableFont_wght.ttf" />
+    <None Remove="Reports\CourseTopicsReport.rdlc" />
+    <None Remove="Reports\GenerateExamReport.rdlc" />
+    <None Remove="Reports\ReviewAnswersReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +25,18 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Raleway-VariableFont_wght.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InstructorClassReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Reports\CourseTopicsReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GenerateExamReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReviewAnswersReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\StudentReport.rdlc">
@@ -39,6 +54,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="InstructorClassesDSC.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InstructorClassesDSC.xsd</DependentUpon>
+	</Compile>
+    <Compile Update="CourseTopicsDS.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CourseTopicsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="getExamMcqQuestionsDS.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>getExamMcqQuestionsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="getExamTfQuestionsDS.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>getExamTfQuestionsDS.xsd</DependentUpon>
+    </Compile>
     <Compile Update="InstructorHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -47,10 +82,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>miinamaaher_SampleDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Update="miinamaaher_SampleDBDataSet2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>miinamaaher_SampleDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ReviewAnswersDSC.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReviewAnswersDSC.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -62,9 +107,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="InstructorClassesDSC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InstructorClassesDSC.Designer.cs</LastGenOutput>
+	</None>
+    <None Update="CourseTopicsDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CourseTopicsDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="getExamMcqQuestionsDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getExamMcqQuestionsDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="getExamTfQuestionsDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>getExamTfQuestionsDS.Designer.cs</LastGenOutput>
+    </None>
     <None Update="miinamaaher_SampleDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>miinamaaher_SampleDBDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="miinamaaher_SampleDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>miinamaaher_SampleDBDataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ReviewAnswersDSC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReviewAnswersDSC.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

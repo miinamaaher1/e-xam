@@ -1,6 +1,6 @@
 ﻿namespace e_xam
 {
-    partial class StudentReportForm
+    partial class InstructorClassesReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentReportForm));
-            studentStatsRV = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorClassesReport));
+            instructorClassesRV = new Microsoft.Reporting.WinForms.ReportViewer();
             SuspendLayout();
             // 
-            // studentStatsRV
+            // instructorClassesRV
             // 
-            studentStatsRV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            studentStatsRV.Location = new Point(0, 0);
-            studentStatsRV.Name = "ReportViewer";
-            studentStatsRV.ServerReport.BearerToken = null;
-            studentStatsRV.Size = new Size(802, 451);
-            studentStatsRV.TabIndex = 0;
+            instructorClassesRV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            instructorClassesRV.Location = new Point(0, 0);
+            instructorClassesRV.Name = "ReportViewer";
+            instructorClassesRV.ServerReport.BearerToken = null;
+            instructorClassesRV.Size = new Size(819, 423);
+            instructorClassesRV.TabIndex = 0;
             // 
-            // StudentReport
+            // InstructorClassesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(studentStatsRV);
+            ClientSize = new Size(817, 416);
+            Controls.Add(instructorClassesRV);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            Name = "StudentReport";
-            Text = "Student Report";
-            Load += StudentReport_Load;
+            Name = "InstructorClassesForm";
+            Text = "Instructor Classes";
+            Load += InstructorClassesForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer studentStatsRV;
+        private Microsoft.Reporting.WinForms.ReportViewer instructorClassesRV;
     }
 }

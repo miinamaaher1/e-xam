@@ -11,11 +11,9 @@ using System.Threading.Tasks;
 
 namespace BLL.EntityManagers
 {
-
     public class TrackManager
     {
         static DBManager dBManager = new DBManager();
-
 
         public static Dictionary<string, int> getTrackNamesAndIds(int _instId)
         {
