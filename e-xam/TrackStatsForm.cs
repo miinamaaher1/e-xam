@@ -30,20 +30,7 @@ namespace e_xam
 
             List<TrackReport> trackReport = StudentManager.getStudentsByTrack(trackId);
 
-           // List<InstructorClass> insClassList = crsInsTrk
-           //.Select(obj => new InstructorClass
-           //{
-           //    course_name = obj.course.name,
-           //    track_name = obj.track.name,
-           //    student_numbers = obj.studentCount
-           //})
-           //.ToList();
-
-            TrackStatsReportViewer.LocalReport.ReportPath = @"C:\Users\Ahmed_Yasser\source\repos\miinamaaher1\e-xam\e-xam\Reports\TrackReport.rdlc";
-
-            //ReportParameter instructorIdParam = new ReportParameter("id", user.id.ToString());
-
-            //instructorClassesRV.LocalReport.SetParameters(instructorIdParam);
+            TrackStatsReportViewer.LocalReport.ReportPath = @"Reports\TrackReport.rdlc";
 
             ReportDataSource trackReportDataSource = new ReportDataSource("TrackStatDS", trackReport);
 

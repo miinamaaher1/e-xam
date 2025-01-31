@@ -15,6 +15,7 @@
     <None Remove="Reports\CourseTopicsReport.rdlc" />
     <None Remove="Reports\GenerateExamReport.rdlc" />
     <None Remove="Reports\ReviewAnswersReport.rdlc" />
+    <None Remove="Reports\TrackReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +42,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\StudentReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TrackReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
