@@ -28,8 +28,15 @@ namespace e_xam
 
         private void addQuestionItm_Click(object sender, EventArgs e)
         {
-            // insert the add question form here
-            MessageBox.Show("Coming Soon");
+            AddQCourseSelectionForm addQCourseSelectionForm = new AddQCourseSelectionForm(user.id);
+
+            addQCourseSelectionForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            addQCourseSelectionForm.Show();
         }
 
         private void generateExamItm_Click(object sender, EventArgs e)
@@ -70,7 +77,15 @@ namespace e_xam
         private void answerSheetItm_Click(object sender, EventArgs e)
         {
             // insert the answer sheet (review student answers) form here
-            
+            SelectStudentClassForm answersheet = new SelectStudentClassForm(user);
+
+            answersheet.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            answersheet.Show();
         }
 
         private void courseDetailsItm_Click(object sender, EventArgs e)
@@ -108,16 +123,16 @@ namespace e_xam
         private void trackStatsItm_Click(object sender, EventArgs e)
         {
             //// insert the track stats (student name and gpa) form here
-            TrackStatsForm trackStatsForm = new TrackStatsForm();
+            TrackSelectionStatsForm trackSelectionStatsForm = new TrackSelectionStatsForm(user.id);
 
             // Subscribe to the FormClosed event
-            trackStatsForm.FormClosed += (s, args) =>
+            trackSelectionStatsForm.FormClosed += (s, args) =>
             {
                 // Show the current form again
                 this.Show();
             };
             this.Hide();
-            trackStatsForm.Show();
+            trackSelectionStatsForm.Show();
         }
 
         private void studentStatsItm_Click(object sender, EventArgs e)

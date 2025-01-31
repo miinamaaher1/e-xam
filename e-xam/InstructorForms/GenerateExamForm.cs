@@ -100,10 +100,15 @@ namespace e_xam.InstructorForms
                 exam.title = tilteTxtBox.Text == "" ? "exam" : tilteTxtBox.Text;
 
                 currentExamId = ExamManager.generateExam(exam);
+                if(currentExamId==-1)
+                {
+                   MessageBox.Show( "Error in generating exam");
+                    return;
+                }
 
                 ///////////////////////////////
 
-                generateExamReportForm insExamReport = new generateExamReportForm(currentExamId ,(int)courseCombo.SelectedValue,instId);
+                generateExamReportForm insExamReport = new generateExamReportForm(currentExamId, exam.tfCount, exam.mcqCount, (int)courseCombo.SelectedValue,instId);
                 insExamReport.FormClosed += (s, args) =>
                 {
                     this.Show();

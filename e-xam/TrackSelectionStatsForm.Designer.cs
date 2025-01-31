@@ -1,6 +1,6 @@
 ﻿namespace e_xam
 {
-    partial class TrackStatsForm
+    partial class TrackSelectionStatsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrackSelectionStatsForm));
             trackSelectLbl = new Label();
             tracksComboBox = new ComboBox();
             viewTrackBtn = new Button();
@@ -64,7 +65,7 @@
             viewTrackBtn.UseVisualStyleBackColor = true;
             viewTrackBtn.Click += viewTrackBtn_Click;
             // 
-            // trackSelectionReport
+            // TrackSelectionStatsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -72,7 +73,8 @@
             Controls.Add(viewTrackBtn);
             Controls.Add(tracksComboBox);
             Controls.Add(trackSelectLbl);
-            Name = "trackSelectionReport";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "TrackSelectionStatsForm";
             Text = "Track Selection";
             ResumeLayout(false);
             PerformLayout();

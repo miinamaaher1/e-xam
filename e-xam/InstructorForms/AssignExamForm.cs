@@ -20,108 +20,103 @@ namespace e_xam.InstructorForms
         int examId;
         int courseId;
         int instructorId;
-        TrackList tracks;
-        string format = "MM/dd/yyyy hh:mm tt";
+        BindingList<Track> tracks;
+        TrackList selectedTracks;
+        bool selectedTracksBefore;
         public AssignExamForm(int _examId, int _courseId, int _instructorId)
         {
             examId = _examId;
             courseId = _courseId;
             instructorId = _instructorId;
+            selectedTracksBefore = false;
+            selectedTracks = new TrackList();
+
             InitializeComponent();
         }
 
         private void AssignExamForm_Load(object sender, EventArgs e)
         {
-            SetupDataGridViewCols();
-            tracks = TrackManager.getInstructorTracksInCrs(instructorId, courseId);
-            foreach (var track in tracks)
-                AssignExamGV.Rows.Add(track.name, false, DateTime.Now.Date, DateTime.Now.Date);
+            //if(tracks.Count ==0 ) handle if ins doesnot have tracks??
+            tracks = new BindingList<Track>(TrackManager.getInstructorTracksInCrs(instructorId, courseId));
 
+            tracksCheckedListB.DataSource = tracks;
+            tracksCheckedListB.DisplayMember = "name";
+            tracksCheckedListB.ValueMember = "id";
 
-        }
+            startDatetimeP.Format = DateTimePickerFormat.Custom;
+            enddateTimeP.Format = DateTimePickerFormat.Custom;
 
-        void SetupDataGridViewCols()
-        {
-            var trackNameCol = new DataGridViewTextBoxColumn()
-            {
-                HeaderText = "Track Name",
-                Name = "trackName",
-                ReadOnly = true,
-            };
-            var selectCol = new DataGridViewCheckBoxColumn()
-            {
-                HeaderText = "select",
-                Name = "selectTrack"
-            };
-
-            var examStartDateCols = new DataGridViewTextBoxColumn()
-            {
-                HeaderText = "Exam start date",
-                Name = "startDate",
-               // ValueType = typeof(DateTime),
-                DefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Format = format
-                } 
-            };
-            var examEndDateCols = new DataGridViewTextBoxColumn()
-            {
-                HeaderText = "Exam end date",
-                Name = "endDate",
-               // ValueType = typeof(DateTime),
-                DefaultCellStyle = new DataGridViewCellStyle
-                {
-                    Format = format
-                }
-            };
-            AssignExamGV.Columns.Add(trackNameCol);
-            AssignExamGV.Columns.Add(selectCol);
-            AssignExamGV.Columns.Add(examStartDateCols);
-            AssignExamGV.Columns.Add(examEndDateCols);
+            startDatetimeP.CustomFormat = "MM/dd/yyyy hh:mm tt";
+            enddateTimeP.CustomFormat = "MM/dd/yyyy hh:mm tt";
 
         }
+
+
 
         private void saveExamTracksBtn_Click(object sender, EventArgs e)
         {
-            TrackExamList trackExams  = new TrackExamList();
-            foreach (DataGridViewRow row in AssignExamGV.Rows)
+            if (!validateDate(startDatetimeP.Value, enddateTimeP.Value))
+                return;
+            if (!getSelectedTracks())
+                return;
+
+            int exId=ExamManager.assignExamToTracks(examId, startDatetimeP.Value, enddateTimeP.Value, selectedTracks);
+            if (exId == -1)
             {
-                bool isSelected = Convert.ToBoolean(row.Cells["selectTrack"].Value);
-                if (isSelected)
-                {
-                    TrackExam trackExam = new TrackExam();
-                    trackExam.examId = examId;
-                    string trackName = row.Cells["trackName"].Value.ToString();
-                    trackExam.trackId= tracks.First(t => t.name == trackName).id;
+                MessageBox.Show("Error in assigning exam to tracks");
+                return;
+            }
 
-                    string sDateStr = row.Cells["startDate"].Value.ToString();
-                    string eDateStr = row.Cells["endDate"].Value.ToString();
+            selectedTracksBefore =true;
 
-                    DateTime sDate , eDate;
-                    if (!validateDte(sDateStr, out sDate) || !validateDte(sDateStr, out eDate))
-                        return;
+            MessageBox.Show("exam was assigned to selected tracks");
 
-                    trackExam.startDate = sDate;
-                    trackExam.endDate = eDate;
+            foreach (var track in selectedTracks)
+            {
+                tracks.Remove(track);
+            }
 
-                    trackExams.Add(trackExam);
+        }
 
-                }
+        bool validateDate(DateTime startDate, DateTime endDate)
+        {
+            if (startDate < DateTime.Today || endDate < DateTime.Today)
+            {
+                MessageBox.Show("can't enter past date");
+                return false;
 
             }
+            else if ( DateTime.Compare(startDate, endDate)>0)
+            { //problem in that not enter in this condition despite date and time is equal
+                MessageBox.Show("start date must be before end date");
+                return false;
+            }
+            return true;
         }
-        
-        bool validateDte(string dateTime,out DateTime parsedDate)
+        bool getSelectedTracks()
         {
-            bool isValid=DateTime.TryParseExact(
-                         dateTime,
-                         format,
-                         CultureInfo.InvariantCulture,
-                         DateTimeStyles.None,
-                         out parsedDate);
-            if (!isValid)
-                MessageBox.Show("Invalid input. Please enter the date and time in the format MM/dd/yyyy hh:mm tt.");
-            return isValid;
+            foreach (var track in tracksCheckedListB.CheckedItems)
+                selectedTracks.Add(((Track)track));
+            if (selectedTracks.Count == 0)
+            {
+                MessageBox.Show("Must Select Track");
+                return false;
+            }
+            return true;
+        }
+
+        private void doneButton_Click(object sender, EventArgs e)
+        {
+            if (!selectedTracksBefore)
+            {
+                MessageBox.Show("Must Select tracks");
+                return;
+            }
+
+            Instructor ins = InstructorManager.getInstructor(instructorId);
+            InstructorHome instructorHome = new InstructorHome(ins);
+            this.Hide();
+            instructorHome.Show();
         }
     }
 }

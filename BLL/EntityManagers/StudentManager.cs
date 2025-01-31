@@ -40,30 +40,26 @@ namespace BLL.EntityManagers
             };
         }
 
- public static List<Student> getStudentsByTrack(int trackId) // This functions returns specific data about students (not all students' data)
+ public static List<TrackReport> getStudentsByTrack(int trackId) // This functions returns specific data about students (not all students' data)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@trackId", trackId);
 
             DataTable dt = dBManager.executeDataTable("getStudentsByTrack", parameters);
-            List<Student> students = new List<Student>();
+            List<TrackReport> trackReport = new List<TrackReport>();
 
             foreach (DataRow row in dt.Rows)
             {
-                students.Add(new Student
+                trackReport.Add(new TrackReport
                 {
-                    firstName = Convert.ToString(row["first_name"]),
-                    lastName = Convert.ToString(row["last_name"]),
-                    track = new Track
-                    {
-                        id = Convert.ToInt32(row["track_id"]),
-                        name = Convert.ToString(row["track_name"])
-                    },
+                    first_name = Convert.ToString(row["first_name"]),
+                    last_name = Convert.ToString(row["last_name"]),
+                    track_name = Convert.ToString(row["track_name"]),
                     gpa = Convert.ToDecimal(row["gpa"])
                 });
             }
 
-            return students;
+            return trackReport;
         }
         
         public static Student getStudentStats(int _id)
@@ -106,9 +102,6 @@ namespace BLL.EntityManagers
             }
         }
 
-
-
-
         public static List<StudentExam> getStudetExams(int _studentid, int _courseid,int _trakid)
         {
             List<StudentExam> exams = new List<StudentExam>();
@@ -145,8 +138,30 @@ namespace BLL.EntityManagers
                 }
                 return exams;
             
-            
 
+        public static List<Exam> getStudentCourseExams(int _crsId, int _stdId)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@crs_id", _crsId);
+            parameters.Add("@std_id", _stdId);
+
+            DataTable dt = dBManager.executeDataTable("getStudentCourseExams", parameters);
+
+            List<Exam> exams = new List<Exam>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                exams.Add
+                (
+                    new Exam
+                    {
+                       id = Convert.ToInt32(dr["id"]),
+                       title = Convert.ToString(dr["title"]),
+                    }
+                );
+            }
+
+            return exams;
         }
     }  
 }
