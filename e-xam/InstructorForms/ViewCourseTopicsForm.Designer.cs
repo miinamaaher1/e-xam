@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCourseTopicsForm));
             CourseLbl = new Label();
             courseCombo = new ComboBox();
             viewTopicsBtn = new Button();
@@ -36,8 +37,9 @@
             // 
             // CourseLbl
             // 
+            CourseLbl.Anchor = AnchorStyles.None;
             CourseLbl.AutoSize = true;
-            CourseLbl.Location = new Point(251, 161);
+            CourseLbl.Location = new Point(478, 345);
             CourseLbl.Name = "CourseLbl";
             CourseLbl.Size = new Size(54, 20);
             CourseLbl.TabIndex = 0;
@@ -45,15 +47,17 @@
             // 
             // courseCombo
             // 
+            courseCombo.Anchor = AnchorStyles.None;
             courseCombo.FormattingEnabled = true;
-            courseCombo.Location = new Point(377, 153);
+            courseCombo.Location = new Point(604, 337);
             courseCombo.Name = "courseCombo";
             courseCombo.Size = new Size(151, 28);
             courseCombo.TabIndex = 1;
             // 
             // viewTopicsBtn
             // 
-            viewTopicsBtn.Location = new Point(305, 223);
+            viewTopicsBtn.Anchor = AnchorStyles.None;
+            viewTopicsBtn.Location = new Point(532, 407);
             viewTopicsBtn.Name = "viewTopicsBtn";
             viewTopicsBtn.Size = new Size(169, 29);
             viewTopicsBtn.TabIndex = 2;
@@ -63,8 +67,9 @@
             // 
             // msgLbl
             // 
+            msgLbl.Anchor = AnchorStyles.Bottom;
             msgLbl.AutoSize = true;
-            msgLbl.Location = new Point(324, 267);
+            msgLbl.Location = new Point(550, 779);
             msgLbl.Name = "msgLbl";
             msgLbl.Size = new Size(132, 20);
             msgLbl.TabIndex = 3;
@@ -74,13 +79,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1232, 808);
             Controls.Add(msgLbl);
             Controls.Add(viewTopicsBtn);
             Controls.Add(courseCombo);
             Controls.Add(CourseLbl);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ViewCourseTopicsForm";
-            Text = "ViewCourseTopicsForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "e-xam - Course Details";
             Load += ViewCourseTopicsForm_Load;
             ResumeLayout(false);
             PerformLayout();

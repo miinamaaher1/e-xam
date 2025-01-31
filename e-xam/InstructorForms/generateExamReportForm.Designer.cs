@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(generateExamReportForm));
             generateExamRV = new Microsoft.Reporting.WinForms.ReportViewer();
             assignExamBtn = new Button();
             generateAnotherQBtn = new Button();
@@ -35,29 +36,32 @@
             // 
             // generateExamRV
             // 
+            generateExamRV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             generateExamRV.Location = new Point(0, 0);
             generateExamRV.Name = "ReportViewer";
             generateExamRV.ServerReport.BearerToken = null;
-            generateExamRV.Size = new Size(800, 400);
+            generateExamRV.Size = new Size(1232, 758);
             generateExamRV.TabIndex = 0;
             // 
             // assignExamBtn
             // 
-            assignExamBtn.Location = new Point(420, 409);
+            assignExamBtn.Anchor = AnchorStyles.Bottom;
+            assignExamBtn.Location = new Point(663, 767);
             assignExamBtn.Name = "assignExamBtn";
             assignExamBtn.Size = new Size(199, 29);
             assignExamBtn.TabIndex = 1;
-            assignExamBtn.Text = "Assign Exam to track";
+            assignExamBtn.Text = "Assign To Track";
             assignExamBtn.UseVisualStyleBackColor = true;
             assignExamBtn.Click += assignExamBtn_Click;
             // 
             // generateAnotherQBtn
             // 
-            generateAnotherQBtn.Location = new Point(127, 409);
+            generateAnotherQBtn.Anchor = AnchorStyles.Bottom;
+            generateAnotherQBtn.Location = new Point(370, 767);
             generateAnotherQBtn.Name = "generateAnotherQBtn";
-            generateAnotherQBtn.Size = new Size(232, 29);
+            generateAnotherQBtn.Size = new Size(199, 29);
             generateAnotherQBtn.TabIndex = 2;
-            generateAnotherQBtn.Text = "Generate another Questions";
+            generateAnotherQBtn.Text = "Regenerate Exam";
             generateAnotherQBtn.UseVisualStyleBackColor = true;
             generateAnotherQBtn.Click += generateAnotherQBtn_Click;
             // 
@@ -65,12 +69,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1232, 808);
             Controls.Add(generateAnotherQBtn);
             Controls.Add(assignExamBtn);
             Controls.Add(generateExamRV);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "generateExamReportForm";
-            Text = "GenerateExamReportForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "e-xam - Generate Exam";
             Load += generateExamReportForm_Load;
             ResumeLayout(false);
         }

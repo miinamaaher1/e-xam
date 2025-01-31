@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="e-xam icon.ico" />
+    <None Remove="Assets\Asset 2.png" />
+    <None Remove="Assets\e-xam icon.ico" />
+    <None Remove="Assets\splash screen.png" />
     <None Remove="Raleway-VariableFont_wght.ttf" />
     <None Remove="Reports\CourseTopicsReport.rdlc" />
     <None Remove="Reports\GenerateExamReport.rdlc" />
@@ -19,12 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="e-xam icon.ico">
+    <EmbeddedResource Include="Assets\Asset 2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\e-xam icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\splash screen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raleway-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -78,7 +83,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>getExamTfQuestionsDS.xsd</DependentUpon>
     </Compile>
-    <Compile Update="InstructorHome.cs">
+    <Compile Update="InstructorForms\InstructorHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="miinamaaher_SampleDBDataSet.Designer.cs">

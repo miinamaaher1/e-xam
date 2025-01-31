@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssignExamForm));
             saveExamTracksBtn = new Button();
             tracksCheckedListB = new CheckedListBox();
             startDatetimeP = new DateTimePicker();
@@ -40,9 +41,11 @@
             // 
             // saveExamTracksBtn
             // 
-            saveExamTracksBtn.Location = new Point(259, 336);
+            saveExamTracksBtn.Anchor = AnchorStyles.None;
+            saveExamTracksBtn.Location = new Point(432, 608);
+            saveExamTracksBtn.Margin = new Padding(5);
             saveExamTracksBtn.Name = "saveExamTracksBtn";
-            saveExamTracksBtn.Size = new Size(94, 29);
+            saveExamTracksBtn.Size = new Size(135, 42);
             saveExamTracksBtn.TabIndex = 1;
             saveExamTracksBtn.Text = "Save";
             saveExamTracksBtn.UseVisualStyleBackColor = true;
@@ -51,58 +54,72 @@
             // tracksCheckedListB
             // 
             tracksCheckedListB.AllowDrop = true;
+            tracksCheckedListB.Anchor = AnchorStyles.None;
             tracksCheckedListB.FormattingEnabled = true;
-            tracksCheckedListB.Location = new Point(315, 139);
+            tracksCheckedListB.Location = new Point(513, 311);
+            tracksCheckedListB.Margin = new Padding(5);
             tracksCheckedListB.Name = "tracksCheckedListB";
-            tracksCheckedListB.Size = new Size(145, 136);
+            tracksCheckedListB.Size = new Size(404, 169);
             tracksCheckedListB.TabIndex = 2;
             // 
             // startDatetimeP
             // 
-            startDatetimeP.Location = new Point(315, 44);
+            startDatetimeP.Anchor = AnchorStyles.None;
+            startDatetimeP.Location = new Point(513, 159);
+            startDatetimeP.Margin = new Padding(5);
             startDatetimeP.Name = "startDatetimeP";
-            startDatetimeP.Size = new Size(250, 27);
+            startDatetimeP.Size = new Size(404, 38);
             startDatetimeP.TabIndex = 3;
             // 
             // enddateTimeP
             // 
-            enddateTimeP.Location = new Point(315, 92);
+            enddateTimeP.Anchor = AnchorStyles.None;
+            enddateTimeP.Location = new Point(513, 232);
+            enddateTimeP.Margin = new Padding(5);
             enddateTimeP.Name = "enddateTimeP";
-            enddateTimeP.Size = new Size(250, 27);
+            enddateTimeP.Size = new Size(404, 38);
             enddateTimeP.TabIndex = 4;
             // 
             // startDateLbl
             // 
+            startDateLbl.Anchor = AnchorStyles.None;
             startDateLbl.AutoSize = true;
-            startDateLbl.Location = new Point(194, 44);
+            startDateLbl.Location = new Point(316, 165);
+            startDateLbl.Margin = new Padding(5, 0, 5, 0);
             startDateLbl.Name = "startDateLbl";
-            startDateLbl.Size = new Size(72, 20);
+            startDateLbl.Size = new Size(115, 31);
             startDateLbl.TabIndex = 5;
-            startDateLbl.Text = "start date";
+            startDateLbl.Text = "Start Date";
             // 
             // endDateLbl
             // 
+            endDateLbl.Anchor = AnchorStyles.None;
             endDateLbl.AutoSize = true;
-            endDateLbl.Location = new Point(194, 92);
+            endDateLbl.Location = new Point(316, 238);
+            endDateLbl.Margin = new Padding(5, 0, 5, 0);
             endDateLbl.Name = "endDateLbl";
-            endDateLbl.Size = new Size(68, 20);
+            endDateLbl.Size = new Size(107, 31);
             endDateLbl.TabIndex = 6;
-            endDateLbl.Text = "end date";
+            endDateLbl.Text = "End Date";
             // 
             // tracksLbl
             // 
+            tracksLbl.Anchor = AnchorStyles.None;
             tracksLbl.AutoSize = true;
-            tracksLbl.Location = new Point(194, 139);
+            tracksLbl.Location = new Point(316, 311);
+            tracksLbl.Margin = new Padding(5, 0, 5, 0);
             tracksLbl.Name = "tracksLbl";
-            tracksLbl.Size = new Size(85, 20);
+            tracksLbl.Size = new Size(133, 31);
             tracksLbl.TabIndex = 7;
-            tracksLbl.Text = "select Track";
+            tracksLbl.Text = "Select Track";
             // 
             // doneButton
             // 
-            doneButton.Location = new Point(403, 336);
+            doneButton.Anchor = AnchorStyles.None;
+            doneButton.Location = new Point(666, 608);
+            doneButton.Margin = new Padding(5);
             doneButton.Name = "doneButton";
-            doneButton.Size = new Size(94, 29);
+            doneButton.Size = new Size(135, 42);
             doneButton.TabIndex = 8;
             doneButton.Text = "Done";
             doneButton.UseVisualStyleBackColor = true;
@@ -110,9 +127,9 @@
             // 
             // AssignExamForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1232, 808);
             Controls.Add(doneButton);
             Controls.Add(tracksLbl);
             Controls.Add(endDateLbl);
@@ -121,8 +138,12 @@
             Controls.Add(startDatetimeP);
             Controls.Add(tracksCheckedListB);
             Controls.Add(saveExamTracksBtn);
+            Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(5);
             Name = "AssignExamForm";
-            Text = "AssignExamForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "e-xam - Generate Exam";
             Load += AssignExamForm_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -1,6 +1,6 @@
-﻿namespace e_xam.InstructorForms
+﻿namespace e_xam
 {
-    partial class CourseTopicsReportForm
+    partial class TrackStatsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseTopicsReportForm));
-            CourseTopicsRV = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrackStatsForm));
+            TrackStatsReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             SuspendLayout();
             // 
-            // CourseTopicsRV
+            // TrackStatsReportViewer
             // 
-            CourseTopicsRV.Dock = DockStyle.Fill;
-            CourseTopicsRV.Location = new Point(0, 0);
-            CourseTopicsRV.Name = "ReportViewer";
-            CourseTopicsRV.ServerReport.BearerToken = null;
-            CourseTopicsRV.Size = new Size(1232, 808);
-            CourseTopicsRV.TabIndex = 0;
+            TrackStatsReportViewer.Dock = DockStyle.Fill;
+            TrackStatsReportViewer.Location = new Point(0, 0);
+            TrackStatsReportViewer.Name = "ReportViewer";
+            TrackStatsReportViewer.ServerReport.BearerToken = null;
+            TrackStatsReportViewer.Size = new Size(1232, 808);
+            TrackStatsReportViewer.TabIndex = 0;
             // 
-            // CourseTopicsReportForm
+            // TrackStatsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
-            Controls.Add(CourseTopicsRV);
+            Controls.Add(TrackStatsReportViewer);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "CourseTopicsReportForm";
+            Name = "TrackStatsForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "e-xam - Course Details";
-            Load += CourseTopicsReportForm_Load;
+            Text = "e-xam - Track Stats";
+            Load += TrackStatsForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer CourseTopicsRV;
+        private Microsoft.Reporting.WinForms.ReportViewer TrackStatsReportViewer;
     }
 }

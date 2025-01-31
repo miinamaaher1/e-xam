@@ -1,6 +1,6 @@
-﻿namespace e_xam.InstructorForms
+﻿namespace e_xam
 {
-    partial class CourseTopicsReportForm
+    partial class InstructorClassesReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseTopicsReportForm));
-            CourseTopicsRV = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorClassesReport));
+            instructorClassesRV = new Microsoft.Reporting.WinForms.ReportViewer();
             SuspendLayout();
             // 
-            // CourseTopicsRV
+            // instructorClassesRV
             // 
-            CourseTopicsRV.Dock = DockStyle.Fill;
-            CourseTopicsRV.Location = new Point(0, 0);
-            CourseTopicsRV.Name = "ReportViewer";
-            CourseTopicsRV.ServerReport.BearerToken = null;
-            CourseTopicsRV.Size = new Size(1232, 808);
-            CourseTopicsRV.TabIndex = 0;
+            instructorClassesRV.Dock = DockStyle.Fill;
+            instructorClassesRV.Location = new Point(0, 0);
+            instructorClassesRV.Name = "ReportViewer";
+            instructorClassesRV.ServerReport.BearerToken = null;
+            instructorClassesRV.Size = new Size(1232, 808);
+            instructorClassesRV.TabIndex = 0;
             // 
-            // CourseTopicsReportForm
+            // InstructorClassesReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
-            Controls.Add(CourseTopicsRV);
+            Controls.Add(instructorClassesRV);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "CourseTopicsReportForm";
+            Name = "InstructorClassesReport";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "e-xam - Course Details";
-            Load += CourseTopicsReportForm_Load;
+            Text = "e-xam - My Classes";
+            Load += InstructorClassesForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer CourseTopicsRV;
+        private Microsoft.Reporting.WinForms.ReportViewer instructorClassesRV;
     }
 }
