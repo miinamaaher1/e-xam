@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BLL.Entities;
-using BLL.EntityLists;
+﻿using BLL.Entities;
 using BLL.EntityManagers;
 using e_xam.StudentForms;
-using Microsoft.VisualBasic.Devices;
 
 namespace e_xam
 {
@@ -187,14 +176,13 @@ namespace e_xam
             {
                 int examId = (int)clickedButton.Tag;
 
-                MessageBox.Show("view");
-                // AnswerSheetForm  answerSheet= new AnswerSheetForm(studentid, examId);
-                //answerSheet.FormClosed += (s, args) =>
-                //{
-                //    this.Show();
-                //};
-                //this.Hide();
-                //AnswerSheetForm.Show();
+                ReviewAnswersForm answerSheet = new ReviewAnswersForm(studentid, examId);
+                answerSheet.FormClosed += (s, args) =>
+                {
+                    this.Show();
+                };
+                this.Hide();
+                answerSheet.Show();
             }
         }
     }

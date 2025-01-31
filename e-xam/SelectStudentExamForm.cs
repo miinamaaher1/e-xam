@@ -1,15 +1,5 @@
 ﻿using BLL.Entities;
 using BLL.EntityManagers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace e_xam
 {
@@ -45,7 +35,7 @@ namespace e_xam
         {
             Exam exam = (Exam)examBx.SelectedItem;
 
-            ReviewAnswersForm reviewAnswer = new ReviewAnswersForm(studentId, exam);
+            ReviewAnswersForm reviewAnswer = new ReviewAnswersForm(studentId, exam.id);
 
             reviewAnswer.FormClosed += (s, args) =>
             {

@@ -1,33 +1,25 @@
 ﻿using BLL.Entities;
 using BLL.EntityManagers;
 using Microsoft.Reporting.WinForms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace e_xam
 {
     public partial class ReviewAnswersForm : Form
     {
         Exam exam;
+        int examId;
         int studentId;
-        public ReviewAnswersForm(int _studentId, Exam _exam)
+        public ReviewAnswersForm(int _studentId, int _examId)
         {
+            examId = _examId;
             studentId = _studentId;
-            exam = _exam;
 
             InitializeComponent();
         }
 
         private void ReviewAnswersForm_Load(object sender, EventArgs e)
         {
-            exam = InstructorManager.reviewStudentAnswers(exam.id, studentId);
+            exam = InstructorManager.reviewStudentAnswers(examId, studentId);
             List<ReviewAnswers> reviewAns = new List<ReviewAnswers>();
 
             foreach (Question question in exam.questions)
