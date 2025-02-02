@@ -21,9 +21,7 @@ namespace e_xam
                 return;
             } else if (user.type == 's')
             {
-                Student student = StudentManager.getStudent(user.id);
-                
-                StudentHome studentHome = new StudentHome(student);
+                StudentHome studentHome = new StudentHome(user.id);
 
                 // Subscribe to the FormClosed event
                 studentHome.FormClosed += (s, args) =>
@@ -36,9 +34,7 @@ namespace e_xam
             }
             else
             {
-                Instructor instructor = InstructorManager.getInstructor(user.id);
-
-                InstructorHome instructorHome = new InstructorHome(instructor);
+                InstructorHome instructorHome = new InstructorHome(user.id);
 
                 // Subscribe to the FormClosed event
                 instructorHome.FormClosed += (s, args) =>

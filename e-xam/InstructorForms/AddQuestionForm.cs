@@ -62,14 +62,7 @@ namespace e_xam
                 QuestionManager.addTFQuestion(question);
                 MessageBox.Show("Question Added Successfully");
 
-                AddQCourseSelectionForm addQCourseSelectionForm = new AddQCourseSelectionForm(inst_id);
-                addQCourseSelectionForm.FormClosed += (s, args) =>
-                {
-                    // Show the current form again
-                    this.Show();
-                };
-                this.Hide();
-                addQCourseSelectionForm.Show();
+                this.Close();
             }
             else
             {
@@ -104,29 +97,14 @@ namespace e_xam
                 QuestionManager.addMCQQuestion(question);
                 MessageBox.Show("Question Added Successfully");
 
-                AddQCourseSelectionForm addQCourseSelectionForm = new AddQCourseSelectionForm(inst_id);
-                addQCourseSelectionForm.FormClosed += (s, args) =>
-                {
-                    // Show the current form again
-                    this.Show();
-                };
-                this.Hide();
-                addQCourseSelectionForm.Show();
+                this.Close();
             }
 
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            AddQCourseSelectionForm addQCourseSelectionForm = new AddQCourseSelectionForm(inst_id);
-
-            addQCourseSelectionForm.FormClosed += (s, args) =>
-            {
-                // Show the current form again
-                this.Show();
-            };
-            this.Hide();
-            addQCourseSelectionForm.Show();
+            this.Close();
         }
         private void MarkTxtBox_KeyPress(object sender, KeyPressEventArgs e)
         {

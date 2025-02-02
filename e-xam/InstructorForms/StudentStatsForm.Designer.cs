@@ -32,6 +32,7 @@
             studentIdLbl = new Label();
             studentIdBx = new TextBox();
             viewBtn = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // studentIdLbl
@@ -39,41 +40,55 @@
             studentIdLbl.Anchor = AnchorStyles.None;
             studentIdLbl.AutoSize = true;
             studentIdLbl.Font = new Font("Segoe UI", 13.8F);
-            studentIdLbl.Location = new Point(371, 312);
+            studentIdLbl.Location = new Point(385, 335);
             studentIdLbl.Name = "studentIdLbl";
-            studentIdLbl.Size = new Size(185, 31);
+            studentIdLbl.Size = new Size(126, 31);
             studentIdLbl.TabIndex = 0;
-            studentIdLbl.Text = "Enter Student ID:";
+            studentIdLbl.Text = "Student ID:";
             // 
             // studentIdBx
             // 
             studentIdBx.Anchor = AnchorStyles.None;
-            studentIdBx.Location = new Point(589, 318);
+            studentIdBx.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            studentIdBx.Location = new Point(551, 332);
             studentIdBx.Name = "studentIdBx";
-            studentIdBx.Size = new Size(272, 27);
+            studentIdBx.Size = new Size(297, 38);
             studentIdBx.TabIndex = 1;
             // 
             // viewBtn
             // 
             viewBtn.Anchor = AnchorStyles.None;
             viewBtn.Font = new Font("Segoe UI", 13.8F);
-            viewBtn.Location = new Point(541, 455);
+            viewBtn.Location = new Point(559, 431);
             viewBtn.Name = "viewBtn";
-            viewBtn.Size = new Size(138, 42);
+            viewBtn.Size = new Size(115, 45);
             viewBtn.TabIndex = 2;
             viewBtn.Text = "View";
             viewBtn.UseVisualStyleBackColor = true;
             viewBtn.Click += viewBtn_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(342, 55);
+            label1.TabIndex = 3;
+            label1.Text = "Select A student";
             // 
             // StudentStatsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
+            Controls.Add(label1);
             Controls.Add(viewBtn);
             Controls.Add(studentIdBx);
             Controls.Add(studentIdLbl);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "StudentStatsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Student Stats";
@@ -86,5 +101,6 @@
         private Label studentIdLbl;
         private TextBox studentIdBx;
         private Button viewBtn;
+        private Label label1;
     }
 }

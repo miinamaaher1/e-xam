@@ -23,7 +23,6 @@ namespace e_xam.InstructorForms
         public GenerateExamForm(int _instId)
         {
             InitializeComponent();
-            MsgLbl.Visible = false;
             instId = _instId;
 
         }
@@ -54,7 +53,7 @@ namespace e_xam.InstructorForms
             else if (courseCombo.SelectedIndex != -1)
             {
                 tfLblMsg.Visible = false;
-                mcqLblMsg.Visible =false;
+                mcqLblMsg.Visible = false;
                 int crsId = (int)courseCombo.SelectedValue;
                 SetMaxQuestionsCnt(crsId);
 
@@ -100,15 +99,15 @@ namespace e_xam.InstructorForms
                 exam.title = tilteTxtBox.Text == "" ? "exam" : tilteTxtBox.Text;
 
                 currentExamId = ExamManager.generateExam(exam);
-                if(currentExamId==-1)
+                if (currentExamId == -1)
                 {
-                   MessageBox.Show( "Error in generating exam");
+                    MessageBox.Show("Error in generating exam");
                     return;
                 }
 
                 ///////////////////////////////
 
-                generateExamReportForm insExamReport = new generateExamReportForm(currentExamId, exam.tfCount, exam.mcqCount, (int)courseCombo.SelectedValue,instId);
+                generateExamReportForm insExamReport = new generateExamReportForm(currentExamId, exam.tfCount, exam.mcqCount, (int)courseCombo.SelectedValue, instId);
                 insExamReport.FormClosed += (s, args) =>
                 {
                     this.Show();
@@ -118,14 +117,12 @@ namespace e_xam.InstructorForms
 
                 //////////////////////////////
 
-                MsgLbl.Text = $"exam id:{currentExamId}";
-                MsgLbl.Visible = true;
+                MessageBox.Show($"exam id:{currentExamId}");
 
             }
             else
             {
-                MsgLbl.Text = $"{validateMsg}";
-                MsgLbl.Visible = true;
+                MessageBox.Show($"{validateMsg}");
             }
 
         }
@@ -134,7 +131,7 @@ namespace e_xam.InstructorForms
         {
             if (courseCombo.SelectedIndex == -1)
                 return "must select course";
-            else if (tfNumUpDown.Value ==0&& mcqNumUpDown.Value == 0)
+            else if (tfNumUpDown.Value == 0 && mcqNumUpDown.Value == 0)
                 return "must select  count of true/false or mcq questions";
             else if (durationNumUpDown.Value == 0)
                 return "must determine count of mcq questions";
@@ -142,7 +139,6 @@ namespace e_xam.InstructorForms
             else
                 return null;
         }
-
 
     }
 }

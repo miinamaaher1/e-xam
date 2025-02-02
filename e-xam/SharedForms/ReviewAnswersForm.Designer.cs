@@ -48,7 +48,9 @@
             AutoScroll = true;
             ClientSize = new Size(1232, 808);
             Controls.Add(reviewAnswersRV);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "ReviewAnswersForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Review Answers";

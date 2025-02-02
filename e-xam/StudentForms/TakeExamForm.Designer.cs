@@ -40,10 +40,10 @@
             // examTitleLbl
             // 
             examTitleLbl.AutoSize = true;
-            examTitleLbl.Font = new Font("Raleway SemiBold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            examTitleLbl.Location = new Point(25, 20);
+            examTitleLbl.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            examTitleLbl.Location = new Point(12, 9);
             examTitleLbl.Name = "examTitleLbl";
-            examTitleLbl.Size = new Size(224, 55);
+            examTitleLbl.Size = new Size(225, 55);
             examTitleLbl.TabIndex = 0;
             examTitleLbl.Text = "Exam Title";
             // 
@@ -51,9 +51,9 @@
             // 
             examQuestionsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             examQuestionsPanel.AutoScroll = true;
-            examQuestionsPanel.Location = new Point(31, 105);
+            examQuestionsPanel.Location = new Point(12, 90);
             examQuestionsPanel.Name = "examQuestionsPanel";
-            examQuestionsPanel.Size = new Size(1170, 623);
+            examQuestionsPanel.Size = new Size(1208, 642);
             examQuestionsPanel.TabIndex = 1;
             // 
             // durationTimer
@@ -66,19 +66,21 @@
             // 
             timerLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             timerLbl.AutoSize = true;
-            timerLbl.Font = new Font("Raleway SemiBold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            timerLbl.Location = new Point(1075, 23);
+            timerLbl.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            timerLbl.ForeColor = Color.Purple;
+            timerLbl.Location = new Point(1086, 9);
             timerLbl.Name = "timerLbl";
-            timerLbl.Size = new Size(133, 55);
+            timerLbl.Size = new Size(134, 55);
             timerLbl.TabIndex = 3;
             timerLbl.Text = "00:00";
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom;
-            button1.Location = new Point(558, 750);
+            button1.ForeColor = Color.Purple;
+            button1.Location = new Point(559, 750);
             button1.Name = "button1";
-            button1.Size = new Size(121, 37);
+            button1.Size = new Size(115, 45);
             button1.TabIndex = 2;
             button1.Text = "Submit";
             button1.UseVisualStyleBackColor = true;
@@ -94,8 +96,10 @@
             Controls.Add(examQuestionsPanel);
             Controls.Add(examTitleLbl);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5);
+            MaximizeBox = false;
             Name = "TakeExamForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Exam";

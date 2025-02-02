@@ -37,15 +37,16 @@
             endDateLbl = new Label();
             tracksLbl = new Label();
             doneButton = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // saveExamTracksBtn
             // 
             saveExamTracksBtn.Anchor = AnchorStyles.None;
-            saveExamTracksBtn.Location = new Point(432, 608);
+            saveExamTracksBtn.Location = new Point(421, 674);
             saveExamTracksBtn.Margin = new Padding(5);
             saveExamTracksBtn.Name = "saveExamTracksBtn";
-            saveExamTracksBtn.Size = new Size(135, 42);
+            saveExamTracksBtn.Size = new Size(115, 45);
             saveExamTracksBtn.TabIndex = 1;
             saveExamTracksBtn.Text = "Save";
             saveExamTracksBtn.UseVisualStyleBackColor = true;
@@ -56,7 +57,7 @@
             tracksCheckedListB.AllowDrop = true;
             tracksCheckedListB.Anchor = AnchorStyles.None;
             tracksCheckedListB.FormattingEnabled = true;
-            tracksCheckedListB.Location = new Point(513, 311);
+            tracksCheckedListB.Location = new Point(501, 396);
             tracksCheckedListB.Margin = new Padding(5);
             tracksCheckedListB.Name = "tracksCheckedListB";
             tracksCheckedListB.Size = new Size(404, 169);
@@ -65,7 +66,7 @@
             // startDatetimeP
             // 
             startDatetimeP.Anchor = AnchorStyles.None;
-            startDatetimeP.Location = new Point(513, 159);
+            startDatetimeP.Location = new Point(501, 244);
             startDatetimeP.Margin = new Padding(5);
             startDatetimeP.Name = "startDatetimeP";
             startDatetimeP.Size = new Size(404, 38);
@@ -74,7 +75,7 @@
             // enddateTimeP
             // 
             enddateTimeP.Anchor = AnchorStyles.None;
-            enddateTimeP.Location = new Point(513, 232);
+            enddateTimeP.Location = new Point(501, 317);
             enddateTimeP.Margin = new Padding(5);
             enddateTimeP.Name = "enddateTimeP";
             enddateTimeP.Size = new Size(404, 38);
@@ -84,52 +85,64 @@
             // 
             startDateLbl.Anchor = AnchorStyles.None;
             startDateLbl.AutoSize = true;
-            startDateLbl.Location = new Point(316, 165);
+            startDateLbl.Location = new Point(328, 250);
             startDateLbl.Margin = new Padding(5, 0, 5, 0);
             startDateLbl.Name = "startDateLbl";
-            startDateLbl.Size = new Size(115, 31);
+            startDateLbl.Size = new Size(126, 31);
             startDateLbl.TabIndex = 5;
-            startDateLbl.Text = "Start Date";
+            startDateLbl.Text = "Start Date :";
             // 
             // endDateLbl
             // 
             endDateLbl.Anchor = AnchorStyles.None;
             endDateLbl.AutoSize = true;
-            endDateLbl.Location = new Point(316, 238);
+            endDateLbl.Location = new Point(336, 323);
             endDateLbl.Margin = new Padding(5, 0, 5, 0);
             endDateLbl.Name = "endDateLbl";
-            endDateLbl.Size = new Size(107, 31);
+            endDateLbl.Size = new Size(118, 31);
             endDateLbl.TabIndex = 6;
-            endDateLbl.Text = "End Date";
+            endDateLbl.Text = "End Date :";
             // 
             // tracksLbl
             // 
             tracksLbl.Anchor = AnchorStyles.None;
             tracksLbl.AutoSize = true;
-            tracksLbl.Location = new Point(316, 311);
+            tracksLbl.Location = new Point(377, 396);
             tracksLbl.Margin = new Padding(5, 0, 5, 0);
             tracksLbl.Name = "tracksLbl";
-            tracksLbl.Size = new Size(133, 31);
+            tracksLbl.Size = new Size(77, 31);
             tracksLbl.TabIndex = 7;
-            tracksLbl.Text = "Select Track";
+            tracksLbl.Text = "Track :";
             // 
             // doneButton
             // 
             doneButton.Anchor = AnchorStyles.None;
-            doneButton.Location = new Point(666, 608);
+            doneButton.Location = new Point(696, 674);
             doneButton.Margin = new Padding(5);
             doneButton.Name = "doneButton";
-            doneButton.Size = new Size(135, 42);
+            doneButton.Size = new Size(115, 45);
             doneButton.TabIndex = 8;
             doneButton.Text = "Done";
             doneButton.UseVisualStyleBackColor = true;
             doneButton.Click += doneButton_Click;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(298, 55);
+            label1.TabIndex = 9;
+            label1.Text = "Select A Track";
             // 
             // AssignExamForm
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
+            Controls.Add(label1);
             Controls.Add(doneButton);
             Controls.Add(tracksLbl);
             Controls.Add(endDateLbl);
@@ -139,8 +152,10 @@
             Controls.Add(tracksCheckedListB);
             Controls.Add(saveExamTracksBtn);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5);
+            MaximizeBox = false;
             Name = "AssignExamForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Generate Exam";
@@ -158,5 +173,6 @@
         private Label endDateLbl;
         private Label tracksLbl;
         private Button doneButton;
+        private Label label1;
     }
 }

@@ -6,10 +6,10 @@ namespace e_xam
     public partial class StudentHome : Form
     {
         Student user;
-        public StudentHome(Student _user)
+        public StudentHome(int _userId)
         {
             InitializeComponent();
-            user = _user;
+            user = StudentManager.getStudent(_userId);
             nameLbl.Text = user.firstName + " " + user.lastName;
             gpaLbl.Text = user.gpa.ToString();
             trackLbl.Text = user.track.dept.name + ", " + user.track.name;

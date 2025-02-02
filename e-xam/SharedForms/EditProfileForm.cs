@@ -3,6 +3,15 @@ using BLL.EntityManagers;
 
 namespace e_xam
 {
+    enum fields
+    {
+        first,
+        last,
+        ssn,
+        gender,
+        user,
+        all
+    }
     public partial class EditProfileForm : Form
     {
         User user;
@@ -11,7 +20,7 @@ namespace e_xam
             user = new User();
             user.id = _id;
             InitializeComponent();
-            updateFields();
+            updateFields(fields.all);
         }
 
         private void saveFirstNameBtn_Click(object sender, EventArgs e)
@@ -24,7 +33,7 @@ namespace e_xam
             {
                 MessageBox.Show("Couldn't Update First Name!");
             }
-            updateFields();
+            updateFields(fields.first);
         }
 
         private void saveLastNameBtn_Click(object sender, EventArgs e)
@@ -37,7 +46,7 @@ namespace e_xam
             {
                 MessageBox.Show("Couldn't Update Last Name!");
             }
-            updateFields();
+            updateFields(fields.last);
         }
 
         private void saveSsnBtn_Click(object sender, EventArgs e)
@@ -50,7 +59,7 @@ namespace e_xam
             {
                 MessageBox.Show("This SSN Isn't Available!");
             }
-            updateFields();
+            updateFields(fields.ssn);
         }
 
         private void newUserNameSaveBtn_Click(object sender, EventArgs e)
@@ -63,7 +72,7 @@ namespace e_xam
             {
                 MessageBox.Show("This User Name Isn't Available!");
             }
-            updateFields();
+            updateFields(fields.user);
         }
 
         private void saveNewPasswordBtn_Click(object sender, EventArgs e)
@@ -94,7 +103,8 @@ namespace e_xam
                 {
                     MessageBox.Show("Couldn't Update Gender!");
                 }
-            } else
+            }
+            else
             {
                 if (UserManager.updateGender(user.id, 'f') > 0)
                 {
@@ -105,22 +115,47 @@ namespace e_xam
                     MessageBox.Show("Couldn't Update Gender!");
                 }
             }
-            updateFields();
+            updateFields(fields.gender);
         }
-        private void updateFields()
+        private void updateFields(fields field)
         {
             user = UserManager.getUser(user.id);
-            firstNameBx.Text = user.firstName;
-            lastNameBx.Text = user.lastName;
-            ssnBx.Text = user.ssn;
-            if (user.gender == 'm')
+
+            if (field == fields.first) firstNameBx.Text = user.firstName;
+
+            else if (field == fields.last) lastNameBx.Text = user.lastName;
+
+            else if (field == fields.ssn) ssnBx.Text = user.ssn;
+
+            else if (field == fields.gender)
             {
-                maleBtn.Checked = true;
-            } else
-            {
-                femaleBtn .Checked = true;
+                if (user.gender == 'm')
+                {
+                    maleBtn.Checked = true;
+                }
+                else
+                {
+                    femaleBtn.Checked = true;
+                }
             }
-            newUserNameBx.Text = user.userName;
+
+            else if (field == fields.user) newUserNameBx.Text = user.userName;
+
+            else if(field == fields.all)
+            {
+                firstNameBx.Text = user.firstName;
+                lastNameBx.Text = user.lastName;
+                ssnBx.Text = user.ssn;
+                if (user.gender == 'm')
+                {
+                    maleBtn.Checked = true;
+                }
+                else
+                {
+                    femaleBtn.Checked = true;
+                }
+                newUserNameBx.Text = user.userName;
+            }
         }
     }
 }

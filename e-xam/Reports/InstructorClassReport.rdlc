@@ -296,10 +296,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>InstructorClassesDS</DataSetName>
-            <Top>0.19667in</Top>
-            <Left>0.3in</Left>
-            <Height>1.45833in</Height>
-            <Width>7.85833in</Width>
+            <Top>0.34833in</Top>
+            <Left>1.07083in</Left>
+            <Height>1.45834in</Height>
+            <Width>7.85834in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -310,7 +310,7 @@
         <Height>2.155in</Height>
         <Style />
       </Body>
-      <Width>9.41668in</Width>
+      <Width>10in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

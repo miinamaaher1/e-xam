@@ -36,12 +36,12 @@
             // coursename
             // 
             coursename.AutoSize = true;
-            coursename.Font = new Font("Raleway SemiBold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            coursename.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             coursename.Location = new Point(14, 9);
             coursename.Name = "coursename";
-            coursename.Size = new Size(139, 55);
+            coursename.Size = new Size(284, 55);
             coursename.TabIndex = 0;
-            coursename.Text = "label1";
+            coursename.Text = "Course Name";
             // 
             // examspanel
             // 
@@ -50,10 +50,10 @@
             examspanel.AutoSize = true;
             examspanel.BackColor = SystemColors.Control;
             examspanel.FlowDirection = FlowDirection.TopDown;
-            examspanel.Location = new Point(14, 68);
+            examspanel.Location = new Point(12, 90);
             examspanel.Margin = new Padding(3, 4, 3, 4);
             examspanel.Name = "examspanel";
-            examspanel.Size = new Size(1206, 727);
+            examspanel.Size = new Size(1208, 705);
             examspanel.TabIndex = 1;
             examspanel.WrapContents = false;
             // 
@@ -64,8 +64,10 @@
             ClientSize = new Size(1232, 808);
             Controls.Add(examspanel);
             Controls.Add(coursename);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "StudentExams";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - My Exams";

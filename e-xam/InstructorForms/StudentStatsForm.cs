@@ -22,7 +22,7 @@ namespace e_xam
             }
             else
             {
-               
+
                 StudentStatsReport studentReport = new StudentStatsReport(student);
 
                 // Subscribe to the FormClosed event

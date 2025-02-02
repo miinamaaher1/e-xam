@@ -78,8 +78,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.22167in</Top>
-            <Left>2.43833in</Left>
+            <Top>0.73834in</Top>
+            <Left>3.57083in</Left>
             <Height>0.60833in</Height>
             <Width>2.85833in</Width>
             <Style>
@@ -277,8 +277,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>StudentStatsDS</DataSetName>
-            <Top>1.18833in</Top>
-            <Left>0.82167in</Left>
+            <Top>1.705in</Top>
+            <Left>2.1125in</Left>
             <Height>1.44166in</Height>
             <Width>5.77501in</Width>
             <ZIndex>1</ZIndex>
@@ -292,7 +292,7 @@
         <Height>3.93333in</Height>
         <Style />
       </Body>
-      <Width>11.33in</Width>
+      <Width>10in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

@@ -35,13 +35,13 @@ namespace e_xam.InstructorForms
             courseCombo.DisplayMember = "Name";
             courseCombo.ValueMember = "id";
             courseCombo.SelectedIndex = -1;
-            msgLbl.Visible = false;
             isLoaded = true;
         }
 
         private void viewTopicsBtn_Click(object sender, EventArgs e)
         {
-            if (courseCombo.SelectedIndex!=-1) {
+            if (courseCombo.SelectedIndex != -1)
+            {
 
                 CourseTopicsReportForm courseTopicsReportForm = new CourseTopicsReportForm((int)courseCombo.SelectedValue);
                 // Subscribe to the FormClosed event
@@ -53,8 +53,8 @@ namespace e_xam.InstructorForms
                 this.Hide();
                 courseTopicsReportForm.Show();
             }
-            else 
-                msgLbl.Visible = true;
+            else
+                MessageBox.Show("No Course Selected!");
         }
     }
 }

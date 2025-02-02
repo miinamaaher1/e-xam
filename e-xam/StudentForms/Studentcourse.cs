@@ -10,12 +10,10 @@ namespace e_xam
         int studentid;
         string coursename;
         int trakid;
-        int x, y, z, v;
         public Studentcourse(int _id,int _trakid)
         {
             studentid= _id;
             trakid= _trakid;
-            x = y = z = v = 0;
             coursename = default;
             courselist = CourseManager.getStudentCourses(studentid);
             InitializeComponent();
@@ -25,23 +23,23 @@ namespace e_xam
         private void loadcourses()
         {
             courses.Controls.Clear();
-            courses.Size = new Size(800, 350);
 
             foreach (Course course in courselist)
             {
    
                 Panel coursePanel = new Panel
                 {
-                    Size = new Size(600, 70), 
-                    BorderStyle = BorderStyle.None 
+                    Size = new Size(1168, 65),
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Margin = new Padding(0, 0, 0, 20)
                 };
 
                 Label courseName = new Label
                 {
                     Text = course.name,
                     AutoSize = true,
-                    Font = new Font("Arial", 10, FontStyle.Bold),
-                    Location = new Point(20 + x, 10 + y),
+                    Font = new Font("Segoe UI", 14),
+                    Location = new Point(30, 15),
                     
                 };
 
@@ -49,12 +47,11 @@ namespace e_xam
                 Button btnCourse = new Button
                 {
                     Text = "view",
-                    Size = new Size(80, 30),
-                    Location = new Point(510 + z, 5 + v),
+                    Size = new Size(115, 45),
+                    Font = new Font("Segoe UI", 14),
+                    Location = new Point(1030, 10),
                     Tag = new Course {id=course.id,name=course.name }
                     
-
-
                 };
                 
                 btnCourse.Click += viewCourse_Click;
@@ -64,10 +61,6 @@ namespace e_xam
                 courses.Controls.Add(coursePanel);
 
             }
-            x += 10;
-            y += 10;
-            z += 500;
-            v += 5;
         }
 
         private void viewCourse_Click(object sender, EventArgs e)

@@ -19,16 +19,9 @@ namespace e_xam
         {
             List<Exam> exams = StudentManager.getStudentCourseExams(courseId, studentId);
 
-            if (exams.Count == 0)
-            {
-                MessageBox.Show($"Student with ID {studentId} didn't take exams in course wit id {courseId}");
-            }
-            else
-            {
-                examBx.Items.Clear();
-                examBx.DataSource = exams;
-                examBx.DisplayMember = "ToString";
-            }
+            examBx.Items.Clear();
+            examBx.DataSource = exams;
+            examBx.DisplayMember = "ToString";
         }
 
         private void reviewBtn_Click(object sender, EventArgs e)

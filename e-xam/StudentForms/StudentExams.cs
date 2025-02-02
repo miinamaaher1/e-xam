@@ -7,10 +7,6 @@ namespace e_xam
     public partial class StudentExams : Form
     {
         List<StudentExam> studentexamlist;
-        int x;
-        int y;
-        int v;
-        int z ;
        
         int studentid;
         string cname;
@@ -18,7 +14,6 @@ namespace e_xam
         {
             studentid = _studentid;
             cname = _coursename;
-            x = y = z = v = 0;
             studentexamlist = StudentManager.getStudetExams(_studentid, _courseid,_trakid);
             InitializeComponent();
 
@@ -31,49 +26,47 @@ namespace e_xam
 
             examspanel.Controls.Clear();
             coursename.Text = cname;
-            coursename.Font = new Font("Arial", 15, FontStyle.Bold);
-            
-            examspanel.Size = new Size(800, 1000);
-            examspanel.AutoScroll = true;
+
+            //examspanel.AutoScroll = true;
            
-            foreach (StudentExam exam in studentexamlist)
+            foreach (StudentExam studexam in studentexamlist)
             {
-
-
                 Panel examPanel = new Panel
                 {
-                    Size = new Size(800, 50),
-                    BorderStyle = BorderStyle.Fixed3D,
-                    Location = new Point(10,60+z)
+                    Size = new Size(1168, 65),
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Margin = new Padding(0, 0, 0, 20)
                 };
+
                 Label examName = new Label
                 {
-                    Text = exam.exam.title,
+                    Text = studexam.exam.title,
                     AutoSize = true,
-                    Font = new Font("Arial", 10, FontStyle.Bold),
-                    Location = new Point(10, 10+y)
+                    Font = new Font("Segoe UI", 14),
+                    Location = new Point(30, 15)
                 };
               
                 Label date = new Label
                 {
                    
-                   Text = $"start: {exam.exam.startDate:G} | End: {exam.exam.endDate:G}",
+                   Text = $"Start: {studexam.exam.startDate.ToString("dd/MM/yyyy hh:mm tt")} | End: {studexam.exam.endDate.ToString("dd/MM/yyyy hh:mm tt")}",
                     AutoSize = true,
-                    Font = new Font("Arial", 10, FontStyle.Bold),
-                    Location = new Point(120 , 10 + x)
+                    Font = new Font("Segoe UI", 14),
+                    Location = new Point(255, 15)
                 };
 
          
 
-                if ((exam.status == 'm') &&  (exam.exam.endDate>DateTime.Now) && (exam.exam.startDate <DateTime.Now))
+                if ((studexam.status == 'm') &&  (studexam.exam.endDate>DateTime.Now) && (studexam.exam.startDate <DateTime.Now))
                 {
                     Button btnexam = new Button
                     {
 
                         Text = "Take",
-                        Size = new Size(80, 30),
-                        Location = new Point(600, 5+v),
-                        Tag = exam.exam.id
+                        Size = new Size(115, 45),
+                        Location = new Point(1030, 10),
+                        Font = new Font("Segoe UI", 14),
+                        Tag = studexam.exam.id
 
 
                     };
@@ -81,15 +74,16 @@ namespace e_xam
                     btnexam.Click += takeExam_Click;
                     examPanel.Controls.Add(btnexam);
                 }
-               else if ((exam.status == 'm') && (exam.exam.endDate >DateTime.Now )&& (exam.exam.startDate > DateTime.Now))
+               else if ((studexam.status == 'm') && (studexam.exam.endDate >DateTime.Now )&& (studexam.exam.startDate > DateTime.Now))
                 {
                     Button btnexam = new Button
                     {
 
                         Text = "Take",
-                        Size = new Size(80, 30),
-                        Location = new Point(600, 5 + v),
-                        Tag = exam.exam.id,
+                        Size = new Size(115, 45),
+                        Location = new Point(1030, 10),
+                        Font = new Font("Segoe UI", 14),
+                        Tag = studexam.exam.id,
                         Enabled = false
 
 
@@ -97,15 +91,16 @@ namespace e_xam
                     examPanel.Controls.Add(btnexam);
                 }
 
-                else if((exam.status == 'm') &&  (exam.exam.endDate<DateTime.Now) )
+                else if((studexam.status == 'm') &&  (studexam.exam.endDate<DateTime.Now) )
                 {
                     Button btnexam = new Button
                     {
 
                         Text = "missed",
-                        Size = new Size(80, 30),
-                        Location = new Point(600, 5 + v), 
-                        Tag = exam.exam.id,
+                        Size = new Size(115, 45),
+                        Location = new Point(1030, 10),
+                        Font = new Font("Segoe UI", 14),
+                        Tag = studexam.exam.id,
                        Enabled = false
 
 
@@ -118,9 +113,10 @@ namespace e_xam
                     {
 
                         Text = "view",
-                        Size = new Size(80, 30),
-                        Location = new Point(600 ,  5+v),
-                        Tag = exam.exam.id
+                        Size = new Size(115, 45),
+                        Location = new Point(1030, 10),
+                        Font = new Font("Segoe UI", 14),
+                        Tag = studexam.exam.id
 
 
                     };
@@ -131,19 +127,8 @@ namespace e_xam
                 examPanel.Controls.Add(date);
                
 
-
-
                 examspanel.Controls.Add(examPanel);
-
-               
-              
             }
-
-            x += 10;
-            y += 10;
-            z += 50;
-            v += 5;
-
 
         }
 

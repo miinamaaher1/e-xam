@@ -41,10 +41,9 @@
             titleLbl = new Label();
             minutesLbl = new Label();
             generateExBtn = new Button();
-            MsgLbl = new Label();
-            label1 = new Label();
             mcqLblMsg = new Label();
             tfLblMsg = new Label();
+            addQLbl = new Label();
             ((System.ComponentModel.ISupportInitialize)mcqNumUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tfNumUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)durationNumUpDown).BeginInit();
@@ -55,7 +54,7 @@
             courseCombo.Anchor = AnchorStyles.None;
             courseCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             courseCombo.FormattingEnabled = true;
-            courseCombo.Location = new Point(627, 177);
+            courseCombo.Location = new Point(591, 186);
             courseCombo.Margin = new Padding(5);
             courseCombo.Name = "courseCombo";
             courseCombo.Size = new Size(244, 39);
@@ -65,7 +64,7 @@
             // mcqNumUpDown
             // 
             mcqNumUpDown.Anchor = AnchorStyles.None;
-            mcqNumUpDown.Location = new Point(627, 241);
+            mcqNumUpDown.Location = new Point(591, 250);
             mcqNumUpDown.Margin = new Padding(5);
             mcqNumUpDown.Name = "mcqNumUpDown";
             mcqNumUpDown.Size = new Size(244, 38);
@@ -74,7 +73,7 @@
             // tfNumUpDown
             // 
             tfNumUpDown.Anchor = AnchorStyles.None;
-            tfNumUpDown.Location = new Point(627, 304);
+            tfNumUpDown.Location = new Point(591, 313);
             tfNumUpDown.Margin = new Padding(5);
             tfNumUpDown.Name = "tfNumUpDown";
             tfNumUpDown.Size = new Size(244, 38);
@@ -83,7 +82,7 @@
             // durationNumUpDown
             // 
             durationNumUpDown.Anchor = AnchorStyles.None;
-            durationNumUpDown.Location = new Point(627, 367);
+            durationNumUpDown.Location = new Point(591, 376);
             durationNumUpDown.Margin = new Padding(5);
             durationNumUpDown.Name = "durationNumUpDown";
             durationNumUpDown.Size = new Size(244, 38);
@@ -92,7 +91,7 @@
             // tilteTxtBox
             // 
             tilteTxtBox.Anchor = AnchorStyles.None;
-            tilteTxtBox.Location = new Point(627, 429);
+            tilteTxtBox.Location = new Point(591, 438);
             tilteTxtBox.Margin = new Padding(5);
             tilteTxtBox.Name = "tilteTxtBox";
             tilteTxtBox.Size = new Size(244, 38);
@@ -102,67 +101,67 @@
             // 
             courseLbl.Anchor = AnchorStyles.None;
             courseLbl.AutoSize = true;
-            courseLbl.Location = new Point(362, 180);
+            courseLbl.Location = new Point(470, 189);
             courseLbl.Margin = new Padding(5, 0, 5, 0);
             courseLbl.Name = "courseLbl";
-            courseLbl.Size = new Size(84, 31);
+            courseLbl.Size = new Size(95, 31);
             courseLbl.TabIndex = 13;
-            courseLbl.Text = "Course";
+            courseLbl.Text = "Course :";
             // 
             // McqLbl
             // 
             McqLbl.Anchor = AnchorStyles.None;
             McqLbl.AutoSize = true;
-            McqLbl.Location = new Point(362, 243);
+            McqLbl.Location = new Point(380, 252);
             McqLbl.Margin = new Padding(5, 0, 5, 0);
             McqLbl.Name = "McqLbl";
-            McqLbl.Size = new Size(174, 31);
+            McqLbl.Size = new Size(185, 31);
             McqLbl.TabIndex = 15;
-            McqLbl.Text = "MCQ Questions";
+            McqLbl.Text = "MCQ Questions :";
             // 
             // tfLbl
             // 
             tfLbl.Anchor = AnchorStyles.None;
             tfLbl.AutoSize = true;
-            tfLbl.Location = new Point(362, 306);
+            tfLbl.Location = new Point(330, 315);
             tfLbl.Margin = new Padding(5, 0, 5, 0);
             tfLbl.Name = "tfLbl";
-            tfLbl.Size = new Size(224, 31);
+            tfLbl.Size = new Size(235, 31);
             tfLbl.TabIndex = 16;
-            tfLbl.Text = "True/False Questions";
+            tfLbl.Text = "True/False Questions :";
             // 
             // durationLbl
             // 
             durationLbl.Anchor = AnchorStyles.None;
             durationLbl.AutoSize = true;
-            durationLbl.Location = new Point(362, 369);
+            durationLbl.Location = new Point(451, 378);
             durationLbl.Margin = new Padding(5, 0, 5, 0);
             durationLbl.Name = "durationLbl";
-            durationLbl.Size = new Size(103, 31);
+            durationLbl.Size = new Size(114, 31);
             durationLbl.TabIndex = 17;
-            durationLbl.Text = "Duration";
+            durationLbl.Text = "Duration :";
             // 
             // titleLbl
             // 
             titleLbl.Anchor = AnchorStyles.None;
             titleLbl.AutoSize = true;
-            titleLbl.Location = new Point(362, 432);
+            titleLbl.Location = new Point(435, 441);
             titleLbl.Margin = new Padding(5, 0, 5, 0);
             titleLbl.Name = "titleLbl";
-            titleLbl.Size = new Size(119, 31);
+            titleLbl.Size = new Size(130, 31);
             titleLbl.TabIndex = 18;
-            titleLbl.Text = "Exam Title";
+            titleLbl.Text = "Exam Title :";
             // 
             // minutesLbl
             // 
             minutesLbl.Anchor = AnchorStyles.None;
             minutesLbl.AutoSize = true;
-            minutesLbl.Location = new Point(881, 369);
+            minutesLbl.Location = new Point(845, 378);
             minutesLbl.Margin = new Padding(5, 0, 5, 0);
             minutesLbl.Name = "minutesLbl";
-            minutesLbl.Size = new Size(53, 31);
+            minutesLbl.Size = new Size(63, 31);
             minutesLbl.TabIndex = 21;
-            minutesLbl.Text = "min";
+            minutesLbl.Text = "mins";
             // 
             // generateExBtn
             // 
@@ -170,42 +169,18 @@
             generateExBtn.Location = new Point(496, 586);
             generateExBtn.Margin = new Padding(5);
             generateExBtn.Name = "generateExBtn";
-            generateExBtn.Size = new Size(240, 46);
+            generateExBtn.Size = new Size(240, 45);
             generateExBtn.TabIndex = 22;
             generateExBtn.Text = "Generate Exam ";
             generateExBtn.UseVisualStyleBackColor = true;
             generateExBtn.Click += generateExBtn_Click;
-            // 
-            // MsgLbl
-            // 
-            MsgLbl.Anchor = AnchorStyles.Bottom;
-            MsgLbl.AutoSize = true;
-            MsgLbl.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MsgLbl.Location = new Point(591, 779);
-            MsgLbl.Margin = new Padding(5, 0, 5, 0);
-            MsgLbl.Name = "MsgLbl";
-            MsgLbl.Size = new Size(50, 20);
-            MsgLbl.TabIndex = 24;
-            MsgLbl.Text = "label1";
-            MsgLbl.Visible = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 9);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 25;
-            label1.Text = "label1";
             // 
             // mcqLblMsg
             // 
             mcqLblMsg.Anchor = AnchorStyles.None;
             mcqLblMsg.AutoSize = true;
             mcqLblMsg.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            mcqLblMsg.Location = new Point(881, 252);
+            mcqLblMsg.Location = new Point(845, 261);
             mcqLblMsg.Margin = new Padding(5, 0, 5, 0);
             mcqLblMsg.Name = "mcqLblMsg";
             mcqLblMsg.Size = new Size(198, 20);
@@ -217,12 +192,24 @@
             tfLblMsg.Anchor = AnchorStyles.None;
             tfLblMsg.AutoSize = true;
             tfLblMsg.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tfLblMsg.Location = new Point(881, 315);
+            tfLblMsg.Location = new Point(845, 324);
             tfLblMsg.Margin = new Padding(5, 0, 5, 0);
             tfLblMsg.Name = "tfLblMsg";
             tfLblMsg.Size = new Size(231, 20);
             tfLblMsg.TabIndex = 27;
             tfLblMsg.Text = "There are no True/False Questions";
+            // 
+            // addQLbl
+            // 
+            addQLbl.Anchor = AnchorStyles.None;
+            addQLbl.AutoSize = true;
+            addQLbl.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addQLbl.Location = new Point(14, 9);
+            addQLbl.Margin = new Padding(5, 0, 5, 0);
+            addQLbl.Name = "addQLbl";
+            addQLbl.Size = new Size(339, 55);
+            addQLbl.TabIndex = 28;
+            addQLbl.Text = "Customize Exam";
             // 
             // GenerateExamForm
             // 
@@ -230,10 +217,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(1232, 808);
+            Controls.Add(addQLbl);
             Controls.Add(tfLblMsg);
             Controls.Add(mcqLblMsg);
-            Controls.Add(label1);
-            Controls.Add(MsgLbl);
             Controls.Add(generateExBtn);
             Controls.Add(minutesLbl);
             Controls.Add(titleLbl);
@@ -247,8 +233,10 @@
             Controls.Add(mcqNumUpDown);
             Controls.Add(courseCombo);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5);
+            MaximizeBox = false;
             Name = "GenerateExamForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Generate Exam";
@@ -274,9 +262,8 @@
         private Label titleLbl;
         private Label minutesLbl;
         private Button generateExBtn;
-        private Label MsgLbl;
-        private Label label1;
         private Label mcqLblMsg;
         private Label tfLblMsg;
+        private Label addQLbl;
     }
 }

@@ -1,17 +1,7 @@
 ﻿using BLL.Entities;
 using BLL.EntityList;
-using BLL.EntityLists;
 using BLL.EntityManagers;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace e_xam.InstructorForms
 {
@@ -114,9 +104,7 @@ namespace e_xam.InstructorForms
             }
 
             Instructor ins = InstructorManager.getInstructor(instructorId);
-            InstructorHome instructorHome = new InstructorHome(ins);
-            this.Hide();
-            instructorHome.Show();
+            this.Close();
         }
     }
 }

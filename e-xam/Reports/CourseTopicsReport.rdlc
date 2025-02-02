@@ -136,8 +136,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>CourseTopicsDS1</DataSetName>
-            <Top>0.46333in</Top>
-            <Left>2.505in</Left>
+            <Top>0.75in</Top>
+            <Left>4.5in</Left>
             <Height>0.5in</Height>
             <Width>1in</Width>
             <Style>
@@ -150,7 +150,7 @@
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>10in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

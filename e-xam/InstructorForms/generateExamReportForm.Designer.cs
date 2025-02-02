@@ -73,7 +73,9 @@
             Controls.Add(generateAnotherQBtn);
             Controls.Add(assignExamBtn);
             Controls.Add(generateExamRV);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "generateExamReportForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Generate Exam";

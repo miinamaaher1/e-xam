@@ -44,15 +44,24 @@ namespace e_xam
         {
             Student selectedStudent = (Student)studentBx.SelectedItem;
 
-            SelectStudentExamForm stdExam = new SelectStudentExamForm(selectedStudent.id, selectedCourseId);
+            List<Exam> exams = StudentManager.getStudentCourseExams(selectedStudent.id, selectedCourseId);
 
-            stdExam.FormClosed += (s, args) =>
+            if (exams.Count == 0)
             {
-                // Show the current form again
-                this.Show();
-            };
-            this.Hide();
-            stdExam.Show();
+                MessageBox.Show($"Student with ID {selectedStudent.id} didn't take exams in course wit id {selectedCourseId}");
+            }
+            else
+            {
+                SelectStudentExamForm stdExam = new SelectStudentExamForm(selectedStudent.id, selectedCourseId);
+
+                stdExam.FormClosed += (s, args) =>
+                {
+                    // Show the current form again
+                    this.Show();
+                };
+                this.Hide();
+                stdExam.Show();
+            }
         }
     }
 }

@@ -32,51 +32,67 @@
             trackSelectLbl = new Label();
             tracksComboBox = new ComboBox();
             viewTrackBtn = new Button();
+            studentIdLbl = new Label();
             SuspendLayout();
             // 
             // trackSelectLbl
             // 
             trackSelectLbl.Anchor = AnchorStyles.None;
             trackSelectLbl.AutoSize = true;
-            trackSelectLbl.Font = new Font("Segoe UI", 20F);
-            trackSelectLbl.Location = new Point(347, 250);
+            trackSelectLbl.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            trackSelectLbl.Location = new Point(12, 9);
             trackSelectLbl.Name = "trackSelectLbl";
-            trackSelectLbl.Size = new Size(325, 46);
+            trackSelectLbl.Size = new Size(298, 55);
             trackSelectLbl.TabIndex = 0;
-            trackSelectLbl.Text = "Please select a track:";
+            trackSelectLbl.Text = "Select A Track";
             // 
             // tracksComboBox
             // 
             tracksComboBox.Anchor = AnchorStyles.None;
             tracksComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            tracksComboBox.Font = new Font("Segoe UI", 20F);
+            tracksComboBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tracksComboBox.FormattingEnabled = true;
-            tracksComboBox.Location = new Point(450, 385);
+            tracksComboBox.Location = new Point(524, 338);
             tracksComboBox.Name = "tracksComboBox";
-            tracksComboBox.Size = new Size(332, 53);
+            tracksComboBox.Size = new Size(297, 39);
             tracksComboBox.Sorted = true;
             tracksComboBox.TabIndex = 1;
             // 
             // viewTrackBtn
             // 
             viewTrackBtn.Anchor = AnchorStyles.None;
-            viewTrackBtn.Location = new Point(553, 510);
+            viewTrackBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            viewTrackBtn.Location = new Point(559, 426);
             viewTrackBtn.Name = "viewTrackBtn";
-            viewTrackBtn.Size = new Size(127, 48);
+            viewTrackBtn.Size = new Size(115, 45);
             viewTrackBtn.TabIndex = 2;
             viewTrackBtn.Text = "View";
             viewTrackBtn.UseVisualStyleBackColor = true;
             viewTrackBtn.Click += viewTrackBtn_Click;
+            // 
+            // studentIdLbl
+            // 
+            studentIdLbl.Anchor = AnchorStyles.None;
+            studentIdLbl.AutoSize = true;
+            studentIdLbl.Font = new Font("Segoe UI", 13.8F);
+            studentIdLbl.Location = new Point(411, 341);
+            studentIdLbl.Name = "studentIdLbl";
+            studentIdLbl.Size = new Size(77, 31);
+            studentIdLbl.TabIndex = 3;
+            studentIdLbl.Text = "Track :";
             // 
             // TrackSelectionStatsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
+            Controls.Add(studentIdLbl);
             Controls.Add(viewTrackBtn);
             Controls.Add(tracksComboBox);
             Controls.Add(trackSelectLbl);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "TrackSelectionStatsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Track Stats";
@@ -89,5 +105,6 @@
         private Label trackSelectLbl;
         private ComboBox tracksComboBox;
         private Button viewTrackBtn;
+        private Label studentIdLbl;
     }
 }

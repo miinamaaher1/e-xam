@@ -47,7 +47,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
             Controls.Add(instructorClassesRV);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "InstructorClassesReport";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - My Classes";

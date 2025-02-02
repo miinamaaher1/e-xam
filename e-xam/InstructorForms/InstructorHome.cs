@@ -1,16 +1,17 @@
 using BLL.Entities;
 using BLL.EntityManagers;
 using e_xam.InstructorForms;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 
 namespace e_xam
 {
     public partial class InstructorHome : Form
     {
         Instructor user;
-        public InstructorHome(Instructor _user)
+        public InstructorHome(int _userId)
         {
             InitializeComponent();
-            user = _user;
+            user = InstructorManager.getInstructor(_userId);
             nameLbl.Text = user.firstName + " " + user.lastName;
             trackLbl.Text = user.dept.name;
         }

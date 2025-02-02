@@ -164,8 +164,10 @@
             Controls.Add(nameLbl);
             Controls.Add(welcomeLbl);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5);
+            MaximizeBox = false;
             Name = "StudentHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Home";

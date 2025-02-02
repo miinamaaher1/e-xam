@@ -27,18 +27,14 @@ namespace e_xam.StudentForms
             {
                 Panel questionPanel = new Panel
                 {
-                    //Size = new Size(750, 350),
-                    AutoSize = false,
-                    Width = this.ClientSize.Width - 20,
+                    AutoSize = true,
+                    MinimumSize = new Size(1168, 65),
                     Padding = new Padding(0, 0, 0, 30)
                 };
                 Label questionBody = new Label
                 {
-                    AutoSize = false, // Manual control over size
-                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, // Resizes with window
                     Text = $"{number}: " + question.body,
-                    MaximumSize = new Size(this.ClientSize.Width - 40, 0),  // Full width minus padding
-                    Width = this.ClientSize.Width - 40,  // Update width initially
+                    AutoSize = true,
                     Tag = question.id,
                     Location = new Point(10, 10),
                 };
@@ -52,11 +48,8 @@ namespace e_xam.StudentForms
                     {
                         RadioButton r1 = new RadioButton
                         {
-                            AutoSize = false, // Manual control over size
-                            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, // Resizes with window
+                            AutoSize = true,
                             Text = option.num + ": " + option.body,
-                            MaximumSize = new Size(this.ClientSize.Width - 40, 0),  // Full width minus padding
-                            Width = this.ClientSize.Width - 40,  // Update width initially
                             Location = new Point(10, 10 + y),
                             Tag = option.num,
                         };
@@ -68,21 +61,15 @@ namespace e_xam.StudentForms
                 {
                     RadioButton r1 = new RadioButton
                     {
-                        AutoSize = false, // Manual control over size
-                        Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, // Resizes with window
+                        AutoSize = true,
                         Text = "True",
-                        MaximumSize = new Size(this.ClientSize.Width - 40, 0),  // Full width minus padding
-                        Width = this.ClientSize.Width - 40,  // Update width initially
                         Location = new Point(10, 60),
                         Tag = 'T',
                     };
                     RadioButton r2 = new RadioButton
                     {
-                        AutoSize = false, // Manual control over size
-                        Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right, // Resizes with window
+                        AutoSize = true,
                         Text = "False",
-                        MaximumSize = new Size(this.ClientSize.Width - 40, 0),  // Full width minus padding
-                        Width = this.ClientSize.Width - 40,  // Update width initially
                         Location = new Point(10, 110),
                         Tag = 'F',
                     };
@@ -91,13 +78,7 @@ namespace e_xam.StudentForms
                 }
                 number++;
                 examQuestionsPanel.Controls.Add(questionPanel);
-                questionPanel.Height = questionPanel.PreferredSize.Height;
 
-                // set height dynamically
-                foreach (Control control in questionPanel.Controls)
-                {
-                    control.Height = control.PreferredSize.Height;
-                }
             }
         }
         private void durationTimer_Tick(object sender, EventArgs e)
