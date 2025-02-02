@@ -59,6 +59,7 @@
             // 
             viewBtn.Anchor = AnchorStyles.None;
             viewBtn.Font = new Font("Segoe UI", 13.8F);
+            viewBtn.ForeColor = Color.DarkViolet;
             viewBtn.Location = new Point(559, 431);
             viewBtn.Name = "viewBtn";
             viewBtn.Size = new Size(115, 45);

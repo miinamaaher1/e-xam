@@ -63,6 +63,7 @@ namespace e_xam
                     {
 
                         Text = "Take",
+                        ForeColor = Color.DarkViolet,
                         Size = new Size(115, 45),
                         Location = new Point(1030, 10),
                         Font = new Font("Segoe UI", 14),
@@ -96,7 +97,7 @@ namespace e_xam
                     Button btnexam = new Button
                     {
 
-                        Text = "missed",
+                        Text = "Missed",
                         Size = new Size(115, 45),
                         Location = new Point(1030, 10),
                         Font = new Font("Segoe UI", 14),
@@ -112,7 +113,7 @@ namespace e_xam
                     Button btnexam = new Button
                     {
 
-                        Text = "view",
+                        Text = "View",
                         Size = new Size(115, 45),
                         Location = new Point(1030, 10),
                         Font = new Font("Segoe UI", 14),

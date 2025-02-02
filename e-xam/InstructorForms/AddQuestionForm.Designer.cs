@@ -224,6 +224,7 @@
             // 
             saveBtn.Anchor = AnchorStyles.None;
             saveBtn.Font = new Font("Segoe UI", 13.8F);
+            saveBtn.ForeColor = Color.DarkViolet;
             saveBtn.Location = new Point(423, 715);
             saveBtn.Margin = new Padding(5);
             saveBtn.Name = "saveBtn";

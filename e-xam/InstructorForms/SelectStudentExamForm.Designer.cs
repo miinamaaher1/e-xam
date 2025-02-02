@@ -60,6 +60,7 @@
             // 
             reviewBtn.Anchor = AnchorStyles.None;
             reviewBtn.Font = new Font("Segoe UI", 13.8F);
+            reviewBtn.ForeColor = Color.DarkViolet;
             reviewBtn.Location = new Point(514, 427);
             reviewBtn.Name = "reviewBtn";
             reviewBtn.Size = new Size(205, 45);

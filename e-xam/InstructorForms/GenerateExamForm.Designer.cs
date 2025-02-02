@@ -166,6 +166,7 @@
             // generateExBtn
             // 
             generateExBtn.Anchor = AnchorStyles.None;
+            generateExBtn.ForeColor = Color.DarkViolet;
             generateExBtn.Location = new Point(496, 586);
             generateExBtn.Margin = new Padding(5);
             generateExBtn.Name = "generateExBtn";

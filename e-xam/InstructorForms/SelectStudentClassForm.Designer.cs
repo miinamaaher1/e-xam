@@ -95,6 +95,7 @@
             // 
             nextBtn.Anchor = AnchorStyles.None;
             nextBtn.Font = new Font("Segoe UI", 13.8F);
+            nextBtn.ForeColor = Color.DarkViolet;
             nextBtn.Location = new Point(559, 478);
             nextBtn.Name = "nextBtn";
             nextBtn.Size = new Size(115, 45);

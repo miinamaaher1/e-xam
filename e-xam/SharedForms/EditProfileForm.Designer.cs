@@ -124,6 +124,7 @@
             // saveGenderBtn
             // 
             saveGenderBtn.Anchor = AnchorStyles.None;
+            saveGenderBtn.ForeColor = Color.DarkViolet;
             saveGenderBtn.Location = new Point(799, 499);
             saveGenderBtn.Name = "saveGenderBtn";
             saveGenderBtn.Size = new Size(115, 45);
@@ -135,6 +136,7 @@
             // saveSsnBtn
             // 
             saveSsnBtn.Anchor = AnchorStyles.None;
+            saveSsnBtn.ForeColor = Color.DarkViolet;
             saveSsnBtn.Location = new Point(799, 407);
             saveSsnBtn.Name = "saveSsnBtn";
             saveSsnBtn.Size = new Size(115, 45);
@@ -146,6 +148,7 @@
             // saveLastNameBtn
             // 
             saveLastNameBtn.Anchor = AnchorStyles.None;
+            saveLastNameBtn.ForeColor = Color.DarkViolet;
             saveLastNameBtn.Location = new Point(799, 314);
             saveLastNameBtn.Name = "saveLastNameBtn";
             saveLastNameBtn.Size = new Size(115, 45);
@@ -157,6 +160,7 @@
             // saveFirstNameBtn
             // 
             saveFirstNameBtn.Anchor = AnchorStyles.None;
+            saveFirstNameBtn.ForeColor = Color.DarkViolet;
             saveFirstNameBtn.Location = new Point(799, 221);
             saveFirstNameBtn.Name = "saveFirstNameBtn";
             saveFirstNameBtn.Size = new Size(115, 45);
@@ -252,7 +256,8 @@
             // saveNewPasswordBtn
             // 
             saveNewPasswordBtn.Anchor = AnchorStyles.None;
-            saveNewPasswordBtn.Location = new Point(799, 315);
+            saveNewPasswordBtn.ForeColor = Color.DarkViolet;
+            saveNewPasswordBtn.Location = new Point(799, 310);
             saveNewPasswordBtn.Name = "saveNewPasswordBtn";
             saveNewPasswordBtn.Size = new Size(115, 45);
             saveNewPasswordBtn.TabIndex = 17;
@@ -263,7 +268,8 @@
             // newUserNameSaveBtn
             // 
             newUserNameSaveBtn.Anchor = AnchorStyles.None;
-            newUserNameSaveBtn.Location = new Point(799, 223);
+            newUserNameSaveBtn.ForeColor = Color.DarkViolet;
+            newUserNameSaveBtn.Location = new Point(799, 218);
             newUserNameSaveBtn.Name = "newUserNameSaveBtn";
             newUserNameSaveBtn.Size = new Size(115, 45);
             newUserNameSaveBtn.TabIndex = 17;
@@ -274,7 +280,7 @@
             // confirmPasswordBx
             // 
             confirmPasswordBx.Anchor = AnchorStyles.None;
-            confirmPasswordBx.Location = new Point(464, 503);
+            confirmPasswordBx.Location = new Point(464, 498);
             confirmPasswordBx.Name = "confirmPasswordBx";
             confirmPasswordBx.PasswordChar = '*';
             confirmPasswordBx.Size = new Size(297, 38);
@@ -283,7 +289,7 @@
             // newPasswordBx
             // 
             newPasswordBx.Anchor = AnchorStyles.None;
-            newPasswordBx.Location = new Point(464, 411);
+            newPasswordBx.Location = new Point(464, 406);
             newPasswordBx.Name = "newPasswordBx";
             newPasswordBx.PasswordChar = '*';
             newPasswordBx.Size = new Size(297, 38);
@@ -292,7 +298,7 @@
             // oldPasswordBx
             // 
             oldPasswordBx.Anchor = AnchorStyles.None;
-            oldPasswordBx.Location = new Point(464, 319);
+            oldPasswordBx.Location = new Point(464, 314);
             oldPasswordBx.Name = "oldPasswordBx";
             oldPasswordBx.PasswordChar = '*';
             oldPasswordBx.Size = new Size(297, 38);
@@ -301,7 +307,7 @@
             // newUserNameBx
             // 
             newUserNameBx.Anchor = AnchorStyles.None;
-            newUserNameBx.Location = new Point(464, 227);
+            newUserNameBx.Location = new Point(464, 222);
             newUserNameBx.Name = "newUserNameBx";
             newUserNameBx.Size = new Size(297, 38);
             newUserNameBx.TabIndex = 13;
@@ -310,7 +316,7 @@
             // 
             confirmPassordLbl.Anchor = AnchorStyles.None;
             confirmPassordLbl.AutoSize = true;
-            confirmPassordLbl.Location = new Point(240, 506);
+            confirmPassordLbl.Location = new Point(240, 501);
             confirmPassordLbl.Name = "confirmPassordLbl";
             confirmPassordLbl.Size = new Size(197, 31);
             confirmPassordLbl.TabIndex = 10;
@@ -320,7 +326,7 @@
             // 
             newPasswordLbl.Anchor = AnchorStyles.None;
             newPasswordLbl.AutoSize = true;
-            newPasswordLbl.Location = new Point(275, 414);
+            newPasswordLbl.Location = new Point(275, 409);
             newPasswordLbl.Name = "newPasswordLbl";
             newPasswordLbl.Size = new Size(162, 31);
             newPasswordLbl.TabIndex = 8;
@@ -330,7 +336,7 @@
             // 
             oldPasswordLbl.Anchor = AnchorStyles.None;
             oldPasswordLbl.AutoSize = true;
-            oldPasswordLbl.Location = new Point(284, 322);
+            oldPasswordLbl.Location = new Point(284, 317);
             oldPasswordLbl.Name = "oldPasswordLbl";
             oldPasswordLbl.Size = new Size(153, 31);
             oldPasswordLbl.TabIndex = 8;
@@ -340,7 +346,7 @@
             // 
             newUserNameLbl.Anchor = AnchorStyles.None;
             newUserNameLbl.AutoSize = true;
-            newUserNameLbl.Location = new Point(310, 230);
+            newUserNameLbl.Location = new Point(310, 225);
             newUserNameLbl.Name = "newUserNameLbl";
             newUserNameLbl.Size = new Size(127, 31);
             newUserNameLbl.TabIndex = 7;

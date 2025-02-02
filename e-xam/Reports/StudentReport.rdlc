@@ -80,7 +80,7 @@
             <Top>1.57583in</Top>
             <Left>0.5in</Left>
             <Height>0.5in</Height>
-            <Width>9in</Width>
+            <Width>7.03333in</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -153,7 +153,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Grade</Value>
+                                  <Value>Percentage</Value>
                                   <Style>
                                     <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -231,7 +231,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!total_grade.Value</Value>
+                                  <Value>=Fields!total_grade.Value.ToString + "%"</Value>
                                   <Style>
                                     <FontSize>14pt</FontSize>
                                   </Style>
@@ -319,11 +319,48 @@
               <BackgroundColor>DarkViolet</BackgroundColor>
             </Style>
           </Rectangle>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>GPA</Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.57583in</Top>
+            <Left>7.60278in</Left>
+            <Height>0.5in</Height>
+            <Width>1.89722in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>3.68333in</Height>
         <Style />
       </Body>
-      <Width>10in</Width>
+      <Width>10.76111in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

@@ -62,6 +62,7 @@
             // 
             viewTrackBtn.Anchor = AnchorStyles.None;
             viewTrackBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            viewTrackBtn.ForeColor = Color.DarkViolet;
             viewTrackBtn.Location = new Point(559, 426);
             viewTrackBtn.Name = "viewTrackBtn";
             viewTrackBtn.Size = new Size(115, 45);

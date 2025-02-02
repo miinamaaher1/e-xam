@@ -67,7 +67,7 @@ namespace e_xam.InstructorForms
             assignExamForm.FormClosed += (s, args) =>
             {
                 // Show the current form again
-                this.Show();
+                this.Close();
             };
             this.Hide();
             assignExamForm.Show();

@@ -78,6 +78,7 @@
             // loginBtn
             // 
             loginBtn.Anchor = AnchorStyles.None;
+            loginBtn.ForeColor = Color.DarkViolet;
             loginBtn.Location = new Point(963, 505);
             loginBtn.Name = "loginBtn";
             loginBtn.Size = new Size(115, 45);

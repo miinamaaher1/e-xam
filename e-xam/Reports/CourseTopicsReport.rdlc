@@ -56,7 +56,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Topic</Value>
+                                  <Value>Topics</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -146,7 +146,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>CourseTopicsDS1</DataSetName>
-            <Top>1.55556in</Top>
+            <Top>2.13889in</Top>
             <Left>0.5in</Left>
             <Height>1in</Height>
             <Width>9in</Width>
@@ -188,8 +188,43 @@
               <BackgroundColor>DarkViolet</BackgroundColor>
             </Style>
           </Rectangle>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Course Name</Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.56944in</Top>
+            <Left>0.5in</Left>
+            <Height>0.5in</Height>
+            <Width>9in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>3.15in</Height>
+        <Height>3.675in</Height>
         <Style />
       </Body>
       <Width>10in</Width>

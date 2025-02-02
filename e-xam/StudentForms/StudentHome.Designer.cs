@@ -42,6 +42,7 @@
             showCoursesItm = new ToolStripMenuItem();
             helpMenu = new ToolStripMenuItem();
             aboutItm = new ToolStripMenuItem();
+            label1 = new Label();
             menuBar.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,11 +82,11 @@
             gpaLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             gpaLbl.AutoSize = true;
             gpaLbl.Font = new Font("Raleway ExtraBold", 28.1999989F, FontStyle.Bold);
-            gpaLbl.Location = new Point(1062, 80);
+            gpaLbl.Location = new Point(984, 80);
             gpaLbl.Name = "gpaLbl";
-            gpaLbl.Size = new Size(126, 65);
+            gpaLbl.Size = new Size(155, 65);
             gpaLbl.TabIndex = 0;
-            gpaLbl.Text = "0.00";
+            gpaLbl.Text = "00.00";
             gpaLbl.TextAlign = ContentAlignment.TopRight;
             // 
             // menuBar
@@ -153,6 +154,19 @@
             aboutItm.Text = "A&bout";
             aboutItm.Click += aboutItm_Click;
             // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Raleway ExtraBold", 28.1999989F, FontStyle.Bold);
+            label1.ForeColor = Color.DarkViolet;
+            label1.Location = new Point(1122, 80);
+            label1.Name = "label1";
+            label1.Size = new Size(66, 65);
+            label1.TabIndex = 0;
+            label1.Text = "%";
+            label1.TextAlign = ContentAlignment.TopRight;
+            // 
             // StudentHome
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
@@ -160,6 +174,7 @@
             ClientSize = new Size(1232, 808);
             Controls.Add(menuBar);
             Controls.Add(trackLbl);
+            Controls.Add(label1);
             Controls.Add(gpaLbl);
             Controls.Add(nameLbl);
             Controls.Add(welcomeLbl);
@@ -192,5 +207,6 @@
         private ToolStripMenuItem helpMenu;
         private ToolStripMenuItem aboutItm;
         private ToolStripMenuItem showCoursesItm;
+        private Label label1;
     }
 }

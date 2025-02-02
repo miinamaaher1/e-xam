@@ -60,6 +60,7 @@
             // 
             viewTopicsBtn.Anchor = AnchorStyles.None;
             viewTopicsBtn.Font = new Font("Segoe UI", 13.8F);
+            viewTopicsBtn.ForeColor = Color.DarkViolet;
             viewTopicsBtn.Location = new Point(535, 425);
             viewTopicsBtn.Name = "viewTopicsBtn";
             viewTopicsBtn.Size = new Size(163, 45);

@@ -110,7 +110,7 @@ namespace e_xam.InstructorForms
                 generateExamReportForm insExamReport = new generateExamReportForm(currentExamId, exam.tfCount, exam.mcqCount, (int)courseCombo.SelectedValue, instId);
                 insExamReport.FormClosed += (s, args) =>
                 {
-                    this.Show();
+                    this.Close();
                 };
                 this.Hide();
                 insExamReport.Show();

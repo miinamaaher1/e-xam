@@ -43,6 +43,7 @@
             // saveExamTracksBtn
             // 
             saveExamTracksBtn.Anchor = AnchorStyles.None;
+            saveExamTracksBtn.ForeColor = Color.DarkViolet;
             saveExamTracksBtn.Location = new Point(421, 674);
             saveExamTracksBtn.Margin = new Padding(5);
             saveExamTracksBtn.Name = "saveExamTracksBtn";

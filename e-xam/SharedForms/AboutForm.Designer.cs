@@ -88,6 +88,7 @@
             // 
             // okBtn
             // 
+            okBtn.ForeColor = Color.DarkViolet;
             okBtn.Location = new Point(969, 612);
             okBtn.Name = "okBtn";
             okBtn.Size = new Size(115, 45);

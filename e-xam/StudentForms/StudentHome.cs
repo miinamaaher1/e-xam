@@ -39,7 +39,7 @@ namespace e_xam
         {
             // insert the show courses (course name and view button) form here
 
-            Studentcourse studentcourse = new Studentcourse(user.id,user.track.id);
+            Studentcourse studentcourse = new Studentcourse(user.id, user.track.id);
             studentcourse.FormClosed += (s, args) =>
             {
                 user = StudentManager.getStudent(user.id);

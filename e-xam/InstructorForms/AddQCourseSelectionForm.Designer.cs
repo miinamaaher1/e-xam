@@ -50,6 +50,7 @@
             // 
             okBtn.Anchor = AnchorStyles.None;
             okBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            okBtn.ForeColor = Color.DarkViolet;
             okBtn.Location = new Point(559, 424);
             okBtn.Name = "okBtn";
             okBtn.Size = new Size(115, 45);
