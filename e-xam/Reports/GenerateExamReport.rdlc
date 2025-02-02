@@ -194,8 +194,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>getExamMcqQuestionsDS1</DataSetName>
-            <Top>2.67778in</Top>
-            <Left>0.5in</Left>
+            <Top>3.24723in</Top>
+            <Left>0.50002in</Left>
             <Height>0.3in</Height>
             <Width>9in</Width>
             <Style>
@@ -309,8 +309,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>getExamTfQuestionsDS1</DataSetName>
-            <Top>1.93889in</Top>
-            <Left>0.50001in</Left>
+            <Top>2.50834in</Top>
+            <Left>0.50003in</Left>
             <Height>0.3in</Height>
             <Width>8.99999in</Width>
             <ZIndex>1</ZIndex>
@@ -342,10 +342,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
-            <Top>1.56944in</Top>
-            <Left>0.50001in</Left>
+            <Top>2.13889in</Top>
+            <Left>0.50003in</Left>
             <Height>0.3in</Height>
-            <Width>2.87498in</Width>
+            <Width>8.99997in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -376,10 +376,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
-            <Top>2.30833in</Top>
-            <Left>0.50001in</Left>
+            <Top>2.87778in</Top>
+            <Left>0.50003in</Left>
             <Height>0.3in</Height>
-            <Width>2.87498in</Width>
+            <Width>8.99997in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -421,8 +421,43 @@
               <BackgroundColor>DarkViolet</BackgroundColor>
             </Style>
           </Rectangle>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Course Name</Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.56944in</Top>
+            <Left>0.50002in</Left>
+            <Height>0.5in</Height>
+            <Width>9in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>3.48833in</Height>
+        <Height>4.04666in</Height>
         <Style>
           <Border>
             <Style>None</Style>

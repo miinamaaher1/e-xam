@@ -1,6 +1,7 @@
 using BLL.Entities;
 using BLL.EntityManagers;
 using e_xam.InstructorForms;
+using e_xam.SharedForms;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 
 namespace e_xam
@@ -144,12 +145,13 @@ namespace e_xam
         private void aboutItm_Click(object sender, EventArgs e)
         {
             // insert the about form here
-            MessageBox.Show("Coming Soon");
-        }
-
-        private void InstructorHome_Load(object sender, EventArgs e)
-        {
-
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.FormClosed += (s, args) =>
+            {
+                this.Show();
+            };
+            this.Hide();
+            aboutForm.Show();
         }
     }
 }

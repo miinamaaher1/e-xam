@@ -1,5 +1,6 @@
 ﻿using BLL.Entities;
 using BLL.EntityManagers;
+using e_xam.SharedForms;
 
 namespace e_xam
 {
@@ -41,6 +42,8 @@ namespace e_xam
             Studentcourse studentcourse = new Studentcourse(user.id,user.track.id);
             studentcourse.FormClosed += (s, args) =>
             {
+                user = StudentManager.getStudent(user.id);
+                gpaLbl.Text = user.gpa.ToString();
                 this.Show();
             };
             this.Hide();
@@ -51,7 +54,13 @@ namespace e_xam
         private void aboutItm_Click(object sender, EventArgs e)
         {
             // insert the about form here
-            MessageBox.Show("Coming Soon");
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.FormClosed += (s, args) =>
+            {
+                this.Show();
+            };
+            this.Hide();
+            aboutForm.Show();
         }
     }
 }
