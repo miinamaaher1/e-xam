@@ -148,54 +148,58 @@
                       <Value>=Fields!question_body.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <TablixHeader>
-                    <Size>4.53334in</Size>
-                    <CellContents>
-                      <Textbox Name="question_body11">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>=RowNumber("question_body1") &amp; ". " &amp;Fields!question_body.Value + " (Degree: " + Fields!mark.Value.ToString() + ")"</Value>
-                                <Style>
-                                  <FontFamily>Segoe UI</FontFamily>
-                                  <FontSize>14pt</FontSize>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style>
-                              <TextAlign>Left</TextAlign>
-                            </Style>
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>question_body11</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>LightGrey</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <VerticalAlign>Middle</VerticalAlign>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="Details2" />
+                      <TablixHeader>
+                        <Size>4.53334in</Size>
+                        <CellContents>
+                          <Textbox Name="question_body11">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=RunningValue(Fields!question_body.Value, CountDistinct, "getExamMcqQuestionsDS1") &amp; ". " &amp; Fields!question_body.Value &amp; " (Degree: " &amp; Fields!mark.Value.ToString() &amp; ")"</Value>
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <FontSize>14pt</FontSize>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Left</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>question_body11</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="Details2" />
+                        </TablixMember>
+                      </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>getExamMcqQuestionsDS1</DataSetName>
-            <Top>3.24723in</Top>
-            <Left>0.50002in</Left>
+            <Top>3.80499in</Top>
+            <Left>0.50276in</Left>
             <Height>0.3in</Height>
             <Width>9in</Width>
             <Style>
@@ -309,8 +313,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>getExamTfQuestionsDS1</DataSetName>
-            <Top>2.50834in</Top>
-            <Left>0.50003in</Left>
+            <Top>3.0661in</Top>
+            <Left>0.50277in</Left>
             <Height>0.3in</Height>
             <Width>8.99999in</Width>
             <ZIndex>1</ZIndex>
@@ -342,8 +346,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
-            <Top>2.13889in</Top>
-            <Left>0.50003in</Left>
+            <Top>2.68611in</Top>
+            <Left>0.50279in</Left>
             <Height>0.3in</Height>
             <Width>8.99997in</Width>
             <ZIndex>2</ZIndex>
@@ -376,8 +380,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
-            <Top>2.87778in</Top>
-            <Left>0.50003in</Left>
+            <Top>3.43554in</Top>
+            <Left>0.50277in</Left>
             <Height>0.3in</Height>
             <Width>8.99997in</Width>
             <ZIndex>3</ZIndex>
@@ -428,7 +432,21 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Course Name</Value>
+                    <Value>Duration: </Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!duration.Value</Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> mins</Value>
                     <Style>
                       <FontSize>24pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -439,15 +457,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.56944in</Top>
-            <Left>0.50002in</Left>
+            <Top>2.14444in</Top>
+            <Left>5.0389in</Left>
             <Height>0.5in</Height>
-            <Width>4.4639in</Width>
+            <Width>4.46392in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
               <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
@@ -463,7 +481,51 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Exam Title</Value>
+                    <Value>=Parameters!examTitle.Value</Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.63056in</Top>
+            <Left>0.50279in</Left>
+            <Height>0.5in</Height>
+            <Width>4.46664in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Course : </Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!courseName.Value</Value>
                     <Style>
                       <FontSize>24pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -474,15 +536,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.56944in</Top>
-            <Left>5.03336in</Left>
+            <Top>2.14444in</Top>
+            <Left>0.50279in</Left>
             <Height>0.5in</Height>
             <Width>4.46664in</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
               <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
@@ -492,14 +554,14 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>4.04666in</Height>
+        <Height>4.23833in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>10in</Width>
+      <Width>10.50002in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -510,7 +572,15 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="examId">
+    <ReportParameter Name="courseName">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="examTitle">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="duration">
       <DataType>Integer</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -523,7 +593,17 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>examId</ParameterName>
+          <ParameterName>courseName</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>examTitle</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>duration</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

@@ -195,7 +195,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Course Name</Value>
+                    <Value>Course : </Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!courseName.Value</Value>
                     <Style>
                       <FontSize>24pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -238,8 +245,8 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="crsId">
-      <DataType>Integer</DataType>
+    <ReportParameter Name="courseName">
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -251,7 +258,7 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>crsId</ParameterName>
+          <ParameterName>courseName</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

@@ -7,10 +7,12 @@ namespace e_xam.InstructorForms
     public partial class CourseTopicsReportForm : Form
     {
         int courseId;
-        public CourseTopicsReportForm(int _courseId)
+        string courseName;
+        public CourseTopicsReportForm(int _courseId, string _courseName)
         {
             InitializeComponent();
             courseId = _courseId;
+            courseName = _courseName;
         }
 
         private void CourseTopicsReportForm_Load(object sender, EventArgs e)
@@ -18,7 +20,7 @@ namespace e_xam.InstructorForms
             //List<string> topics = CourseManager.getCourseTopics(courseId);
             DataTable topics = CourseManager.getCourseTopics(courseId);
             CourseTopicsRV.LocalReport.ReportPath = @"Reports\CourseTopicsReport.rdlc";
-            ReportParameter reportParameter = new ReportParameter("crsId", courseId.ToString());
+            ReportParameter reportParameter = new ReportParameter("courseName", courseName);
             CourseTopicsRV.LocalReport.SetParameters(reportParameter);
             ReportDataSource reportDataSource = new ReportDataSource("CourseTopicsDS1", topics);
             CourseTopicsRV.LocalReport.DataSources.Add(reportDataSource);
