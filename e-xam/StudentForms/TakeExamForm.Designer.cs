@@ -67,7 +67,7 @@
             timerLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             timerLbl.AutoSize = true;
             timerLbl.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            timerLbl.ForeColor = Color.Purple;
+            timerLbl.ForeColor = Color.DarkViolet;
             timerLbl.Location = new Point(1086, 9);
             timerLbl.Name = "timerLbl";
             timerLbl.Size = new Size(134, 55);
@@ -77,7 +77,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom;
-            button1.ForeColor = Color.Purple;
+            button1.ForeColor = Color.DarkViolet;
             button1.Location = new Point(559, 750);
             button1.Name = "button1";
             button1.Size = new Size(115, 45);
