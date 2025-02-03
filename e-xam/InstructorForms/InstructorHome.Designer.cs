@@ -45,6 +45,7 @@
             answerSheetItm = new ToolStripMenuItem();
             studentStatsItm = new ToolStripMenuItem();
             trackStatsItm = new ToolStripMenuItem();
+            coursesExamsItm = new ToolStripMenuItem();
             helpMenu = new ToolStripMenuItem();
             aboutItm = new ToolStripMenuItem();
             menuBar.SuspendLayout();
@@ -54,10 +55,10 @@
             // 
             welcomeLbl.Anchor = AnchorStyles.None;
             welcomeLbl.AutoSize = true;
-            welcomeLbl.Font = new Font("Raleway ExtraBold", 41.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            welcomeLbl.Font = new Font("Microsoft Sans Serif", 41.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welcomeLbl.Location = new Point(45, 53);
             welcomeLbl.Name = "welcomeLbl";
-            welcomeLbl.Size = new Size(489, 97);
+            welcomeLbl.Size = new Size(469, 79);
             welcomeLbl.TabIndex = 0;
             welcomeLbl.Text = "Welcome, Dr.";
             // 
@@ -65,21 +66,21 @@
             // 
             nameLbl.Anchor = AnchorStyles.None;
             nameLbl.AutoSize = true;
-            nameLbl.Font = new Font("Raleway ExtraBold", 41.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameLbl.Font = new Font("Microsoft Sans Serif", 41.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameLbl.Location = new Point(45, 150);
             nameLbl.Name = "nameLbl";
-            nameLbl.Size = new Size(458, 97);
+            nameLbl.Size = new Size(408, 79);
             nameLbl.TabIndex = 0;
             nameLbl.Text = "placeholder";
             // 
             // trackLbl
             // 
             trackLbl.AutoSize = true;
-            trackLbl.Font = new Font("Raleway ExtraBold", 28.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            trackLbl.Font = new Font("Microsoft Sans Serif", 28.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
             trackLbl.Location = new Point(51, 276);
             trackLbl.Name = "trackLbl";
             trackLbl.RightToLeft = RightToLeft.No;
-            trackLbl.Size = new Size(139, 65);
+            trackLbl.Size = new Size(126, 54);
             trackLbl.TabIndex = 0;
             trackLbl.Text = "Dept";
             // 
@@ -136,7 +137,7 @@
             // 
             // reportsMenu
             // 
-            reportsMenu.DropDownItems.AddRange(new ToolStripItem[] { courseDetailsItm, instructorClassesItm, answerSheetItm, studentStatsItm, trackStatsItm });
+            reportsMenu.DropDownItems.AddRange(new ToolStripItem[] { courseDetailsItm, instructorClassesItm, answerSheetItm, studentStatsItm, trackStatsItm, coursesExamsItm });
             reportsMenu.Name = "reportsMenu";
             reportsMenu.Size = new Size(74, 24);
             reportsMenu.Text = "&Reports";
@@ -144,37 +145,44 @@
             // courseDetailsItm
             // 
             courseDetailsItm.Name = "courseDetailsItm";
-            courseDetailsItm.Size = new Size(197, 26);
+            courseDetailsItm.Size = new Size(224, 26);
             courseDetailsItm.Text = "&Course Details";
             courseDetailsItm.Click += courseDetailsItm_Click;
             // 
             // instructorClassesItm
             // 
             instructorClassesItm.Name = "instructorClassesItm";
-            instructorClassesItm.Size = new Size(197, 26);
+            instructorClassesItm.Size = new Size(224, 26);
             instructorClassesItm.Text = "&My Classes";
             instructorClassesItm.Click += instructorClassesItm_Click;
             // 
             // answerSheetItm
             // 
             answerSheetItm.Name = "answerSheetItm";
-            answerSheetItm.Size = new Size(197, 26);
+            answerSheetItm.Size = new Size(224, 26);
             answerSheetItm.Text = "&Review Answers";
             answerSheetItm.Click += answerSheetItm_Click;
             // 
             // studentStatsItm
             // 
             studentStatsItm.Name = "studentStatsItm";
-            studentStatsItm.Size = new Size(197, 26);
+            studentStatsItm.Size = new Size(224, 26);
             studentStatsItm.Text = "&Student Stats";
             studentStatsItm.Click += studentStatsItm_Click;
             // 
             // trackStatsItm
             // 
             trackStatsItm.Name = "trackStatsItm";
-            trackStatsItm.Size = new Size(197, 26);
+            trackStatsItm.Size = new Size(224, 26);
             trackStatsItm.Text = "&Track Stats";
             trackStatsItm.Click += trackStatsItm_Click;
+            // 
+            // coursesExamsItm
+            // 
+            coursesExamsItm.Name = "coursesExamsItm";
+            coursesExamsItm.Size = new Size(224, 26);
+            coursesExamsItm.Text = "Course Exams";
+            coursesExamsItm.Click += coursesExamsItm_Click;
             // 
             // helpMenu
             // 
@@ -233,5 +241,6 @@
         private ToolStripMenuItem generateExamItm;
         private ToolStripMenuItem exitItm;
         private ToolStripMenuItem editProfileItm;
+        private ToolStripMenuItem coursesExamsItm;
     }
 }

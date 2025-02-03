@@ -108,5 +108,29 @@ namespace BLL.EntityManagers
             dict.Add("@mcqCount", _exam.mcqCount);
             return (int)( dBManager.executeScaler("generateAnotherExamQ", dict));
         }
+        public static void getExamCourseTitle(int _examId , out string _crsName , out string _examTile , out int _duration)
+        {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("@examId", _examId);
+            DataTable dt= dBManager.executeDataTable("getExamCourseTitle", dict);
+
+            _examTile = Convert.ToString( dt.Rows[0]["title"]);
+            _crsName = Convert.ToString(dt.Rows[0]["name"]);
+            _duration = Convert.ToInt32(dt.Rows[0]["duration"]);
+
+        }
+        public static List<int> GetExamsIdByCrsId(int _courseId)
+        {
+            List<int> examsId = new List<int>();
+
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("@courseId", _courseId);
+            DataTable dt = dBManager.executeDataTable("GetExamsIdByCrsId", dict);
+
+            foreach (DataRow dr in dt.Rows)
+                examsId.Add(Convert.ToInt32(dr["id"]));
+    
+            return examsId;
+        }
     }
 }

@@ -153,5 +153,20 @@ namespace e_xam
             this.Hide();
             aboutForm.Show();
         }
+
+
+
+        private void coursesExamsItm_Click(object sender, EventArgs e)
+        {
+            SelectExamForm selectExamForm = new SelectExamForm(user.id);
+
+            selectExamForm.FormClosed += (s, args) =>
+            {
+                // Show the current form again
+                this.Show();
+            };
+            this.Hide();
+            selectExamForm.Show();
+        }
     }
 }

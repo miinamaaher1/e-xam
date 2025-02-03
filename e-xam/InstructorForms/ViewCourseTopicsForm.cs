@@ -42,8 +42,9 @@ namespace e_xam.InstructorForms
         {
             if (courseCombo.SelectedIndex != -1)
             {
+                Course c= (Course)courseCombo.SelectedItem;
 
-                CourseTopicsReportForm courseTopicsReportForm = new CourseTopicsReportForm((int)courseCombo.SelectedValue);
+                CourseTopicsReportForm courseTopicsReportForm = new CourseTopicsReportForm(c.id,c.name);
                 // Subscribe to the FormClosed event
                 courseTopicsReportForm.FormClosed += (s, args) =>
                 {
