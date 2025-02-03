@@ -98,10 +98,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="ReviewAnswersDSC.Designer.cs">
+    <Compile Update="reviewAnswersDSC.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ReviewAnswersDSC.xsd</DependentUpon>
+      <DependentUpon>reviewAnswersDSC.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -137,9 +137,9 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>miinamaaher_SampleDBDataSet2.Designer.cs</LastGenOutput>
     </None>
-    <None Update="ReviewAnswersDSC.xsd">
+    <None Update="reviewAnswersDSC.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReviewAnswersDSC.Designer.cs</LastGenOutput>
+      <LastGenOutput>reviewAnswersDSC.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

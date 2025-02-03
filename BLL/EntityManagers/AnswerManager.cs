@@ -42,5 +42,37 @@ namespace BLL.EntityManagers
 
             return table;
         }
+
+        public static List<ReviewAnswers> reviewStudentAnswers(int _examId, int _stdId, char _type)
+        {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+
+            parameters.Add("@ex_id", _examId);
+            parameters.Add("@std_id", _stdId);
+
+            DataTable dt = dBManager.executeDataTable("reviewStudentAnswers", parameters);
+
+            List<ReviewAnswers> answerSheet = new List<ReviewAnswers>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (Convert.ToChar(dr["QuestionType"]) == _type)
+                {
+                    ReviewAnswers answer = new ReviewAnswers
+                    {
+                        FirstName = Convert.ToString(dr["FirstName"]),
+                        LastName = Convert.ToString(dr["LastName"]),
+                        Score = Convert.ToDecimal(dr["Score"] == DBNull.Value? 0: dr["Score"]),
+                        QuestionBody = Convert.ToString(dr["QuestionBody"]),
+                        OptionNum = Convert.ToChar(dr["OptionNum"] == DBNull.Value? '\0': dr["OptionNum"]),
+                        OptionBody = Convert.ToString(dr["OptionBody"] == DBNull.Value? "\0": dr["OptionBody"]),
+                        StudentAnswer = Convert.ToChar(dr["StudentAnswer"] == DBNull.Value ? '\0' : dr["StudentAnswer"]),
+                        ModelAnswer = Convert.ToChar(dr["ModelAnswer"])
+                    };
+                    answerSheet.Add(answer);
+                }
+            }
+            return answerSheet;
+        }
     }
 }
