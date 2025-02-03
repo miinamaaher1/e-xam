@@ -57,42 +57,43 @@ namespace BLL.EntityManagers
         
         public static Student getStudentStats(int _id)
         {
+
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@id", _id);
 
-            DataTable dt = dBManager.executeDataTable("getStudentStats", parameters);
+            int stud_exist = (int)dBManager.executeScaler("checkStudent", parameters);
 
-            if (dt.Rows.Count == 0)
+            if(stud_exist == 0)
             {
                 return null;
             }
-            else
+
+            DataTable dt = dBManager.executeDataTable("getStudentStats", parameters);
+
+            Student student = new Student();
+
+            student.firstName = Convert.ToString(dt.Rows[0]["first_name"]);
+            student.lastName = Convert.ToString(dt.Rows[0]["last_name"]);
+            student.gpa = Convert.ToDecimal(dt.Rows[0]["gpa"]);
+
+            foreach (DataRow dr in dt.Rows)
             {
-                Student student = new Student();
-
-                student.firstName = Convert.ToString(dt.Rows[0]["first_name"]);
-                student.lastName = Convert.ToString(dt.Rows[0]["last_name"]);
-                student.gpa = Convert.ToDecimal(dt.Rows[0]["gpa"]);
-
-                foreach (DataRow dr in dt.Rows)
+                if (student.courseGrades == null)
                 {
-                    if (student.courseGrades == null)
-                    {
-                        student.courseGrades = new();
-                    }
-
-                    student.courseGrades.Add
-                    (
-                        new Course 
-                        {
-                            name = Convert.ToString(dr["course_name"]) 
-                        }
-                        , Convert.ToDecimal(dr["total_grade"])
-                    );
+                    student.courseGrades = new();
                 }
 
-                return student;
+                student.courseGrades.Add
+                (
+                    new Course
+                    {
+                        name = Convert.ToString(dr["course_name"])
+                    }
+                    , dr["total_grade"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["total_grade"])
+                );
             }
+
+            return student;
         }
 
         public static List<StudentExam> getStudetExams(int _studentid, int _courseid, int _trakid)

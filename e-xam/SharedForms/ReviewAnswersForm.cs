@@ -6,7 +6,7 @@ namespace e_xam
 {
     public partial class ReviewAnswersForm : Form
     {
-        Exam exam;
+        StudentExam std_exam;
         int examId;
         int studentId;
         public ReviewAnswersForm(int _studentId, int _examId)
@@ -19,10 +19,10 @@ namespace e_xam
 
         private void ReviewAnswersForm_Load(object sender, EventArgs e)
         {
-            exam = InstructorManager.reviewStudentAnswers(examId, studentId);
-            List<ReviewAnswers> reviewAns = new List<ReviewAnswers>();
+            std_exam = InstructorManager.reviewStudentAnswers(examId, studentId);
+            List<ReviewAnswer> reviewAns = new List<ReviewAnswer>();
 
-            foreach (Question question in exam.questions)
+            foreach (Question question in std_exam.exam.questions)
             {
                 if (question.type == 'm')
                 {
@@ -30,7 +30,7 @@ namespace e_xam
                     {
                         reviewAns.Add
                          (
-                               new ReviewAnswers
+                               new ReviewAnswer
                                {
                                    Option = (char)option.num,
                                    OptionBody = option.body,
@@ -47,7 +47,7 @@ namespace e_xam
                 {
                     reviewAns.Add
                     (
-                            new ReviewAnswers
+                            new ReviewAnswer
                             {
                                 Option = '1',
                                 OptionBody = "True",
@@ -59,7 +59,7 @@ namespace e_xam
 
                     reviewAns.Add
                     (
-                            new ReviewAnswers
+                            new ReviewAnswer
                             {
                                 Option = '2',
                                 OptionBody = "False",
@@ -72,10 +72,14 @@ namespace e_xam
                 }
             }
 
+            reviewAns[0].first_name = std_exam.student.firstName;
+            reviewAns[0].last_name = std_exam.student.lastName;
+            reviewAns[0].score = std_exam.grade;
+
             reviewAnswersRV.LocalReport.ReportPath = @"Reports\ReviewAnswersReport.rdlc";
 
             ReportParameter studentIdParam = new ReportParameter("ex_id",studentId.ToString());
-            ReportParameter examIdParam = new ReportParameter("std_id", exam.id.ToString());
+            ReportParameter examIdParam = new ReportParameter("std_id", examId.ToString());
 
             reviewAnswersRV.LocalReport.SetParameters(studentIdParam);
             reviewAnswersRV.LocalReport.SetParameters(examIdParam);

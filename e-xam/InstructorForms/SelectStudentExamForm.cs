@@ -21,7 +21,7 @@ namespace e_xam
 
             examBx.Items.Clear();
             examBx.DataSource = exams;
-            examBx.DisplayMember = "ToString";
+            //examBx.DisplayMember = "ToString";
         }
 
         private void reviewBtn_Click(object sender, EventArgs e)

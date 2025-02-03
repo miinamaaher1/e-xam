@@ -20,9 +20,9 @@ namespace e_xam
                 MessageBox.Show("Student Not Found!");
                 return;
             }
+
             else
             {
-
                 StudentStatsReport studentReport = new StudentStatsReport(student);
 
                 // Subscribe to the FormClosed event

@@ -9,19 +9,23 @@ namespace e_xam
         public Student student;
         public StudentStatsReport(Student _student)
         {
-            InitializeComponent();
             student = _student;
+            InitializeComponent();
         }
 
         private void StudentReport_Load(object sender, EventArgs e)
         {
-            List<CourseReport> courseReportList = student.courseGrades
-            .Select(course => new CourseReport
+            List<StudentReport> studentReports = student.courseGrades
+            .Select(course => new StudentReport
             {
                 course_name = course.Key.name,
                 total_grade = course.Value
             })
             .ToList();
+
+            studentReports[0].first_name = student.firstName;
+            studentReports[0].last_name = student.lastName;
+            studentReports[0].gpa = (decimal)student.gpa;
 
             studentStatsRV.LocalReport.ReportPath = @"Reports\StudentReport.rdlc";
 
@@ -29,7 +33,7 @@ namespace e_xam
 
             studentStatsRV.LocalReport.SetParameters(studentIdParam);
 
-            ReportDataSource studentReportDataSource = new ReportDataSource("StudentStatsDS", courseReportList);
+            ReportDataSource studentReportDataSource = new ReportDataSource("StudentStatsDS", studentReports);
 
             studentStatsRV.LocalReport.DataSources.Add(studentReportDataSource);
 

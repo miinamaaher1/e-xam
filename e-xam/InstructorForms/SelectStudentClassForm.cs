@@ -32,9 +32,6 @@ namespace e_xam
 
             List<Student> studentList = InstructorManager.getTrackStudents(selectedTrack);
 
-            //studentBx.Items.Clear();
-            //studentBx.Text = " ";
-
             studentBx.DataSource = studentList;
             studentBx.DisplayMember = "ToString";
 
@@ -44,7 +41,7 @@ namespace e_xam
         {
             Student selectedStudent = (Student)studentBx.SelectedItem;
 
-            List<Exam> exams = StudentManager.getStudentCourseExams(selectedStudent.id, selectedCourseId);
+            List<Exam> exams = StudentManager.getStudentCourseExams(selectedCourseId, selectedStudent.id);
 
             if (exams.Count == 0)
             {

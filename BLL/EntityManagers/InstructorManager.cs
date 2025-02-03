@@ -96,8 +96,9 @@ namespace BLL.EntityManagers
             return studentList;
         }
 
-        public static Exam reviewStudentAnswers(int _examId, int _stdId)
+        public static StudentExam reviewStudentAnswers(int _examId, int _stdId)
         {
+
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
             parameters.Add("@ex_id", _examId);
@@ -105,7 +106,17 @@ namespace BLL.EntityManagers
 
             DataTable dt = dBManager.executeDataTable("reviewStudentAnswers", parameters);
 
-            Exam exam = new Exam
+            StudentExam stdExam = new StudentExam();
+
+            stdExam.student = new Student
+            {
+                firstName = Convert.ToString(dt.Rows[0]["first_name"]),
+                lastName = Convert.ToString(dt.Rows[0]["last_name"]),
+            };
+
+            stdExam.grade = Convert.ToDecimal(dt.Rows[0]["score"]);
+
+            stdExam.exam = new Exam
             {
                 questions = new List<Question>()
             };
@@ -116,7 +127,7 @@ namespace BLL.EntityManagers
             {
                 if (q_ids.Contains(Convert.ToInt32(dr["id"])))
                 {
-                    foreach (Question q in exam.questions)
+                    foreach (Question q in stdExam.exam.questions)
                     {
                         if (q.id == Convert.ToInt32(dr["id"]))
                         {
@@ -149,10 +160,12 @@ namespace BLL.EntityManagers
                             body = Convert.ToString(dr["OptionBody"])
                         });
                     };
-                    exam.questions.Add(q);
+                    stdExam.exam.questions.Add(q);
                 }
             }
-            return exam;
+            
+            return stdExam;
+
         }
     }
 }
