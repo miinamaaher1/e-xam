@@ -18,9 +18,6 @@ namespace e_xam
 #pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
             Application.SetColorMode(SystemColorMode.System);
 #pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-            //Application.Run(new generateExamReportForm(42,3,4,1009, 10062));
-            //Application.Run(new CourseTopicsReportForm(1009, "oop"));
-            //Application.Run(new SelectExamForm(10062));
             Application.Run(new LoginForm());
         }
     }

@@ -20,9 +20,9 @@ namespace e_xam {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ReviewAnswersDSC")]
+    [global::System.Xml.Serialization.XmlRootAttribute("reviewAnswersDSC")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ReviewAnswersDSC : global::System.Data.DataSet {
+    public partial class reviewAnswersDSC : global::System.Data.DataSet {
         
         private reviewStudentAnswersDataTable tablereviewStudentAnswers;
         
@@ -30,7 +30,7 @@ namespace e_xam {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ReviewAnswersDSC() {
+        public reviewAnswersDSC() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace e_xam {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [System.ObsoleteAttribute("This API supports obsolete formatter-based serialization. It should not be called" +
             " or extended by application code.", DiagnosticId="SYSLIB0051")]
-        protected ReviewAnswersDSC(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected reviewAnswersDSC(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -129,7 +129,7 @@ namespace e_xam {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ReviewAnswersDSC cln = ((ReviewAnswersDSC)(base.Clone()));
+            reviewAnswersDSC cln = ((reviewAnswersDSC)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -201,9 +201,9 @@ namespace e_xam {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ReviewAnswersDSC";
+            this.DataSetName = "reviewAnswersDSC";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ReviewAnswersDSC.xsd";
+            this.Namespace = "http://tempuri.org/reviewAnswersDSC.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablereviewStudentAnswers = new reviewStudentAnswersDataTable();
@@ -227,7 +227,7 @@ namespace e_xam {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ReviewAnswersDSC ds = new ReviewAnswersDSC();
+            reviewAnswersDSC ds = new reviewAnswersDSC();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -281,17 +281,23 @@ namespace e_xam {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class reviewStudentAnswersDataTable : global::System.Data.TypedTableBase<reviewStudentAnswersRow> {
             
+            private global::System.Data.DataColumn columnFirstName;
+            
+            private global::System.Data.DataColumn columnLastName;
+            
+            private global::System.Data.DataColumn columnScore;
+            
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnQuestion;
+            private global::System.Data.DataColumn columnQuestionBody;
             
-            private global::System.Data.DataColumn columntype;
+            private global::System.Data.DataColumn columnQuestionType;
             
             private global::System.Data.DataColumn columnStudentAnswer;
             
-            private global::System.Data.DataColumn columnRightAnswer;
+            private global::System.Data.DataColumn columnModelAnswer;
             
-            private global::System.Data.DataColumn columnOption;
+            private global::System.Data.DataColumn columnOptionNum;
             
             private global::System.Data.DataColumn columnOptionBody;
             
@@ -332,6 +338,30 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FirstNameColumn {
+                get {
+                    return this.columnFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LastNameColumn {
+                get {
+                    return this.columnLastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ScoreColumn {
+                get {
+                    return this.columnScore;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn idColumn {
                 get {
                     return this.columnid;
@@ -340,17 +370,17 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn QuestionColumn {
+            public global::System.Data.DataColumn QuestionBodyColumn {
                 get {
-                    return this.columnQuestion;
+                    return this.columnQuestionBody;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn typeColumn {
+            public global::System.Data.DataColumn QuestionTypeColumn {
                 get {
-                    return this.columntype;
+                    return this.columnQuestionType;
                 }
             }
             
@@ -364,17 +394,17 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn RightAnswerColumn {
+            public global::System.Data.DataColumn ModelAnswerColumn {
                 get {
-                    return this.columnRightAnswer;
+                    return this.columnModelAnswer;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OptionColumn {
+            public global::System.Data.DataColumn OptionNumColumn {
                 get {
-                    return this.columnOption;
+                    return this.columnOptionNum;
                 }
             }
             
@@ -423,15 +453,18 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public reviewStudentAnswersRow AddreviewStudentAnswersRow(string Question, string type, string StudentAnswer, string RightAnswer, string Option, string OptionBody) {
+            public reviewStudentAnswersRow AddreviewStudentAnswersRow(string FirstName, string LastName, double Score, string QuestionBody, string QuestionType, string StudentAnswer, string ModelAnswer, string OptionNum, string OptionBody) {
                 reviewStudentAnswersRow rowreviewStudentAnswersRow = ((reviewStudentAnswersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        FirstName,
+                        LastName,
+                        Score,
                         null,
-                        Question,
-                        type,
+                        QuestionBody,
+                        QuestionType,
                         StudentAnswer,
-                        RightAnswer,
-                        Option,
+                        ModelAnswer,
+                        OptionNum,
                         OptionBody};
                 rowreviewStudentAnswersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowreviewStudentAnswersRow);
@@ -455,43 +488,57 @@ namespace e_xam {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnFirstName = base.Columns["FirstName"];
+                this.columnLastName = base.Columns["LastName"];
+                this.columnScore = base.Columns["Score"];
                 this.columnid = base.Columns["id"];
-                this.columnQuestion = base.Columns["Question"];
-                this.columntype = base.Columns["type"];
+                this.columnQuestionBody = base.Columns["QuestionBody"];
+                this.columnQuestionType = base.Columns["QuestionType"];
                 this.columnStudentAnswer = base.Columns["StudentAnswer"];
-                this.columnRightAnswer = base.Columns["RightAnswer"];
-                this.columnOption = base.Columns["Option"];
+                this.columnModelAnswer = base.Columns["ModelAnswer"];
+                this.columnOptionNum = base.Columns["OptionNum"];
                 this.columnOptionBody = base.Columns["OptionBody"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
+                this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastName);
+                this.columnScore = new global::System.Data.DataColumn("Score", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnScore);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnQuestion = new global::System.Data.DataColumn("Question", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuestion);
-                this.columntype = new global::System.Data.DataColumn("type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntype);
+                this.columnQuestionBody = new global::System.Data.DataColumn("QuestionBody", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestionBody);
+                this.columnQuestionType = new global::System.Data.DataColumn("QuestionType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestionType);
                 this.columnStudentAnswer = new global::System.Data.DataColumn("StudentAnswer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStudentAnswer);
-                this.columnRightAnswer = new global::System.Data.DataColumn("RightAnswer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRightAnswer);
-                this.columnOption = new global::System.Data.DataColumn("Option", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOption);
+                this.columnModelAnswer = new global::System.Data.DataColumn("ModelAnswer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModelAnswer);
+                this.columnOptionNum = new global::System.Data.DataColumn("OptionNum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionNum);
                 this.columnOptionBody = new global::System.Data.DataColumn("OptionBody", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOptionBody);
+                this.columnFirstName.AllowDBNull = false;
+                this.columnFirstName.MaxLength = 20;
+                this.columnLastName.AllowDBNull = false;
+                this.columnLastName.MaxLength = 20;
+                this.columnScore.ReadOnly = true;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
-                this.columnQuestion.AllowDBNull = false;
-                this.columnQuestion.MaxLength = 1000;
-                this.columntype.AllowDBNull = false;
-                this.columntype.MaxLength = 1;
+                this.columnQuestionBody.AllowDBNull = false;
+                this.columnQuestionBody.MaxLength = 1000;
+                this.columnQuestionType.AllowDBNull = false;
+                this.columnQuestionType.MaxLength = 1;
                 this.columnStudentAnswer.MaxLength = 1;
-                this.columnRightAnswer.AllowDBNull = false;
-                this.columnRightAnswer.MaxLength = 1;
-                this.columnOption.MaxLength = 1;
+                this.columnModelAnswer.AllowDBNull = false;
+                this.columnModelAnswer.MaxLength = 1;
+                this.columnOptionNum.MaxLength = 1;
                 this.columnOptionBody.MaxLength = 1000;
             }
             
@@ -560,7 +607,7 @@ namespace e_xam {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ReviewAnswersDSC ds = new ReviewAnswersDSC();
+                reviewAnswersDSC ds = new reviewAnswersDSC();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -635,6 +682,44 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FirstName {
+                get {
+                    return ((string)(this[this.tablereviewStudentAnswers.FirstNameColumn]));
+                }
+                set {
+                    this[this.tablereviewStudentAnswers.FirstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string LastName {
+                get {
+                    return ((string)(this[this.tablereviewStudentAnswers.LastNameColumn]));
+                }
+                set {
+                    this[this.tablereviewStudentAnswers.LastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double Score {
+                get {
+                    try {
+                        return ((double)(this[this.tablereviewStudentAnswers.ScoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Score\' in table \'reviewStudentAnswers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereviewStudentAnswers.ScoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int id {
                 get {
                     return ((int)(this[this.tablereviewStudentAnswers.idColumn]));
@@ -646,23 +731,23 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Question {
+            public string QuestionBody {
                 get {
-                    return ((string)(this[this.tablereviewStudentAnswers.QuestionColumn]));
+                    return ((string)(this[this.tablereviewStudentAnswers.QuestionBodyColumn]));
                 }
                 set {
-                    this[this.tablereviewStudentAnswers.QuestionColumn] = value;
+                    this[this.tablereviewStudentAnswers.QuestionBodyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string type {
+            public string QuestionType {
                 get {
-                    return ((string)(this[this.tablereviewStudentAnswers.typeColumn]));
+                    return ((string)(this[this.tablereviewStudentAnswers.QuestionTypeColumn]));
                 }
                 set {
-                    this[this.tablereviewStudentAnswers.typeColumn] = value;
+                    this[this.tablereviewStudentAnswers.QuestionTypeColumn] = value;
                 }
             }
             
@@ -684,28 +769,28 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string RightAnswer {
+            public string ModelAnswer {
                 get {
-                    return ((string)(this[this.tablereviewStudentAnswers.RightAnswerColumn]));
+                    return ((string)(this[this.tablereviewStudentAnswers.ModelAnswerColumn]));
                 }
                 set {
-                    this[this.tablereviewStudentAnswers.RightAnswerColumn] = value;
+                    this[this.tablereviewStudentAnswers.ModelAnswerColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Option {
+            public string OptionNum {
                 get {
                     try {
-                        return ((string)(this[this.tablereviewStudentAnswers.OptionColumn]));
+                        return ((string)(this[this.tablereviewStudentAnswers.OptionNumColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Option\' in table \'reviewStudentAnswers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionNum\' in table \'reviewStudentAnswers\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablereviewStudentAnswers.OptionColumn] = value;
+                    this[this.tablereviewStudentAnswers.OptionNumColumn] = value;
                 }
             }
             
@@ -727,6 +812,18 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsScoreNull() {
+                return this.IsNull(this.tablereviewStudentAnswers.ScoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetScoreNull() {
+                this[this.tablereviewStudentAnswers.ScoreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsStudentAnswerNull() {
                 return this.IsNull(this.tablereviewStudentAnswers.StudentAnswerColumn);
             }
@@ -739,14 +836,14 @@ namespace e_xam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsOptionNull() {
-                return this.IsNull(this.tablereviewStudentAnswers.OptionColumn);
+            public bool IsOptionNumNull() {
+                return this.IsNull(this.tablereviewStudentAnswers.OptionNumColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetOptionNull() {
-                this[this.tablereviewStudentAnswers.OptionColumn] = global::System.Convert.DBNull;
+            public void SetOptionNumNull() {
+                this[this.tablereviewStudentAnswers.OptionNumColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -797,7 +894,7 @@ namespace e_xam {
         }
     }
 }
-namespace e_xam.ReviewAnswersDSCTableAdapters {
+namespace e_xam.reviewAnswersDSCTableAdapters {
     
     
     /// <summary>
@@ -921,12 +1018,15 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "reviewStudentAnswers";
+            tableMapping.ColumnMappings.Add("FirstName", "FirstName");
+            tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("Score", "Score");
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("Question", "Question");
-            tableMapping.ColumnMappings.Add("type", "type");
+            tableMapping.ColumnMappings.Add("QuestionBody", "QuestionBody");
+            tableMapping.ColumnMappings.Add("QuestionType", "QuestionType");
             tableMapping.ColumnMappings.Add("StudentAnswer", "StudentAnswer");
-            tableMapping.ColumnMappings.Add("RightAnswer", "RightAnswer");
-            tableMapping.ColumnMappings.Add("Option", "Option");
+            tableMapping.ColumnMappings.Add("ModelAnswer", "ModelAnswer");
+            tableMapping.ColumnMappings.Add("OptionNum", "OptionNum");
             tableMapping.ColumnMappings.Add("OptionBody", "OptionBody");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -935,8 +1035,9 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=miinamaaher_SampleDB;User ID=" +
-                "miinamaaher_SampleDB;Password=user1234;TrustServerCertificate=True";
+            this._connection.ConnectionString = "Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=miinamaaher_SampleDB;Persist " +
+                "Security Info=True;User ID=miinamaaher_SampleDB;Password=user1234;TrustServerCer" +
+                "tificate=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -978,7 +1079,7 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ReviewAnswersDSC.reviewStudentAnswersDataTable dataTable, global::System.Nullable<int> ex_id, global::System.Nullable<int> std_id) {
+        public virtual int Fill(reviewAnswersDSC.reviewStudentAnswersDataTable dataTable, global::System.Nullable<int> ex_id, global::System.Nullable<int> std_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ex_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ex_id.Value));
@@ -1003,7 +1104,7 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ReviewAnswersDSC.reviewStudentAnswersDataTable GetData(global::System.Nullable<int> ex_id, global::System.Nullable<int> std_id) {
+        public virtual reviewAnswersDSC.reviewStudentAnswersDataTable GetData(global::System.Nullable<int> ex_id, global::System.Nullable<int> std_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ex_id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ex_id.Value));
@@ -1017,7 +1118,7 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            ReviewAnswersDSC.reviewStudentAnswersDataTable dataTable = new ReviewAnswersDSC.reviewStudentAnswersDataTable();
+            reviewAnswersDSC.reviewStudentAnswersDataTable dataTable = new reviewAnswersDSC.reviewStudentAnswersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1091,7 +1192,7 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ReviewAnswersDSC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(reviewAnswersDSC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1101,7 +1202,7 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ReviewAnswersDSC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(reviewAnswersDSC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1111,7 +1212,7 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ReviewAnswersDSC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(reviewAnswersDSC dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1145,7 +1246,7 @@ namespace e_xam.ReviewAnswersDSCTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ReviewAnswersDSC dataSet) {
+        public virtual int UpdateAll(reviewAnswersDSC dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
