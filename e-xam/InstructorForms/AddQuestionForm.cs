@@ -44,19 +44,38 @@ namespace e_xam
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(bodyTxtBox.Text))
+            {
+                MessageBox.Show("Please enter a question!");
+                return;
+            }
+
             Question question = new Question();
+            question.body = bodyTxtBox.Text;
+
+            if (string.IsNullOrWhiteSpace(markTxtBox.Text))
+            {
+                MessageBox.Show("Please enter a mark!");
+                return;
+            }
+            question.mark = Convert.ToInt32(markTxtBox.Text);
+
             if ((QuestionType)typeComboBox.SelectedItem == QuestionType.TF_Question)
             {
-                question.body = bodyTxtBox.Text;
-                question.mark = Convert.ToInt32(markTxtBox.Text);
+                
                 question.type = 't';
                 if (trueRadBtn.Checked)
                 {
                     question.ans = 'T';
                 }
-                else
+                else if (falseRadBtn.Checked)
                 {
                     question.ans = 'F';
+                }
+                else
+                {
+                    MessageBox.Show("Please select the correct answer!");
+                    return;
                 }
                 question.course = new Course();
                 question.course.id = course_id;
@@ -67,8 +86,12 @@ namespace e_xam
             }
             else
             {
-                question.body = bodyTxtBox.Text;
-                question.mark = Convert.ToInt32(markTxtBox.Text);
+                if (string.IsNullOrWhiteSpace(optionATxtBox.Text) || string.IsNullOrWhiteSpace(optionBTxtBox.Text) || string.IsNullOrWhiteSpace(optionCTxtBox.Text) || string.IsNullOrWhiteSpace(optionDTxtBox.Text))
+                {
+                    MessageBox.Show("Please enter all options!");
+                    return;
+                }
+
                 question.type = 'm';
                 if (optionARadBtn.Checked)
                 {
@@ -82,9 +105,14 @@ namespace e_xam
                 {
                     question.ans = 'C';
                 }
-                else
+                else if(optionDRadBtn.Checked)
                 {
                     question.ans = 'D';
+                }
+                else
+                {
+                    MessageBox.Show("Please select the correct answer!");
+                    return;
                 }
                 question.course = new Course();
                 question.course.id = course_id;

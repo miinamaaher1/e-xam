@@ -19,7 +19,14 @@ namespace e_xam
             }
             else
             {
-                Student student = StudentManager.getStudent(Convert.ToInt32(studentIdBx.Text));
+                int studId;
+                if (!Int32.TryParse(studentIdBx.Text, out studId))
+                {
+                    MessageBox.Show("Enter a valid ID!");
+                    return;
+                }
+
+                Student student = StudentManager.getStudent(studId);
 
                 if (student == null)
                 {

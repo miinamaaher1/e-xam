@@ -134,12 +134,11 @@ namespace e_xam.InstructorForms
         private string validateFormFields()
         {
             if (courseCombo.SelectedIndex == -1)
-                return "must select course";
+                return "must select a course";
             else if (tfNumUpDown.Value == 0 && mcqNumUpDown.Value == 0)
                 return "must select  count of true/false or mcq questions";
             else if (durationNumUpDown.Value == 0)
-                return "must determine count of mcq questions";
-
+                return "duration must be a positive number";
             else
                 return null;
         }
