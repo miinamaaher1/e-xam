@@ -21,7 +21,7 @@ namespace e_xam
                 return;
             } else if (user.type == 's')
             {
-                StudentHome studentHome = new StudentHome(user.id);
+                StudentHomeForm studentHome = new StudentHomeForm(user.id);
 
                 // Subscribe to the FormClosed event
                 studentHome.FormClosed += (s, args) =>
@@ -34,7 +34,7 @@ namespace e_xam
             }
             else
             {
-                InstructorHome instructorHome = new InstructorHome(user.id);
+                InstructorHomeForm instructorHome = new InstructorHomeForm(user.id);
 
                 // Subscribe to the FormClosed event
                 instructorHome.FormClosed += (s, args) =>

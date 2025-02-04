@@ -195,13 +195,6 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Course : </Value>
-                    <Style>
-                      <FontSize>24pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
                     <Value>=Parameters!courseName.Value</Value>
                     <Style>
                       <FontSize>24pt</FontSize>

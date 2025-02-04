@@ -14,6 +14,8 @@ namespace BLL.EntityManagers
 
             DataTable dt = dBManager.executeDataTable("getStudent", parameters);
 
+            if (dt.Rows.Count == 0) return null;
+
             return new Student
             {
                 id = Convert.ToInt32(dt.Rows[0]["id"]),
@@ -33,17 +35,17 @@ namespace BLL.EntityManagers
             };
         }
 
- public static List<TrackReport> getStudentsByTrack(int trackId) // This functions returns specific data about students (not all students' data)
+ public static List<TrackStatsRecord> getStudentsByTrack(int trackId) // This functions returns specific data about students (not all students' data)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@trackId", trackId);
 
             DataTable dt = dBManager.executeDataTable("getStudentsByTrack", parameters);
-            List<TrackReport> trackReport = new List<TrackReport>();
+            List<TrackStatsRecord> trackReport = new List<TrackStatsRecord>();
 
             foreach (DataRow row in dt.Rows)
             {
-                trackReport.Add(new TrackReport
+                trackReport.Add(new TrackStatsRecord
                 {
                     first_name = Convert.ToString(row["first_name"]),
                     last_name = Convert.ToString(row["last_name"]),
@@ -55,43 +57,48 @@ namespace BLL.EntityManagers
             return trackReport;
         }
         
-        public static Student getStudentStats(int _id)
+        public static List<StudentStatsRecord> getStudentStats(int _id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@id", _id);
 
             DataTable dt = dBManager.executeDataTable("getStudentStats", parameters);
 
+            List<StudentStatsRecord> statsRecords = new List<StudentStatsRecord>();
+
+
             if (dt.Rows.Count == 0)
             {
-                return null;
+                Student student = getStudent(_id);
+
+                StudentStatsRecord statsRecord = new StudentStatsRecord
+                {
+                    first_name = student.firstName,
+                    last_name = student.lastName,
+                    course_name = "",
+                    gpa = (decimal)student.gpa,
+                    total_grade = 0
+                };
+                statsRecords.Add(statsRecord);
+
+                return statsRecords;
             }
             else
             {
-                Student student = new Student();
-
-                student.firstName = Convert.ToString(dt.Rows[0]["first_name"]);
-                student.lastName = Convert.ToString(dt.Rows[0]["last_name"]);
-                student.gpa = Convert.ToDecimal(dt.Rows[0]["gpa"]);
-
                 foreach (DataRow dr in dt.Rows)
                 {
-                    if (student.courseGrades == null)
+                    StudentStatsRecord statsRecord = new StudentStatsRecord
                     {
-                        student.courseGrades = new();
-                    }
-
-                    student.courseGrades.Add
-                    (
-                        new Course 
-                        {
-                            name = Convert.ToString(dr["course_name"]) 
-                        }
-                        , Convert.ToDecimal(dr["total_grade"])
-                    );
+                        first_name = Convert.ToString(dr["first_name"]),
+                        last_name = Convert.ToString(dt.Rows[0]["last_name"]),
+                        course_name = Convert.ToString(dr["course_name"]),
+                        gpa = Convert.ToDecimal(dr["gpa"]),
+                        total_grade = Convert.ToDecimal(dr["total_grade"] == DBNull.Value ? 0 : dr["total_grade"])
+                    };
+                    statsRecords.Add(statsRecord);
                 }
 
-                return student;
+                return statsRecords;
             }
         }
 

@@ -36,7 +36,6 @@
             startDateLbl = new Label();
             endDateLbl = new Label();
             tracksLbl = new Label();
-            doneButton = new Button();
             label1 = new Label();
             SuspendLayout();
             // 
@@ -44,7 +43,7 @@
             // 
             saveExamTracksBtn.Anchor = AnchorStyles.None;
             saveExamTracksBtn.ForeColor = Color.DarkViolet;
-            saveExamTracksBtn.Location = new Point(421, 674);
+            saveExamTracksBtn.Location = new Point(559, 674);
             saveExamTracksBtn.Margin = new Padding(5);
             saveExamTracksBtn.Name = "saveExamTracksBtn";
             saveExamTracksBtn.Size = new Size(115, 45);
@@ -115,18 +114,6 @@
             tracksLbl.TabIndex = 7;
             tracksLbl.Text = "Track :";
             // 
-            // doneButton
-            // 
-            doneButton.Anchor = AnchorStyles.None;
-            doneButton.Location = new Point(696, 674);
-            doneButton.Margin = new Padding(5);
-            doneButton.Name = "doneButton";
-            doneButton.Size = new Size(115, 45);
-            doneButton.TabIndex = 8;
-            doneButton.Text = "Done";
-            doneButton.UseVisualStyleBackColor = true;
-            doneButton.Click += doneButton_Click;
-            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
@@ -144,7 +131,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
             Controls.Add(label1);
-            Controls.Add(doneButton);
             Controls.Add(tracksLbl);
             Controls.Add(endDateLbl);
             Controls.Add(startDateLbl);
@@ -173,7 +159,6 @@
         private Label startDateLbl;
         private Label endDateLbl;
         private Label tracksLbl;
-        private Button doneButton;
         private Label label1;
     }
 }

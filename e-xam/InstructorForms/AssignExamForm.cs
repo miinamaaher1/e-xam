@@ -94,17 +94,5 @@ namespace e_xam.InstructorForms
             }
             return true;
         }
-
-        private void doneButton_Click(object sender, EventArgs e)
-        {
-            if (!selectedTracksBefore)
-            {
-                MessageBox.Show("Must Select tracks");
-                return;
-            }
-
-            Instructor ins = InstructorManager.getInstructor(instructorId);
-            this.Close();
-        }
     }
 }

@@ -80,7 +80,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>getExamTfQuestionsDS.xsd</DependentUpon>
     </Compile>
-    <Compile Update="InstructorForms\InstructorHome.cs">
+    <Compile Update="InstructorForms\InstructorHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="miinamaaher_SampleDBDataSet.Designer.cs">

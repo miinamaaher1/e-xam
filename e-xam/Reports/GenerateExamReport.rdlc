@@ -198,8 +198,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>getExamMcqQuestionsDS1</DataSetName>
-            <Top>3.80499in</Top>
-            <Left>0.50276in</Left>
+            <Top>3.63276in</Top>
+            <Left>0.49997in</Left>
             <Height>0.3in</Height>
             <Width>9in</Width>
             <Style>
@@ -313,8 +313,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>getExamTfQuestionsDS1</DataSetName>
-            <Top>3.0661in</Top>
-            <Left>0.50277in</Left>
+            <Top>2.89387in</Top>
+            <Left>0.49998in</Left>
             <Height>0.3in</Height>
             <Width>8.99999in</Width>
             <ZIndex>1</ZIndex>
@@ -346,14 +346,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
-            <Top>2.68611in</Top>
-            <Left>0.50279in</Left>
+            <Top>2.51388in</Top>
+            <Left>0.5in</Left>
             <Height>0.3in</Height>
             <Width>8.99997in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
               </Border>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -380,14 +381,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
-            <Top>3.43554in</Top>
-            <Left>0.50277in</Left>
+            <Top>3.26331in</Top>
+            <Left>0.49998in</Left>
             <Height>0.3in</Height>
             <Width>8.99997in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
               </Border>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -434,21 +436,24 @@
                   <TextRun>
                     <Value>Duration: </Value>
                     <Style>
-                      <FontSize>24pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!duration.Value</Value>
                     <Style>
-                      <FontSize>24pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> mins</Value>
                     <Style>
-                      <FontSize>24pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -459,13 +464,13 @@
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>2.14444in</Top>
             <Left>5.0389in</Left>
-            <Height>0.5in</Height>
+            <Height>0.3in</Height>
             <Width>4.46392in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
               <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
@@ -481,9 +486,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!examTitle.Value</Value>
+                    <Value>=StrConv(Parameters!examTitle.Value, VbStrConv.ProperCase)</Value>
                     <Style>
-                      <FontSize>24pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -494,15 +500,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.63056in</Top>
-            <Left>0.50279in</Left>
-            <Height>0.5in</Height>
+            <Top>2.14444in</Top>
+            <Left>0.5in</Left>
+            <Height>0.3in</Height>
             <Width>4.46664in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
               <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
@@ -518,13 +524,6 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Course : </Value>
-                    <Style>
-                      <FontSize>24pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
                     <Value>=Parameters!courseName.Value</Value>
                     <Style>
                       <FontSize>24pt</FontSize>
@@ -536,15 +535,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.14444in</Top>
-            <Left>0.50279in</Left>
+            <Top>1.56944in</Top>
+            <Left>0.5in</Left>
             <Height>0.5in</Height>
-            <Width>4.46664in</Width>
+            <Width>9in</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
               <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
@@ -554,14 +553,14 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>4.23833in</Height>
+        <Height>4.42166in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>10.50002in</Width>
+      <Width>10in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

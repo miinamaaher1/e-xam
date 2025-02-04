@@ -1,16 +1,6 @@
 ﻿using BLL.Entities;
-using BLL.EntityList;
 using BLL.EntityLists;
 using BLL.EntityManagers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace e_xam.InstructorForms
 {
@@ -64,7 +54,7 @@ namespace e_xam.InstructorForms
         private void SetMaxQuestionsCnt(int _crsId)
         {
             int tf = 0, mcq = 0;
-            QuestionsManager.GetTfMcqCount(_crsId, out tf, out mcq);
+            QuestionManager.GetTfMcqCount(_crsId, out tf, out mcq);
             tfNumUpDown.Maximum = tf;
             mcqNumUpDown.Maximum = mcq;
             if (tf == 0)
@@ -110,14 +100,10 @@ namespace e_xam.InstructorForms
                 generateExamReportForm insExamReport = new generateExamReportForm(currentExamId, exam.tfCount, exam.mcqCount, (int)courseCombo.SelectedValue, instId);
                 insExamReport.FormClosed += (s, args) =>
                 {
-                    this.Close();
+                    this.Show();
                 };
                 this.Hide();
                 insExamReport.Show();
-
-                //////////////////////////////
-
-                MessageBox.Show($"exam id:{currentExamId}");
 
             }
             else

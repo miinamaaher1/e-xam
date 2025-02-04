@@ -66,7 +66,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Student Name</Value>
+                    <Value>=First(Fields!first_name.Value + " " + Fields!last_name.Value, "StudentStatsDS")</Value>
                     <Style>
                       <FontSize>24pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -80,7 +80,7 @@
             <Top>1.57583in</Top>
             <Left>0.5in</Left>
             <Height>0.5in</Height>
-            <Width>7.03333in</Width>
+            <Width>6.7in</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -326,7 +326,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>GPA</Value>
+                    <Value>=First(Fields!gpa.Value.ToString + "%", "StudentStatsDS")</Value>
                     <Style>
                       <FontSize>24pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -340,9 +340,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>1.57583in</Top>
-            <Left>7.60278in</Left>
+            <Left>7.26944in</Left>
             <Height>0.5in</Height>
-            <Width>1.89722in</Width>
+            <Width>2.23056in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -360,7 +360,7 @@
         <Height>3.68333in</Height>
         <Style />
       </Body>
-      <Width>10.76111in</Width>
+      <Width>10in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
