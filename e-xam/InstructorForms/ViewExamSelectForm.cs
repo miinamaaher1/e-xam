@@ -15,28 +15,44 @@ namespace e_xam.InstructorForms
     public partial class ViewExamSelectForm : Form
     {
         int instructorId;
-        bool isLoaded;
-        //BindingList<int> ExamsId;
-
+        bool isLoaded, hasCourses, hasExams;
+       
         public ViewExamSelectForm(int _instructorId)
         {
             InitializeComponent();
+            this.AcceptButton = getExamBtn;
             instructorId = _instructorId;
             isLoaded = false;
-            //ExamsId = new BindingList<int>();
         }
 
         private void SelectExamForm_Load(object sender, EventArgs e)
         {
             isLoaded = false;
 
-            coursesCombo.DataSource = CourseManager.getInstructorCourses(instructorId);
-            coursesCombo.DisplayMember = "name";
-            coursesCombo.ValueMember = "id";
-            coursesCombo.SelectedIndex = -1;
+            List<Course> courses = CourseManager.getInstructorCourses(instructorId);
 
-            //ExamsCombo.DataSource = ExamsId;
-            isLoaded = true;
+            if (courses.Count > 0)
+            {
+                coursesCombo.DataSource = CourseManager.getInstructorCourses(instructorId);
+                coursesCombo.DisplayMember = "name";
+                coursesCombo.ValueMember = "id";
+                coursesCombo.SelectedIndex = -1;
+
+                isLoaded = true;
+                hasCourses = true;
+            }
+            else
+            {
+                coursesCombo.Items.Add("No Courses Available");
+                coursesCombo.SelectedIndex = 0;
+
+                ExamsCombo.Items.Add("No Exams Available");
+                ExamsCombo.SelectedIndex = 0;
+
+                hasExams = false;
+                isLoaded = false;
+                hasCourses= false;
+            }
 
         }
 
@@ -46,12 +62,21 @@ namespace e_xam.InstructorForms
             {
                 ExamsCombo.DataSource = null;
                 List<int> examsId = ExamManager.GetExamsIdByCrsId((int)coursesCombo.SelectedValue);
+
                 if (examsId.Count == 0)
+                {
                     MessageBox.Show($"there is no exams for Course {((Course)coursesCombo.SelectedItem).name}");
+
+                    ExamsCombo.Items.Add("No Exams Available");
+                    ExamsCombo.SelectedIndex = 0;
+                    hasExams = false;
+                }
+                   
                 else
                 {
                     ExamsCombo.DataSource = examsId;
                     ExamsCombo.SelectedIndex = -1;
+                    hasExams = true;
 
                 }
             }
@@ -59,7 +84,17 @@ namespace e_xam.InstructorForms
 
         private void getExamBtn_Click(object sender, EventArgs e)
         {
-            if (coursesCombo.SelectedIndex == -1)
+            if(!hasCourses)
+            {
+                MessageBox.Show("No Courses Available");
+                return;
+            }
+            else if(!hasExams)
+            {
+                MessageBox.Show("No Exams Available");
+                return;
+            }
+            else if (coursesCombo.SelectedIndex == -1)
             {
                 MessageBox.Show("must select Course");
                 return;
@@ -69,7 +104,7 @@ namespace e_xam.InstructorForms
                 MessageBox.Show("must select Exam ID");
                 return;
             }
-            else///////////////////////////////////////////////call form
+            else ///call form
             {
                 ViewExamReportForm  displayExamReport = new ViewExamReportForm((int)ExamsCombo.SelectedValue, (int)coursesCombo.SelectedValue,instructorId);
                 displayExamReport.FormClosed += (s, args) =>

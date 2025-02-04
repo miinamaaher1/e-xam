@@ -34,16 +34,16 @@
             examQuestionsPanel = new FlowLayoutPanel();
             durationTimer = new System.Windows.Forms.Timer(components);
             timerLbl = new Label();
-            button1 = new Button();
+            submitBtn = new Button();
             SuspendLayout();
             // 
             // examTitleLbl
             // 
             examTitleLbl.AutoSize = true;
-            examTitleLbl.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            examTitleLbl.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             examTitleLbl.Location = new Point(12, 9);
             examTitleLbl.Name = "examTitleLbl";
-            examTitleLbl.Size = new Size(225, 55);
+            examTitleLbl.Size = new Size(219, 46);
             examTitleLbl.TabIndex = 0;
             examTitleLbl.Text = "Exam Title";
             // 
@@ -66,25 +66,25 @@
             // 
             timerLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             timerLbl.AutoSize = true;
-            timerLbl.Font = new Font("Raleway", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            timerLbl.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             timerLbl.ForeColor = Color.DarkViolet;
             timerLbl.Location = new Point(1086, 9);
             timerLbl.Name = "timerLbl";
-            timerLbl.Size = new Size(134, 55);
+            timerLbl.Size = new Size(124, 46);
             timerLbl.TabIndex = 3;
             timerLbl.Text = "00:00";
             // 
-            // button1
+            // submitBtn
             // 
-            button1.Anchor = AnchorStyles.Bottom;
-            button1.ForeColor = Color.DarkViolet;
-            button1.Location = new Point(559, 750);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 45);
-            button1.TabIndex = 2;
-            button1.Text = "Submit";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += submitBtn_Click;
+            submitBtn.Anchor = AnchorStyles.Bottom;
+            submitBtn.ForeColor = Color.DarkViolet;
+            submitBtn.Location = new Point(559, 750);
+            submitBtn.Name = "submitBtn";
+            submitBtn.Size = new Size(115, 45);
+            submitBtn.TabIndex = 2;
+            submitBtn.Text = "Submit";
+            submitBtn.UseVisualStyleBackColor = true;
+            submitBtn.Click += submitBtn_Click;
             // 
             // TakeExamForm
             // 
@@ -92,7 +92,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 808);
             Controls.Add(timerLbl);
-            Controls.Add(button1);
+            Controls.Add(submitBtn);
             Controls.Add(examQuestionsPanel);
             Controls.Add(examTitleLbl);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -114,6 +114,6 @@
         private FlowLayoutPanel examQuestionsPanel;
         private System.Windows.Forms.Timer durationTimer;
         private Label timerLbl;
-        private Button button1;
+        private Button submitBtn;
     }
 }

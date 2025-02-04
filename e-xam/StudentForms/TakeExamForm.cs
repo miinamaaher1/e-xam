@@ -14,6 +14,7 @@ namespace e_xam.StudentForms
             exam = ExamManager.getExam(_examId);
             studentId = _studentId;
             InitializeComponent();
+            this.AcceptButton = submitBtn;
             examTitleLbl.Text = exam.title;
             remainingTime = exam.duration * 60;
             renderExam();
@@ -101,7 +102,12 @@ namespace e_xam.StudentForms
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            finalizeExam();
+            DialogResult result = MessageBox.Show("Are you sure you want to submit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                finalizeExam();
+            }
         }
 
 

@@ -8,15 +8,17 @@ namespace e_xam
     {
         List<StudentExam> studentexamlist;
        
-        int studentid;
+        int studentId, courseId, trackId;
         string cname;
         public StudentExamsForm(int _studentid, int _courseid, int _trakid,string _coursename)
         {
-            studentid = _studentid;
+            studentId = _studentid;
+            courseId = _courseid;
+            trackId = _trakid;
             cname = _coursename;
-            studentexamlist = StudentManager.getStudetExams(_studentid, _courseid,_trakid);
             InitializeComponent();
 
+            studentexamlist = StudentManager.getStudetExams(_studentid, _courseid,_trakid);
             LoudExams();
         }
 
@@ -142,9 +144,11 @@ namespace e_xam
             {
                 int examId = (int)clickedButton.Tag;
 
-                TakeExamForm takeExam = new TakeExamForm( examId,studentid);
+                TakeExamForm takeExam = new TakeExamForm( examId,studentId);
                 takeExam.FormClosed += (s, args) =>
                 {
+                    studentexamlist = StudentManager.getStudetExams(studentId, courseId, trackId);
+                    LoudExams();
                     this.Show();
                 };
                 this.Hide();
@@ -162,7 +166,7 @@ namespace e_xam
             {
                 int examId = (int)clickedButton.Tag;
 
-                ReviewAnswersReportForm answerSheet = new ReviewAnswersReportForm(studentid, examId);
+                ReviewAnswersReportForm answerSheet = new ReviewAnswersReportForm(studentId, examId);
                 answerSheet.FormClosed += (s, args) =>
                 {
                     this.Show();

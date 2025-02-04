@@ -9,10 +9,11 @@ namespace e_xam.InstructorForms
         int instId;
         CourseList courses = null;
         int currentExamId;
-        bool isLoaded;
+        bool isLoaded, hasCourses;
         public GenerateExamForm(int _instId)
         {
             InitializeComponent();
+            this.AcceptButton = generateExBtn;
             instId = _instId;
 
         }
@@ -22,17 +23,28 @@ namespace e_xam.InstructorForms
             isLoaded = false;
 
             courses = CourseManager.getInstructorCourses(instId);
-            courseCombo.DataSource = courses;
-            courseCombo.DisplayMember = "Name";
-            courseCombo.ValueMember = "id";
-            courseCombo.SelectedIndex = -1;
-            mcqLblMsg.Visible = false;
-            tfLblMsg.Visible = false;
-            tfNumUpDown.Minimum = 0;
-            mcqNumUpDown.Minimum = 0;
-            tfNumUpDown.Maximum = 0;
-            mcqNumUpDown.Maximum = 0;
-            isLoaded = true;
+
+            if(courses.Count == 0)
+            {
+                courseCombo.Items.Add("No Courses Available");
+                courseCombo.SelectedIndex = 0;
+                hasCourses = false;
+            }
+            else
+            {
+                courseCombo.DataSource = courses;
+                courseCombo.DisplayMember = "Name";
+                courseCombo.ValueMember = "id";
+                courseCombo.SelectedIndex = -1;
+                mcqLblMsg.Visible = false;
+                tfLblMsg.Visible = false;
+                tfNumUpDown.Minimum = 0;
+                mcqNumUpDown.Minimum = 0;
+                tfNumUpDown.Maximum = 0;
+                mcqNumUpDown.Maximum = 0;
+                isLoaded = true;
+                hasCourses = true;
+            }
         }
 
         private void courseCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,6 +88,12 @@ namespace e_xam.InstructorForms
 
         private void generateExBtn_Click(object sender, EventArgs e)
         {
+            if(!hasCourses)
+            {
+                MessageBox.Show("No Courses Available");
+                return;
+            }
+
             string validateMsg = validateFormFields();
             if (validateMsg == null)
             {
@@ -100,7 +118,7 @@ namespace e_xam.InstructorForms
                 generateExamReportForm insExamReport = new generateExamReportForm(currentExamId, exam.tfCount, exam.mcqCount, (int)courseCombo.SelectedValue, instId);
                 insExamReport.FormClosed += (s, args) =>
                 {
-                    this.Show();
+                    this.Close();
                 };
                 this.Hide();
                 insExamReport.Show();

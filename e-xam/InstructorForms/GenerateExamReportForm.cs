@@ -29,6 +29,7 @@ namespace e_xam.InstructorForms
             courseId = _courseId;
             instrcutorId = _instrcutorId;
             InitializeComponent();
+            this.AcceptButton = assignExamBtn;
         }
 
         private void generateExamReportForm_Load(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace e_xam.InstructorForms
             assignExamForm.FormClosed += (s, args) =>
             {
                 // Show the current form again
-                this.Show();
+                this.Close();
             };
             this.Hide();
             assignExamForm.Show();

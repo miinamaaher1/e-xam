@@ -5,6 +5,7 @@
         public AboutForm()
         {
             InitializeComponent();
+            this.AcceptButton = okBtn;
         }
 
         private void okBtn_Click(object sender, EventArgs e)
