@@ -74,13 +74,13 @@ namespace e_xam
                 Course course = (Course)clickedButton.Tag;
 
                 StudentExamsForm studentExam = new StudentExamsForm(studentid, course.id, trakid, course.name);
+
                 studentExam.FormClosed += (s, args) =>
                 {
-                    courselist = CourseManager.getStudentCourses(studentid);
-                    loadcourses();
                     this.Show();
                 };
                 this.Hide();
+
                 studentExam.Show();
             }
         }

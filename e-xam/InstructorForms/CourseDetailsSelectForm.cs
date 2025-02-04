@@ -6,12 +6,13 @@ namespace e_xam.InstructorForms
 {
     public partial class CourseDetailsSelectForm : Form
     {
-        bool isLoaded;
+        bool isLoaded, hasCourses;
         int instId;
         CourseList courses;
         public CourseDetailsSelectForm(int _instId)
         {
             InitializeComponent();
+            this.AcceptButton = viewTopicsBtn;
             instId = _instId;
         }
 
@@ -20,15 +21,31 @@ namespace e_xam.InstructorForms
 
             isLoaded = false;
             courses = CourseManager.getInstructorCourses(instId);
-            courseCombo.DataSource = courses;
-            courseCombo.DisplayMember = "Name";
-            courseCombo.ValueMember = "id";
-            courseCombo.SelectedIndex = -1;
-            isLoaded = true;
+
+            if(courses.Count == 0)
+            {
+                courseCombo.Items.Add("No Courses Available");
+                courseCombo.SelectedIndex = 0;
+                hasCourses = false;
+            }
+            else
+            {
+                courseCombo.DataSource = courses;
+                courseCombo.DisplayMember = "Name";
+                courseCombo.ValueMember = "id";
+                courseCombo.SelectedIndex = -1;
+                isLoaded = true;
+                hasCourses = true;
+            }
         }
 
         private void viewTopicsBtn_Click(object sender, EventArgs e)
         {
+            if(!hasCourses)
+            {
+                MessageBox.Show("No Courses Available");
+                return;
+            }
             if (courseCombo.SelectedIndex != -1)
             {
                 Course c = (Course)courseCombo.SelectedItem;

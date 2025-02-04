@@ -22,6 +22,7 @@ namespace e_xam.InstructorForms
             selectedTracks = new TrackList();
 
             InitializeComponent();
+            this.AcceptButton = saveExamTracksBtn;
         }
 
         private void AssignExamForm_Load(object sender, EventArgs e)
@@ -65,6 +66,8 @@ namespace e_xam.InstructorForms
             {
                 tracks.Remove(track);
             }
+
+            selectedTracks.Clear();
 
         }
 

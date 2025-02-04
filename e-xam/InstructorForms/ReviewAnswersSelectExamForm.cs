@@ -13,6 +13,7 @@ namespace e_xam
             courseId = _courseId;
 
             InitializeComponent();
+            this.AcceptButton = reviewBtn;
         }
 
         private void SelectStudentExamForm_Load(object sender, EventArgs e)
@@ -21,24 +22,23 @@ namespace e_xam
 
             examBx.Items.Clear();
             examBx.DataSource = exams;
-            examBx.DisplayMember = "ToString";
         }
 
         private void reviewBtn_Click(object sender, EventArgs e)
         {
+            
             Exam exam = (Exam)examBx.SelectedItem;
 
             ReviewAnswersReportForm reviewAnswer = new ReviewAnswersReportForm(studentId, exam.id);
 
             reviewAnswer.FormClosed += (s, args) =>
             {
-                // Show the current form again
                 this.Show();
             };
 
             this.Hide();
             reviewAnswer.Show();
-
+            
         }
     }
 }

@@ -16,6 +16,7 @@ namespace e_xam
         public AddQuestionForm(int _course_id, int _inst_id)
         {
             InitializeComponent();
+            this.AcceptButton = saveBtn;
             typeComboBox.Items.Add(QuestionType.MCQ_Question);
             typeComboBox.Items.Add(QuestionType.TF_Question);
             typeComboBox.SelectedIndex = 0;

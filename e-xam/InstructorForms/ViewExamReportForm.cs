@@ -21,6 +21,7 @@ namespace e_xam.InstructorForms
         public ViewExamReportForm(int _examId,int _courseId,int _instrcutorId)
         {
             InitializeComponent();
+            this.AcceptButton = assignExamBtn;
             examId = _examId;
             courseId = _courseId;
             instrcutorId = _instrcutorId;

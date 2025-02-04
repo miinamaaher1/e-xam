@@ -10,6 +10,7 @@ namespace e_xam
         public TrackStatsSelectForm(int _instId)
         {
             InitializeComponent();
+            this.AcceptButton = viewTrackBtn;
             trackDictionary = TrackManager.getTrackNamesAndIds(_instId);  // I returned the Ids too, since they are our primary keys
             tracksComboBox.Items.Clear();
             instId = _instId;

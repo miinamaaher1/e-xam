@@ -13,25 +13,30 @@ namespace e_xam
 
         private void viewBtn_Click(object sender, EventArgs e)
         {
-            Student student = StudentManager.getStudent(Convert.ToInt32(studentIdBx.Text));
-
-            if (student == null)
+            if (string.IsNullOrWhiteSpace(studentIdBx.Text))
             {
-                MessageBox.Show("Student Not Found!");
-                return;
+                MessageBox.Show("Please enter a student ID.");
             }
             else
             {
-                StudentStatsReportForm studentReport = new StudentStatsReportForm(student.id);
+                Student student = StudentManager.getStudent(Convert.ToInt32(studentIdBx.Text));
 
-                // Subscribe to the FormClosed event
-                studentReport.FormClosed += (s, args) =>
+                if (student == null)
                 {
-                    // Show the current form again
-                    this.Show();
-                };
-                this.Hide();
-                studentReport.Show();
+                    MessageBox.Show("Student Not Found!");
+                    return;
+                }
+                else
+                {
+                    StudentStatsReportForm studentReport = new StudentStatsReportForm(student.id);
+
+                    studentReport.FormClosed += (s, args) =>
+                    {
+                        this.Show();
+                    };
+                    this.Hide();
+                    studentReport.Show();
+                }
             }
 
         }

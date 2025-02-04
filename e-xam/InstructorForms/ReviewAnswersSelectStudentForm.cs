@@ -7,61 +7,90 @@ namespace e_xam
     {
         Instructor user;
         int selectedCourseId;
+        bool hasClasses, hasStudents;
+
         public ReviewAnswersSelectStudentForm(Instructor _user)
         {
             user = _user;
             InitializeComponent();
+            this.AcceptButton = nextBtn;
         }
 
         private void SelectStudentClassForm_Load(object sender, EventArgs e)
         {
-            List<CourseInstructorTrack> instructorClasses = InstructorManager.getInstructorClasses(user.id);
+            var instructorClasses = InstructorManager.getInstructorClasses(user.id);
+            hasClasses = instructorClasses.Count > 0;
 
             classBx.Items.Clear();
-            classBx.DataSource = instructorClasses;
-            classBx.DisplayMember = "ToString";
+            studentBx.Items.Clear();
 
+            if (hasClasses)
+            {
+                classBx.DataSource = instructorClasses;
+            }
+            else
+            {
+                classBx.Items.Add("No Classes Available");
+                classBx.SelectedIndex = 0;
+
+                studentBx.Items.Add("No Students Available");
+                studentBx.SelectedIndex = 0;
+            }
         }
+
         private void classBx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!hasClasses) return;
 
-            CourseInstructorTrack selectedClass = (CourseInstructorTrack)classBx.SelectedItem;
+            var selectedClass = classBx.SelectedItem as CourseInstructorTrack;
 
-            int selectedTrack = selectedClass.track.id;
             selectedCourseId = selectedClass.course.id;
 
-            List<Student> studentList = InstructorManager.getTrackStudents(selectedTrack);
+            List<Student> studentList = InstructorManager.getTrackStudents(selectedClass.track.id);
 
-            //studentBx.Items.Clear();
-            //studentBx.Text = " ";
+            if(studentList.Count > 0)
+            {
+                studentBx.DataSource = studentList;
 
-            studentBx.DataSource = studentList;
-            studentBx.DisplayMember = "ToString";
+                hasStudents = true;
+            }
+            else
+            {
+                studentBx.Items.Add("No Students Available");
+                studentBx.SelectedIndex = 0;
 
+                hasStudents = false;
+            }
         }
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            Student selectedStudent = (Student)studentBx.SelectedItem;
+            if (!hasClasses)
+            {
+                MessageBox.Show("No Classes Or Students Available");
+                return;
+            }
 
-            List<Exam> exams = StudentManager.getStudentCourseExams(selectedCourseId, selectedStudent.id);
+            else if(!hasStudents)
+            {
+                MessageBox.Show("No Students Available");
+                return;
+            }
+
+            var selectedStudent = studentBx.SelectedItem as Student;
+
+            var exams = StudentManager.getStudentCourseExams(selectedCourseId, selectedStudent.id);
 
             if (exams.Count == 0)
             {
-                MessageBox.Show($"This Student didn't take exams in this course!");
+                MessageBox.Show("This student didn't take exams in this course!");
+                return;
             }
-            else
-            {
-                ReviewAnswersSelectExamForm stdExam = new ReviewAnswersSelectExamForm(selectedStudent.id, selectedCourseId);
 
-                stdExam.FormClosed += (s, args) =>
-                {
-                    // Show the current form again
-                    this.Show();
-                };
-                this.Hide();
-                stdExam.Show();
-            }
+            var stdExam = new ReviewAnswersSelectExamForm(selectedStudent.id, selectedCourseId);
+            stdExam.FormClosed += (s, args) => this.Show();
+            this.Hide();
+            stdExam.Show();
         }
     }
 }
