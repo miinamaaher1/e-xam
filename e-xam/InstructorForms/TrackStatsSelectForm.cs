@@ -45,7 +45,7 @@ namespace e_xam
             trackReport.FormClosed += (s, args) =>
             {
                 // Show the current form again
-                this.Close();
+                this.Show();
             };
             this.Hide();
             trackReport.Show();
