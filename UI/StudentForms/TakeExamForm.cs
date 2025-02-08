@@ -130,11 +130,6 @@ namespace UI.StudentForms
                             answer.answerNum = (char)control.Tag;
                         }
                     }
-                    if (answer.answerNum is null)
-                    {
-                        MessageBox.Show("Please Answer All Questions!");
-                        return;
-                    }
                     answerSheet.Add(answer);
                 }
             }
