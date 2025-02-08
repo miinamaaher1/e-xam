@@ -102,7 +102,7 @@ Students can:
   - **View** → If they have already taken the exam (to review their answers).
   - **Missed** (Disabled) → If they missed the exam.
 
-![My Exams](screenshots/23%20student%20Exams.png)
+![My Exams](screenshots/23%20student%20exams.png)
 
 ### Take Exam
 Students can:
