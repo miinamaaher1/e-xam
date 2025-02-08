@@ -142,7 +142,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!gpa.Value.ToString + "%"</Value>
+                              <Value>=Fields!gpa.Value.ToString() + "%"</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>14pt</FontSize>
@@ -189,7 +189,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>TrackStatDS</DataSetName>
+        <DataSetName>TrackStatsDS</DataSetName>
         <Top>2.18889in</Top>
         <Left>0.5in</Left>
         <Height>1in</Height>
@@ -207,7 +207,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!track_name.Value</Value>
+                <Value>=First(Fields!track_name.Value, "TrackStatsDS")</Value>
                 <Style>
                   <FontFamily>Segoe UI</FontFamily>
                   <FontSize>24pt</FontSize>
@@ -269,7 +269,7 @@
     <Height>3.67167in</Height>
     <Style />
   </Body>
-  <Width>10.89167in</Width>
+  <Width>10in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -279,18 +279,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="miinamaaher_SampleDBDataSet2">
+    <DataSource Name="e_xam_DSC">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>6ce2b5c2-d9dd-4a21-a5b7-614cbb30d2f6</rd:DataSourceID>
+      <rd:DataSourceID>2be8ecbe-c1c6-4008-854d-546e0638fac4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="TrackStatDS">
+    <DataSet Name="TrackStatsDS">
       <Query>
-        <DataSourceName>miinamaaher_SampleDBDataSet2</DataSourceName>
+        <DataSourceName>e_xam_DSC</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -316,8 +316,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>miinamaaher_SampleDBDataSet2</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Ahmed_Yasser\source\repos\miinamaaher1\e-xam\e-xam\miinamaaher_SampleDBDataSet2.xsd</rd:SchemaPath>
+        <rd:DataSetName>e_xam_DSC</rd:DataSetName>
+        <rd:SchemaPath>D:\IDA\e-xam\e-xam\e_xam_DSC.xsd</rd:SchemaPath>
         <rd:TableName>getStudentsByTrack</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

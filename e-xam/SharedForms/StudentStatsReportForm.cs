@@ -19,7 +19,7 @@ namespace e_xam
 
         private void StudentReport_Load(object sender, EventArgs e)
         {
-            studentStatsRV.LocalReport.ReportPath = @"Reports\StudentReport.rdlc";
+            studentStatsRV.LocalReport.ReportPath = @"Reports\StudentStatsReport.rdlc";
 
             ReportParameter studentIdParam = new ReportParameter("id", studentId.ToString());
 

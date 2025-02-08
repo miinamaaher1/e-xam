@@ -14,10 +14,8 @@
     <None Remove="Assets\e-xam icon.ico" />
     <None Remove="Assets\splash screen.png" />
     <None Remove="Raleway-VariableFont_wght.ttf" />
-    <None Remove="Reports\CourseTopicsReport.rdlc" />
     <None Remove="Reports\GenerateExamReport.rdlc" />
     <None Remove="Reports\ReviewAnswersReport.rdlc" />
-    <None Remove="Reports\TrackReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,13 +25,13 @@
     <EmbeddedResource Include="Assets\splash screen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raleway-VariableFont_wght.ttf">
+    <EmbeddedResource Include="Assets\Raleway-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\InstructorClassReport.rdlc">
+    <EmbeddedResource Include="Reports\InstructorClassesReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</EmbeddedResource>
-    <EmbeddedResource Include="Reports\CourseTopicsReport.rdlc">
+    <EmbeddedResource Include="Reports\CourseDetailsReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\GenerateExamReport.rdlc">
@@ -42,10 +40,10 @@
     <EmbeddedResource Include="Reports\ReviewAnswersReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\StudentReport.rdlc">
+    <EmbeddedResource Include="Reports\StudentStatsReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\TrackReport.rdlc">
+    <EmbeddedResource Include="Reports\TrackStatsReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -60,33 +58,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="InstructorClassesDSC.Designer.cs">
+    <Compile Update="Reports\e_xam_DSC.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>InstructorClassesDSC.xsd</DependentUpon>
-	</Compile>
-    <Compile Update="CourseTopicsDS.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CourseTopicsDS.xsd</DependentUpon>
-    </Compile>
-    <Compile Update="getExamMcqQuestionsDS.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>getExamMcqQuestionsDS.xsd</DependentUpon>
-    </Compile>
-    <Compile Update="getExamTfQuestionsDS.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>getExamTfQuestionsDS.xsd</DependentUpon>
+      <DependentUpon>e_xam_DSC.xsd</DependentUpon>
     </Compile>
     <Compile Update="InstructorForms\InstructorHomeForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="miinamaaher_SampleDBDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>miinamaaher_SampleDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Update="miinamaaher_SampleDBDataSet2.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -98,11 +76,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="reviewAnswersDSC.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>reviewAnswersDSC.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -113,33 +86,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="InstructorClassesDSC.xsd">
+    <None Update="Reports\e_xam_DSC.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InstructorClassesDSC.Designer.cs</LastGenOutput>
-	</None>
-    <None Update="CourseTopicsDS.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CourseTopicsDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="getExamMcqQuestionsDS.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>getExamMcqQuestionsDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="getExamTfQuestionsDS.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>getExamTfQuestionsDS.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="miinamaaher_SampleDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>miinamaaher_SampleDBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>e_xam_DSC.Designer.cs</LastGenOutput>
     </None>
     <None Update="miinamaaher_SampleDBDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>miinamaaher_SampleDBDataSet2.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="reviewAnswersDSC.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>reviewAnswersDSC.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

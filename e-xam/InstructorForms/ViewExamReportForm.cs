@@ -46,17 +46,17 @@ namespace e_xam.InstructorForms
 
         private void RefreshReport()
         {
-            DataTable mcqQuestions = QuestionManager.getExamMcqQuestions(examId);
+            DataTable mcQuestions = QuestionManager.getExamMcqQuestions(examId);
 
-            DataTable TfQuestions = QuestionManager.getExamTfQuestions(examId);
+            DataTable tfQuestions = QuestionManager.getExamTfQuestions(examId);
 
             displayExamRV.LocalReport.DataSources.Clear();
 
-            ReportDataSource mcqQuestionsDataSource = new ReportDataSource("getExamMcqQuestionsDS1", mcqQuestions);
-            displayExamRV.LocalReport.DataSources.Add(mcqQuestionsDataSource);
+            ReportDataSource mcQuestionsDS = new ReportDataSource("getExamMCQuestionsDS", mcQuestions);
+            displayExamRV.LocalReport.DataSources.Add(mcQuestionsDS);
 
-            ReportDataSource tfQuestionsDataSource = new ReportDataSource("getExamTfQuestionsDS1", TfQuestions);
-            displayExamRV.LocalReport.DataSources.Add(tfQuestionsDataSource);
+            ReportDataSource tfQuestionsDS = new ReportDataSource("getExamTFQuestionsDS", tfQuestions);
+            displayExamRV.LocalReport.DataSources.Add(tfQuestionsDS);
             displayExamRV.RefreshReport();
 
         }

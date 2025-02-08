@@ -2,25 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="getExamTfQuestionsDS">
+    <DataSource Name="e_xam_DSC">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>1efa4e66-fbb5-438a-b1ca-3e991a9a0278</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="getExamMcqQuestionsDS">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>c42b62a1-1f64-4dcf-8737-44717800386a</rd:DataSourceID>
+      <rd:DataSourceID>4514111c-12dc-4f41-a73a-36d6ffaccd53</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="getExamTfQuestionsDS1">
+    <DataSet Name="getExamTFQuestionsDS">
       <Query>
-        <DataSourceName>getExamTfQuestionsDS</DataSourceName>
+        <DataSourceName>e_xam_DSC</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -34,17 +27,17 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>getExamTfQuestionsDS</rd:DataSetName>
-        <rd:SchemaPath>D:\repo\e-xam\e-xam\getExamTfQuestionsDS.xsd</rd:SchemaPath>
+        <rd:DataSetName>e_xam_DSC</rd:DataSetName>
+        <rd:SchemaPath>D:\IDA\e-xam\e-xam\Reports\e_xam_DSC.xsd</rd:SchemaPath>
         <rd:TableName>getExamTfQuestions</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>getExamTfQuestionsTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="getExamMcqQuestionsDS1">
+    <DataSet Name="getExamMCQuestionsDS">
       <Query>
-        <DataSourceName>getExamMcqQuestionsDS</DataSourceName>
+        <DataSourceName>e_xam_DSC</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -66,8 +59,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>getExamMcqQuestionsDS</rd:DataSetName>
-        <rd:SchemaPath>D:\repo\e-xam\e-xam\getExamMcqQuestionsDS.xsd</rd:SchemaPath>
+        <rd:DataSetName>e_xam_DSC</rd:DataSetName>
+        <rd:SchemaPath>D:\IDA\e-xam\e-xam\Reports\e_xam_DSC.xsd</rd:SchemaPath>
         <rd:TableName>getExamMcqQuestions</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -153,14 +146,14 @@
                       <TablixHeader>
                         <Size>4.53334in</Size>
                         <CellContents>
-                          <Textbox Name="question_body11">
+                          <Textbox Name="question_body">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=RunningValue(Fields!question_body.Value, CountDistinct, "getExamMcqQuestionsDS1") &amp; ". " &amp; Fields!question_body.Value &amp; " (Degree: " &amp; Fields!mark.Value.ToString() &amp; ")"</Value>
+                                    <Value>=RunningValue(Fields!question_body.Value, CountDistinct, "getExamMCQuestionsDS") &amp; ". " &amp; Fields!question_body.Value &amp; " (Degree: " &amp; Fields!mark.Value.ToString() &amp; ")"</Value>
                                     <Style>
                                       <FontFamily>Segoe UI</FontFamily>
                                       <FontSize>14pt</FontSize>
@@ -172,7 +165,7 @@
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>question_body11</rd:DefaultName>
+                            <rd:DefaultName>question_body</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>LightGrey</Color>
@@ -197,7 +190,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>getExamMcqQuestionsDS1</DataSetName>
+            <DataSetName>getExamMCQuestionsDS</DataSetName>
             <Top>3.63276in</Top>
             <Left>0.49997in</Left>
             <Height>0.3in</Height>
@@ -312,9 +305,9 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>getExamTfQuestionsDS1</DataSetName>
+            <DataSetName>getExamTFQuestionsDS</DataSetName>
             <Top>2.89387in</Top>
-            <Left>0.49998in</Left>
+            <Left>0.50283in</Left>
             <Height>0.3in</Height>
             <Width>8.99999in</Width>
             <ZIndex>1</ZIndex>

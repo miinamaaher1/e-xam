@@ -21,9 +21,9 @@ namespace e_xam
 
             List<TrackStatsRecord> trackReport = StudentManager.getStudentsByTrack(trackId);
 
-            TrackStatsReportViewer.LocalReport.ReportPath = @"Reports\TrackReport.rdlc";
+            TrackStatsReportViewer.LocalReport.ReportPath = @"Reports\TrackStatsReport.rdlc";
 
-            ReportDataSource trackReportDataSource = new ReportDataSource("TrackStatDS", trackReport);
+            ReportDataSource trackReportDataSource = new ReportDataSource("TrackStatsDS", trackReport);
 
             TrackStatsReportViewer.LocalReport.DataSources.Add(trackReportDataSource);
 

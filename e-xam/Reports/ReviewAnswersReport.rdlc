@@ -2,18 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="reviewAnswersDSC">
+    <DataSource Name="e_xam_DSC">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>111bd611-1cd1-4785-93f9-61d37c3fddef</rd:DataSourceID>
+      <rd:DataSourceID>73413ed6-648d-4cd5-a52f-182e799ba83f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="ReviewAnswersMCQ">
       <Query>
-        <DataSourceName>reviewAnswersDSC</DataSourceName>
+        <DataSourceName>e_xam_DSC</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -59,8 +59,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>reviewAnswersDSC</rd:DataSetName>
-        <rd:SchemaPath>D:\IDA\11 Advanced SQL\Project\e-xam\e-xam\reviewAnswersDSC.xsd</rd:SchemaPath>
+        <rd:DataSetName>e_xam_DSC</rd:DataSetName>
+        <rd:SchemaPath>D:\IDA\e-xam\e-xam\Reports\e_xam_DSC.xsd</rd:SchemaPath>
         <rd:TableName>reviewStudentAnswers</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -69,7 +69,7 @@
     </DataSet>
     <DataSet Name="ReviewAnswersTF">
       <Query>
-        <DataSourceName>reviewAnswersDSC</DataSourceName>
+        <DataSourceName>e_xam_DSC</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -115,8 +115,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>reviewAnswersDSC</rd:DataSetName>
-        <rd:SchemaPath>D:\IDA\11 Advanced SQL\Project\e-xam\e-xam\reviewAnswersDSC.xsd</rd:SchemaPath>
+        <rd:DataSetName>e_xam_DSC</rd:DataSetName>
+        <rd:SchemaPath>D:\IDA\e-xam\e-xam\Reports\e_xam_DSC.xsd</rd:SchemaPath>
         <rd:TableName>reviewStudentAnswers</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -273,7 +273,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!QuestionBody.Value</Value>
+                                  <Value>=RunningValue(Fields!QuestionBody.Value, Count, Nothing) &amp; ". " &amp;Fields!QuestionBody.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -514,9 +514,6 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.63211in</Width>
-                </TablixColumn>
-                <TablixColumn>
                   <Width>3.76645in</Width>
                 </TablixColumn>
               </TablixColumns>
@@ -526,44 +523,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox8">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>#</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>DarkViolet</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox73">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -571,7 +530,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Option</Value>
+                                  <Value>Options</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -607,43 +566,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Option2">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!OptionNum.Value</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>14pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Option</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="OptionBody">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -651,7 +573,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!OptionBody.Value</Value>
+                                  <Value>=Fields!OptionNum.Value.ToString() + ". " + Fields!OptionBody.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -686,14 +608,13 @@
             <TablixColumnHierarchy>
               <TablixMembers>
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>3.12978in</Size>
+                    <Size>3.76189in</Size>
                     <CellContents>
                       <Textbox Name="Textbox67">
                         <CanGrow>true</CanGrow>
@@ -833,7 +754,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>3.12978in</Size>
+                    <Size>3.76189in</Size>
                     <CellContents>
                       <Textbox Name="QuestionBody1">
                         <CanGrow>true</CanGrow>
@@ -842,7 +763,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!QuestionBody.Value</Value>
+                                <Value>=RunningValue(Fields!QuestionBody.Value, CountDistinct, "ReviewAnswersMCQ") &amp; ". " &amp; Fields!QuestionBody.Value</Value>
                                 <Style>
                                   <FontFamily>Segoe UI</FontFamily>
                                   <FontSize>14pt</FontSize>

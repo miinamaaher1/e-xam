@@ -27,7 +27,7 @@ namespace e_xam
            })
            .ToList();
 
-            instructorClassesRV.LocalReport.ReportPath = @"Reports\InstructorClassReport.rdlc";
+            instructorClassesRV.LocalReport.ReportPath = @"Reports\InstructorClassesReport.rdlc";
 
             ReportParameter instructorIdParam = new ReportParameter("id", user.id.ToString());
             ReportParameter instructorNameParam = new ReportParameter("instructorName", user.firstName + " " + user.lastName);

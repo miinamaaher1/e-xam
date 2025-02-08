@@ -19,10 +19,10 @@ namespace e_xam.InstructorForms
         {
             //List<string> topics = CourseManager.getCourseTopics(courseId);
             DataTable topics = CourseManager.getCourseTopics(courseId);
-            CourseTopicsRV.LocalReport.ReportPath = @"Reports\CourseTopicsReport.rdlc";
+            CourseTopicsRV.LocalReport.ReportPath = @"Reports\CourseDetailsReport.rdlc";
             ReportParameter reportParameter = new ReportParameter("courseName", courseName);
             CourseTopicsRV.LocalReport.SetParameters(reportParameter);
-            ReportDataSource reportDataSource = new ReportDataSource("CourseTopicsDS1", topics);
+            ReportDataSource reportDataSource = new ReportDataSource("CourseTopicsDS", topics);
             CourseTopicsRV.LocalReport.DataSources.Add(reportDataSource);
             CourseTopicsRV.RefreshReport();
         }
