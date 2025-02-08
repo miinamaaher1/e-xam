@@ -26,7 +26,7 @@ namespace UI
 
         private void reviewBtn_Click(object sender, EventArgs e)
         {
-            
+
             Exam exam = (Exam)examBx.SelectedItem;
 
             ReviewAnswersReportForm reviewAnswer = new ReviewAnswersReportForm(studentId, exam.id);
@@ -38,7 +38,7 @@ namespace UI
 
             this.Hide();
             reviewAnswer.Show();
-            
+
         }
     }
 }

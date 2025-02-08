@@ -1,7 +1,6 @@
 ﻿using BLL.Entities;
 using BLL.EntityManagers;
 using Microsoft.Reporting.WinForms;
-using System.Data;
 
 namespace UI
 {

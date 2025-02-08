@@ -1,13 +1,7 @@
 ﻿using BLL.Entities;
-using BLL.EntityList;
 using BLL.EntityLists;
 using DAL;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.EntityManagers
 {
@@ -17,7 +11,7 @@ namespace BLL.EntityManagers
 
         public static CourseList getInstructorCourses(int _instId)
         {
-            Dictionary<string,object> parameters = new Dictionary<string,object>();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@instId", _instId);
             DataTable dt = dBManager.executeDataTable("getInstructorCourses", parameters);
             return dataTableToCourseList(dt);
@@ -26,7 +20,7 @@ namespace BLL.EntityManagers
 
         static public DataTable getCourseTopics(int _courseId)
         {
-            List<string>topics=new List<string>();
+            List<string> topics = new List<string>();
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@crsId", _courseId);
 
@@ -75,7 +69,7 @@ namespace BLL.EntityManagers
             return course;
         }
 
-        public static Dictionary<string,int> getCoursesByInstId(int inst_id)
+        public static Dictionary<string, int> getCoursesByInstId(int inst_id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@instId", inst_id);

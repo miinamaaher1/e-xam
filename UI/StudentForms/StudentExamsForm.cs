@@ -7,10 +7,10 @@ namespace UI
     public partial class StudentExamsForm : Form
     {
         List<StudentExam> studentexamlist;
-       
+
         int studentId, courseId, trackId;
         string cname;
-        public StudentExamsForm(int _studentid, int _courseid, int _trakid,string _coursename)
+        public StudentExamsForm(int _studentid, int _courseid, int _trakid, string _coursename)
         {
             studentId = _studentid;
             courseId = _courseid;
@@ -18,7 +18,7 @@ namespace UI
             cname = _coursename;
             InitializeComponent();
 
-            studentexamlist = StudentManager.getStudetExams(_studentid, _courseid,_trakid);
+            studentexamlist = StudentManager.getStudetExams(_studentid, _courseid, _trakid);
             LoudExams();
         }
 
@@ -30,7 +30,7 @@ namespace UI
             coursename.Text = cname;
 
             //examspanel.AutoScroll = true;
-           
+
             foreach (StudentExam studexam in studentexamlist)
             {
                 Panel examPanel = new Panel
@@ -47,19 +47,19 @@ namespace UI
                     Font = new Font("Segoe UI", 14),
                     Location = new Point(30, 15)
                 };
-              
+
                 Label date = new Label
                 {
-                   
-                   Text = $"Start: {studexam.exam.startDate.ToString("dd/MM/yyyy hh:mm tt")} | End: {studexam.exam.endDate.ToString("dd/MM/yyyy hh:mm tt")}",
+
+                    Text = $"Start: {studexam.exam.startDate.ToString("dd/MM/yyyy hh:mm tt")} | End: {studexam.exam.endDate.ToString("dd/MM/yyyy hh:mm tt")}",
                     AutoSize = true,
                     Font = new Font("Segoe UI", 14),
                     Location = new Point(255, 15)
                 };
 
-         
 
-                if ((studexam.status == 'm') &&  (studexam.exam.endDate>DateTime.Now) && (studexam.exam.startDate <DateTime.Now))
+
+                if ((studexam.status == 'm') && (studexam.exam.endDate > DateTime.Now) && (studexam.exam.startDate < DateTime.Now))
                 {
                     Button btnexam = new Button
                     {
@@ -77,7 +77,7 @@ namespace UI
                     btnexam.Click += takeExam_Click;
                     examPanel.Controls.Add(btnexam);
                 }
-               else if ((studexam.status == 'm') && (studexam.exam.endDate >DateTime.Now )&& (studexam.exam.startDate > DateTime.Now))
+                else if ((studexam.status == 'm') && (studexam.exam.endDate > DateTime.Now) && (studexam.exam.startDate > DateTime.Now))
                 {
                     Button btnexam = new Button
                     {
@@ -94,7 +94,7 @@ namespace UI
                     examPanel.Controls.Add(btnexam);
                 }
 
-                else if((studexam.status == 'm') &&  (studexam.exam.endDate<DateTime.Now) )
+                else if ((studexam.status == 'm') && (studexam.exam.endDate < DateTime.Now))
                 {
                     Button btnexam = new Button
                     {
@@ -104,7 +104,7 @@ namespace UI
                         Location = new Point(1030, 10),
                         Font = new Font("Segoe UI", 14),
                         Tag = studexam.exam.id,
-                       Enabled = false
+                        Enabled = false
 
 
                     };
@@ -128,7 +128,7 @@ namespace UI
                 }
                 examPanel.Controls.Add(examName);
                 examPanel.Controls.Add(date);
-               
+
 
                 examspanel.Controls.Add(examPanel);
             }
@@ -144,7 +144,7 @@ namespace UI
             {
                 int examId = (int)clickedButton.Tag;
 
-                TakeExamForm takeExam = new TakeExamForm( examId,studentId);
+                TakeExamForm takeExam = new TakeExamForm(examId, studentId);
                 takeExam.FormClosed += (s, args) =>
                 {
                     studentexamlist = StudentManager.getStudetExams(studentId, courseId, trackId);

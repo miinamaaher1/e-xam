@@ -1,13 +1,7 @@
-using DAL;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
 using BLL.Entities;
 using BLL.EntityList;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DAL;
+using System.Data;
 
 namespace BLL.EntityManagers
 {
@@ -29,7 +23,7 @@ namespace BLL.EntityManagers
         }
 
 
-        public static TrackList getInstructorTracksInCrs(int _instId , int _crsId)
+        public static TrackList getInstructorTracksInCrs(int _instId, int _crsId)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@instId", _instId);
@@ -37,11 +31,13 @@ namespace BLL.EntityManagers
             DataTable dt = dBManager.executeDataTable("getInstructorTracksInCrs", parameters);
 
             TrackList trackList = new TrackList();
-            foreach (DataRow dr in dt.Rows) {
+            foreach (DataRow dr in dt.Rows)
+            {
                 trackList.Add(
-                    new Track {
-                        id = Convert.ToInt32( dr["id"]),
-                        name = Convert.ToString( dr["name"] )
+                    new Track
+                    {
+                        id = Convert.ToInt32(dr["id"]),
+                        name = Convert.ToString(dr["name"])
                     }
                 );
             }

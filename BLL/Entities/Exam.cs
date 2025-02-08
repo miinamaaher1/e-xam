@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BLL.Entities
+﻿namespace BLL.Entities
 {
     public class Exam : Entity
     {
@@ -16,12 +10,12 @@ namespace BLL.Entities
         public int totalDegree { get; set; }
         public Course course { get; set; }
         public List<Question> questions { get; set; }
-        
+
 
         //////////////////////////////////////////////
         public List<Track> tracks { get; set; }
         /*****/
-        public string tracksId { get; set; }   
+        public string tracksId { get; set; }
         /*****/
         public int mcqCount { get; set; }
         public int tfCount { get; set; }

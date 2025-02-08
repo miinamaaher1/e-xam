@@ -62,7 +62,7 @@ namespace UI
 
             if ((QuestionType)typeComboBox.SelectedItem == QuestionType.TF_Question)
             {
-                
+
                 question.type = 't';
                 if (trueRadBtn.Checked)
                 {
@@ -105,7 +105,7 @@ namespace UI
                 {
                     question.ans = 'C';
                 }
-                else if(optionDRadBtn.Checked)
+                else if (optionDRadBtn.Checked)
                 {
                     question.ans = 'D';
                 }

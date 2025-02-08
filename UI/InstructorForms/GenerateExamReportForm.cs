@@ -1,15 +1,7 @@
 ﻿using BLL.Entities;
 using BLL.EntityManagers;
 using Microsoft.Reporting.WinForms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UI.InstructorForms
 {
@@ -21,7 +13,7 @@ namespace UI.InstructorForms
         int courseId;
         int instrcutorId;
 
-        public generateExamReportForm(int _examId,int _tfCount, int _mcqCount, int _courseId, int _instrcutorId )
+        public generateExamReportForm(int _examId, int _tfCount, int _mcqCount, int _courseId, int _instrcutorId)
         {
             examId = _examId;
             tfCount = _tfCount;
@@ -90,8 +82,8 @@ namespace UI.InstructorForms
                 mcqCount = mcqCount,
                 tfCount = tfCount
             };
-           int exId= ExamManager.generateAnotherExamQ(exam);
-            if(exId==-1)
+            int exId = ExamManager.generateAnotherExamQ(exam);
+            if (exId == -1)
             {
                 MessageBox.Show("Error in generating another Questions");
                 return;

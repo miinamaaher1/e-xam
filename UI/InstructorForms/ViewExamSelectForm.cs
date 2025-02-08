@@ -1,14 +1,5 @@
 ﻿using BLL.Entities;
 using BLL.EntityManagers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UI.InstructorForms
 {
@@ -16,7 +7,7 @@ namespace UI.InstructorForms
     {
         int instructorId;
         bool isLoaded, hasCourses, hasExams;
-       
+
         public ViewExamSelectForm(int _instructorId)
         {
             InitializeComponent();
@@ -51,7 +42,7 @@ namespace UI.InstructorForms
 
                 hasExams = false;
                 isLoaded = false;
-                hasCourses= false;
+                hasCourses = false;
             }
 
         }
@@ -71,7 +62,7 @@ namespace UI.InstructorForms
                     ExamsCombo.SelectedIndex = 0;
                     hasExams = false;
                 }
-                   
+
                 else
                 {
                     ExamsCombo.DataSource = examsId;
@@ -84,12 +75,12 @@ namespace UI.InstructorForms
 
         private void getExamBtn_Click(object sender, EventArgs e)
         {
-            if(!hasCourses)
+            if (!hasCourses)
             {
                 MessageBox.Show("No Courses Available");
                 return;
             }
-            else if(!hasExams)
+            else if (!hasExams)
             {
                 MessageBox.Show("No Exams Available");
                 return;
@@ -106,7 +97,7 @@ namespace UI.InstructorForms
             }
             else ///call form
             {
-                ViewExamReportForm  displayExamReport = new ViewExamReportForm((int)ExamsCombo.SelectedValue, (int)coursesCombo.SelectedValue,instructorId);
+                ViewExamReportForm displayExamReport = new ViewExamReportForm((int)ExamsCombo.SelectedValue, (int)coursesCombo.SelectedValue, instructorId);
                 displayExamReport.FormClosed += (s, args) =>
                 {
                     this.Close();

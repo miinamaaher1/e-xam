@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BLL;
-using BLL.Entities;
+﻿using BLL.Entities;
 using DAL;
+using System.Data;
 
 namespace BLL.EntityManagers
 {
@@ -62,10 +56,10 @@ namespace BLL.EntityManagers
                     {
                         FirstName = Convert.ToString(dr["FirstName"]),
                         LastName = Convert.ToString(dr["LastName"]),
-                        Score = Convert.ToDecimal(dr["Score"] == DBNull.Value? 0: dr["Score"]),
+                        Score = Convert.ToDecimal(dr["Score"] == DBNull.Value ? 0 : dr["Score"]),
                         QuestionBody = Convert.ToString(dr["QuestionBody"]),
-                        OptionNum = Convert.ToChar(dr["OptionNum"] == DBNull.Value? '\0': dr["OptionNum"]),
-                        OptionBody = Convert.ToString(dr["OptionBody"] == DBNull.Value? "\0": dr["OptionBody"]),
+                        OptionNum = Convert.ToChar(dr["OptionNum"] == DBNull.Value ? '\0' : dr["OptionNum"]),
+                        OptionBody = Convert.ToString(dr["OptionBody"] == DBNull.Value ? "\0" : dr["OptionBody"]),
                         StudentAnswer = Convert.ToChar(dr["StudentAnswer"] == DBNull.Value ? '\0' : dr["StudentAnswer"]),
                         ModelAnswer = Convert.ToChar(dr["ModelAnswer"])
                     };

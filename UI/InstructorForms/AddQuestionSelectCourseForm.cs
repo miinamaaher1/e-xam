@@ -38,7 +38,7 @@ namespace UI
                 MessageBox.Show("No Courses Available");
                 return;
             }
-            AddQuestionForm addQuestionForm = new AddQuestionForm(courses[coursesComboBox.Text] , inst_id);
+            AddQuestionForm addQuestionForm = new AddQuestionForm(courses[coursesComboBox.Text], inst_id);
 
             // Subscribe to the FormClosed event
             addQuestionForm.FormClosed += (s, args) =>

@@ -22,7 +22,8 @@ namespace BLL.EntityManagers
                 type = Convert.ToChar(dt.Rows[0]["type"]),
                 firstName = Convert.ToString(dt.Rows[0]["first_name"]),
                 lastName = Convert.ToString(dt.Rows[0]["last_name"]),
-                track = new Track { 
+                track = new Track
+                {
                     id = Convert.ToInt32(dt.Rows[0]["track_id"]),
                     name = Convert.ToString(dt.Rows[0]["track_name"]),
                     dept = new Department
@@ -35,7 +36,7 @@ namespace BLL.EntityManagers
             };
         }
 
- public static List<TrackStatsRecord> getStudentsByTrack(int trackId) // This functions returns specific data about students (not all students' data)
+        public static List<TrackStatsRecord> getStudentsByTrack(int trackId) // This functions returns specific data about students (not all students' data)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("@trackId", trackId);
@@ -56,7 +57,7 @@ namespace BLL.EntityManagers
 
             return trackReport;
         }
-        
+
         public static List<StudentStatsRecord> getStudentStats(int _id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -148,12 +149,12 @@ namespace BLL.EntityManagers
                 (
                     new Exam
                     {
-                       id = Convert.ToInt32(dr["id"]),
-                       title = Convert.ToString(dr["title"]),
+                        id = Convert.ToInt32(dr["id"]),
+                        title = Convert.ToString(dr["title"]),
                     }
                 );
             }
             return exams;
         }
-    }  
+    }
 }

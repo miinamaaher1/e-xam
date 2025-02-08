@@ -51,14 +51,14 @@ namespace UI.InstructorForms
             if (!getSelectedTracks())
                 return;
 
-            int exId=ExamManager.assignExamToTracks(examId, startDatetimeP.Value, enddateTimeP.Value, selectedTracks);
+            int exId = ExamManager.assignExamToTracks(examId, startDatetimeP.Value, enddateTimeP.Value, selectedTracks);
             if (exId == -1)
             {
                 MessageBox.Show("Error in assigning exam to tracks");
                 return;
             }
 
-            selectedTracksBefore =true;
+            selectedTracksBefore = true;
 
             MessageBox.Show("exam was assigned to selected tracks");
 
@@ -79,7 +79,7 @@ namespace UI.InstructorForms
                 return false;
 
             }
-            else if ( DateTime.Compare(startDate, endDate)>0)
+            else if (DateTime.Compare(startDate, endDate) > 0)
             { //problem in that not enter in this condition despite date and time is equal
                 MessageBox.Show("start date must be before end date");
                 return false;

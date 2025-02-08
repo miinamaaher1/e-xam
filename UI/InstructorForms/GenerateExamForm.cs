@@ -24,7 +24,7 @@ namespace UI.InstructorForms
 
             courses = CourseManager.getInstructorCourses(instId);
 
-            if(courses.Count == 0)
+            if (courses.Count == 0)
             {
                 courseCombo.Items.Add("No Courses Available");
                 courseCombo.SelectedIndex = 0;
@@ -88,7 +88,7 @@ namespace UI.InstructorForms
 
         private void generateExBtn_Click(object sender, EventArgs e)
         {
-            if(!hasCourses)
+            if (!hasCourses)
             {
                 MessageBox.Show("No Courses Available");
                 return;

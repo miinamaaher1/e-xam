@@ -2,7 +2,6 @@ using BLL.Entities;
 using BLL.EntityManagers;
 using UI.InstructorForms;
 using UI.SharedForms;
-using Microsoft.Reporting.Map.WebForms.BingMaps;
 
 namespace UI
 {

@@ -141,7 +141,7 @@ namespace UI
 
             else if (field == fields.user) newUserNameBx.Text = user.userName;
 
-            else if(field == fields.all)
+            else if (field == fields.all)
             {
                 firstNameBx.Text = user.firstName;
                 lastNameBx.Text = user.lastName;

@@ -1,15 +1,6 @@
-﻿using BLL.Entities;
-using BLL.EntityManagers;
+﻿using BLL.EntityManagers;
 using Microsoft.Reporting.WinForms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UI.InstructorForms
 {
@@ -18,7 +9,7 @@ namespace UI.InstructorForms
         int examId;
         int courseId;
         int instrcutorId;
-        public ViewExamReportForm(int _examId,int _courseId,int _instrcutorId)
+        public ViewExamReportForm(int _examId, int _courseId, int _instrcutorId)
         {
             InitializeComponent();
             this.AcceptButton = assignExamBtn;
@@ -30,7 +21,7 @@ namespace UI.InstructorForms
         {
             string courseName, examTitle;
             int duration;
-            ExamManager.getExamCourseTitle(examId, out courseName, out examTitle , out duration);
+            ExamManager.getExamCourseTitle(examId, out courseName, out examTitle, out duration);
             displayExamRV.LocalReport.ReportPath = @"Reports\GenerateExamReport.rdlc";
 
             ReportParameter reportParameter = new ReportParameter("courseName", courseName);

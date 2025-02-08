@@ -48,7 +48,7 @@ namespace UI
 
             List<Student> studentList = InstructorManager.getTrackStudents(selectedClass.track.id);
 
-            if(studentList.Count > 0)
+            if (studentList.Count > 0)
             {
                 studentBx.DataSource = studentList;
 
@@ -71,7 +71,7 @@ namespace UI
                 return;
             }
 
-            else if(!hasStudents)
+            else if (!hasStudents)
             {
                 MessageBox.Show("No Students Available");
                 return;

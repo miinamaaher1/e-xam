@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BLL.Entities
+﻿namespace BLL.Entities
 {
     public class CourseInstructorTrack : Entity
     {
@@ -13,7 +7,7 @@ namespace BLL.Entities
         public Track track { get; set; }
         public DateOnly? startDate { get; set; }
         public DateOnly? endDate { get; set; }
-        public int studentCount {  get; set; }
+        public int studentCount { get; set; }
 
         public override string ToString()
         {

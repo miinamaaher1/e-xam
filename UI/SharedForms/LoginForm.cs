@@ -19,7 +19,8 @@ namespace UI
             {
                 MessageBox.Show("Invalid username or password");
                 return;
-            } else if (user.type == 's')
+            }
+            else if (user.type == 's')
             {
                 StudentHomeForm studentHome = new StudentHomeForm(user.id);
 

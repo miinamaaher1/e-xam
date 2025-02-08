@@ -1,11 +1,6 @@
 ﻿using BLL.Entities;
 using DAL;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.EntityManagers
 {
@@ -36,7 +31,7 @@ namespace BLL.EntityManagers
             dict.Add("@ans", question.ans);
             dict.Add("@crs_id", question.course.id);
             dict.Add("@optionA", question.options[0].body);
-            dict.Add("@optionB", question.options[1].body); 
+            dict.Add("@optionB", question.options[1].body);
             dict.Add("@optionC", question.options[2].body);
             dict.Add("@optionD", question.options[3].body);
             DataTable dt = dBManager.executeDataTable("addMCQQuestion", dict);

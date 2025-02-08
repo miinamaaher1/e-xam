@@ -23,7 +23,7 @@ namespace UI
 
             reviewAnswersRV.LocalReport.ReportPath = @"Reports\ReviewAnswersReport.rdlc";
 
-            ReportParameter studentIdParam = new ReportParameter("ex_id",studentId.ToString());
+            ReportParameter studentIdParam = new ReportParameter("ex_id", studentId.ToString());
             ReportParameter examIdParam = new ReportParameter("std_id", examId.ToString());
 
             reviewAnswersRV.LocalReport.SetParameters(studentIdParam);
@@ -31,7 +31,7 @@ namespace UI
 
             ReportDataSource reviewAnswersMCQ = new ReportDataSource("ReviewAnswersMCQ", answerSheetMCQ);
             reviewAnswersRV.LocalReport.DataSources.Add(reviewAnswersMCQ);
-            
+
             ReportDataSource reviewAnswersTF = new ReportDataSource("ReviewAnswersTF", answerSheetTF);
             reviewAnswersRV.LocalReport.DataSources.Add(reviewAnswersTF);
 
