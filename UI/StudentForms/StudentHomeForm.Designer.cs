@@ -85,7 +85,7 @@
             gpaLbl.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             gpaLbl.AutoSize = true;
             gpaLbl.Font = new Font("Raleway ExtraBold", 28.1999989F, FontStyle.Bold);
-            gpaLbl.Location = new Point(1021, 149);
+            gpaLbl.Location = new Point(1016, 246);
             gpaLbl.Name = "gpaLbl";
             gpaLbl.Size = new Size(155, 65);
             gpaLbl.TabIndex = 0;
@@ -170,13 +170,12 @@
             label1.AutoSize = true;
             label1.Font = new Font("Raleway ExtraBold", 28.1999989F, FontStyle.Bold);
             label1.ForeColor = Color.DarkViolet;
-            label1.Location = new Point(1159, 149);
+            label1.Location = new Point(1154, 246);
             label1.Name = "label1";
             label1.Size = new Size(66, 65);
             label1.TabIndex = 0;
             label1.Text = "%";
             label1.TextAlign = ContentAlignment.TopRight;
-            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
@@ -188,7 +187,7 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // StudentHome
+            // StudentHomeForm
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -205,7 +204,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5);
             MaximizeBox = false;
-            Name = "StudentHome";
+            Name = "StudentHomeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "e-xam - Home";
             menuBar.ResumeLayout(false);
