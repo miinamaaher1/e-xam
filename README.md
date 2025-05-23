@@ -1,5 +1,7 @@
 # e-xam
 
+![Logo](screenshots/e-xam.png)
+
 **e-xam** is a conceptual digital examination platform designed for ITI to facilitate exam management for instructors and students.
 
 This project was developed by our team as part of the [ITI](https://iti.gov.eg/home) Advanced SQL course within the Integrated Software Development & Architecture track.
